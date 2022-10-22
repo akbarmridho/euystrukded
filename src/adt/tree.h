@@ -17,6 +17,7 @@ typedef Address Tree;
 /*
 Implementasi dibebaskan :>
 buat juga list of tree untuk menyimpan semua tree resep
+list statis saja
 
 referensi: https://github.com/malikrafsan/Praktikum-STEI-IF-ITB/blob/main/Algoritma-dan-Struktur-Data/Praktikum13/bintree.h
 */

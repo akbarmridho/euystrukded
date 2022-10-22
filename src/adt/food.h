@@ -3,6 +3,7 @@
 
 #include "wordmachine.h"
 #include "time.h"
+#include "string.h"
 
 enum food_source
 {
@@ -15,7 +16,7 @@ enum food_source
 typedef struct
 {
     int id;
-    word_t name;
+    string name;
     time_t expire_time;
     time_t delivery_time;
     food_source source;

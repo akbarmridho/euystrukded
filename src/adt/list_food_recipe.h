@@ -27,11 +27,10 @@ typedef struct
 void create_food_recipe(food_t food, recipe_t recipe);
 
 /* Definisi elemen dan koleksi objek */
-typedef food_recipe_t ElType; /* type elemen List */
 typedef int IdxType;
 typedef struct
 {
-   ElType contents[CAPACITY]; /* memori tempat penyimpan elemen (container) */
+   food_recipe_t contents[CAPACITY]; /* memori tempat penyimpan elemen (container) */
 } ListFoodRecipe;
 /* Indeks yang digunakan [0..CAPACITY-1] */
 /* Jika l adalah ListFoodRecipe, cara deklarasi dan akses: */
@@ -91,7 +90,7 @@ boolean lfr_is_full(ListFoodRecipe l);
 /* I.S. List l tidak kosong dan tidak penuh, idx merupakan index yang valid di l */
 /* F.S. val adalah elemen yang disisipkan pada index idx l */
 /* *** Menambahkan elemen terakhir *** */
-void lfr_insert_at(ListFoodRecipe *l, ElType val, IdxType idx);
+void lfr_insert_at(ListFoodRecipe *l, food_recipe_t val, IdxType idx);
 
 /* Proses : Menghapus elemen pada index idx List */
 /* I.S. List tidak kosong, idx adalah index yang valid di l */
@@ -99,6 +98,6 @@ void lfr_insert_at(ListFoodRecipe *l, ElType val, IdxType idx);
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
 /* *** Menghapus elemen terakhir *** */
-void lfr_delete_at(ListFoodRecipe *l, ElType *val, IdxType idx);
+void lfr_delete_at(ListFoodRecipe *l, food_recipe_t *val, IdxType idx);
 
 #endif

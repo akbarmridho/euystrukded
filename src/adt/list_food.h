@@ -11,11 +11,10 @@
 /* Indeks tak terdefinisi*/
 
 /* Definisi elemen dan koleksi objek */
-typedef food_t ElType; /* type elemen list */
 typedef int IdxType;
 typedef struct
 {
-   ElType *buffer; /* memori tempat penyimpan elemen (container) */
+   food_t *buffer; /* memori tempat penyimpan elemen (container) */
    int nEff;       /* >=0, banyaknya elemen efektif */
    int capacity;   /* ukuran elemen */
 } ListFood;
@@ -70,7 +69,7 @@ void list_food_copy(ListFood lIn, ListFood *lOut);
 
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
-int list_food_count_val(ListFood l, ElType val);
+int list_food_count_val(ListFood l, food_t val);
 
 /* IDX_UNDEF jika kosong, 0 jika tidk kosong */
 int list_food_get_idx_head(ListFood l);
@@ -90,7 +89,7 @@ lain bila diperlukan
 Periksa is_full!
 jika penuh, panggil fungsi expand list
 */
-void enqueue_food(ListFood *l, ElType val);
+void enqueue_food(ListFood *l, food_t val);
 
 /*
 Melakukan proses dequeue list
@@ -101,7 +100,7 @@ Pastikan elemen tetap terurut sebelum dan sesudah proses dequeue
 return value 0 jika proses berjalan dengan lancar
 return value -1 jika tidak ditemukan makanan dengan id food_id atau jika list kosong
 */
-int dequeue_food(ListFood *l, int food_id, ElType *val);
+int dequeue_food(ListFood *l, int food_id, food_t *val);
 
 /*
 Menghitung banyaknya makanan dengan id food_id pada list_food
