@@ -24,6 +24,8 @@ typedef struct
    recipe_t recipe;
 } food_recipe_t;
 
+void create_food_recipe(food_t food, recipe_t recipe);
+
 /* Definisi elemen dan koleksi objek */
 typedef food_recipe_t ElType; /* type elemen List */
 typedef int IdxType;

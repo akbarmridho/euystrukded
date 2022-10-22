@@ -21,4 +21,6 @@ typedef struct
     food_source source;
 } food_t;
 
+void create_food(food_t *f, word_t name, time_t expire_time, time_t delivery_time, food_source source);
+
 #endif
