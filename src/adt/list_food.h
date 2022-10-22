@@ -90,7 +90,7 @@ lain bila diperlukan
 Periksa is_full!
 jika penuh, panggil fungsi expand list
 */
-void enqueue(ListFood *l, ElType val);
+void enqueue_food(ListFood *l, ElType val);
 
 /*
 Melakukan proses dequeue list
@@ -101,7 +101,7 @@ Pastikan elemen tetap terurut sebelum dan sesudah proses dequeue
 return value 0 jika proses berjalan dengan lancar
 return value -1 jika tidak ditemukan makanan dengan id food_id atau jika list kosong
 */
-int dequeue(ListFood *l, int food_id, ElType *val);
+int dequeue_food(ListFood *l, int food_id, ElType *val);
 
 /*
 Menghitung banyaknya makanan dengan id food_id pada list_food

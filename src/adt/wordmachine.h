@@ -19,9 +19,12 @@ typedef struct
 extern boolean end_word;
 extern word_t current_word;
 
-/* Mengabaikan satu atau beberapa BLANK
-   I.S. : CC sembarang
-   F.S. : CC ≠ BLANK atau CC = MARK */
+/*
+Implementasikan ignore blank agar juga bisa menanggap \n sebagai blank
+
+Mengabaikan satu atau beberapa BLANK
+I.S. : CC sembarang
+F.S. : CC ≠ BLANK atau CC = MARK */
 void ignore_blank();
 
 /*
