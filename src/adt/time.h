@@ -41,6 +41,8 @@ Hanya menampilkan jam dan menit, tidak termasuk hari
 */
 void write_time(time_t t);
 
+void write_day(time_t t);
+
 /*
 Diberikan sebuah TIME, mengonversi jumlah menit dari hari ke-nol menuju menit terakhir pada hari tertentu
 Rumus : menit = 24*60*day + 60*hour + menit
@@ -52,15 +54,25 @@ Mengonversi menit ke waktu, dimulai dari day nol
 */
 time_t minute_to_time(long N);
 
-/* Mengirimkan true jika T1=T2, false jika tidak */
+void pminute_to_time(long N, time_t* result);
+
+/* Mengirimkan true jika T1=T2 (bagian jam dan menit), false jika tidak */
 boolean TEQ(time_t t1, time_t t2);
 
-/* Mengirimkan true jika T1<T2, false jika tidak */
+/* Mengirimkan true jika T1=T2, false jika tidak */
+boolean DTEQ(time_t t1, time_t t2);
+
+/* Mengirimkan true jika T1<T2 (bagian jam dan menit), false jika tidak */
 boolean TLT(time_t t1, time_t t2);
 
-/* Mengirimkan true jika T1>T2, false jika tidak */
-/* *** Operator aritmatika TIME *** */
+/* Mengirimkan true jika T1<T2, false jika tidak */
+boolean DTLT(time_t t1, time_t t2);
+
+/* Mengirimkan true jika T1>T2 (bagian jam dan menit), false jika tidak */
 boolean TGT(time_t t1, time_t t2);
+
+/* Mengirimkan true jika T1>T2, false jika tidak */
+boolean DTGT(time_t t1, time_t t2);
 
 /* Menambahkan time t sebanyak n menit*/
 void pnext_n_minute(time_t *t, int n);
