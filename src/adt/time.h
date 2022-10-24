@@ -1,8 +1,8 @@
 /* File: time.h */
 /* Definisi ADT TIME */
 
-#ifndef TIME_H
-#define TIME_H
+#ifndef ADT_TIME_H
+#define ADT_TIME_H
 
 #include "boolean.h"
 
