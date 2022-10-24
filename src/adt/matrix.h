@@ -1,7 +1,7 @@
 /* ********** Definisi TYPE Matrix dengan Index dan elemen integer ********** */
 
-#ifndef MATRIX_H
-#define MATRIX_H
+#ifndef ADT_MATRIX_H
+#define ADT_MATRIX_H
 
 #include "boolean.h"
 
@@ -11,8 +11,7 @@
 
 typedef int IdxType; /* Index baris, kolom */
 typedef char ElType;
-typedef struct
-{
+typedef struct {
     ElType mem[ROW_CAP][COL_CAP];
     int rowEff; /* banyaknya/ukuran baris yg terdefinisi */
     int colEff; /* banyaknya/ukuran kolom yg terdefinisi */
@@ -25,7 +24,6 @@ typedef struct
 Membentuk sebuah Matrix "kosong" yang siap diisi berukuran nRow x nCol di "ujung kiri" memori
 I.S. nRow dan nCol adalah valid untuk memori matriks yang dibuat
 F.S. Matriks m sesuai dengan definisi di atas terbentuk
-Inisiasi matrix kosong dengan char #
 */
 void create_matrix(int nRows, int nCols, Matrix *m);
 
