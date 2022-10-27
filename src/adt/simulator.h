@@ -1,5 +1,5 @@
-#ifndef __SIMULATOR_H
-#define __SIMULATOR_H
+#ifndef ADT_SIMULATOR_H
+#define ADT_SIMULATOR_H
 
 #include "string.h"
 #include "point.h"
@@ -10,7 +10,7 @@ typedef struct
 {
     string name;
     point_t position;
-    time_t time;
+    day_time_t time;
     ListFood inventory;
     ListNotification notification;
 } simulator_t;

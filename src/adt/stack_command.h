@@ -1,5 +1,5 @@
-#ifndef __STACK_COMMAND_H
-#define __STACK_COMMAND_H
+#ifndef ADT_STACK_COMMAND_H
+#define ADT_STACK_COMMAND_H
 
 #include "list_food.h"
 #include "list_delivery.h"
@@ -11,12 +11,10 @@ typedef struct
 {
     ListFood inventory;
     point_t position;
-    time_t time;
+    day_time_t time;
     ListDelivery delivery;
     ListNotification notification;
 } state_t;
-
-typedef int state_t;
 
 typedef struct
 {

@@ -1,5 +1,5 @@
-#ifndef __FOOD_h
-#define __FOOD_h
+#ifndef ADT_FOOD_h
+#define ADT_FOOD_h
 
 #include "wordmachine.h"
 #include "time.h"
@@ -17,11 +17,11 @@ typedef struct
 {
     int id;
     string name;
-    time_t expire_time;
-    time_t delivery_time;
-    food_source source;
+    day_time_t expire_time;
+    day_time_t delivery_time;
+    enum food_source source;
 } food_t;
 
-void create_food(food_t *f, word_t name, time_t expire_time, time_t delivery_time, food_source source);
+void create_food(food_t *f, word_t name, day_time_t expire_time, day_time_t delivery_time, enum food_source source);
 
 #endif
