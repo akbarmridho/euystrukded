@@ -18,7 +18,27 @@ Alur dan struktur umum program ini dapat diakses melalui dokumen [berikut](CODE_
 
 ## Pembagian Tugas
 
-todo
+ADT:
+
+1. Wilson: charmachine, wordmachine, stack
+2. Egi: food. list_food, list_delivery
+3. Eugene: list_food_recipe, recipe, point
+4. Salomo: string, notification, simulator
+5. Akbar: time, matrix, tree
+
+Services:
+1. Eugene: chopper, boiler
+2. Salomo: clock, delivery
+3. Akbar: notifier, history
+4. Wilson: map, mixer
+5. Egi: fryer, simulator
+
+Commands:
+1. Wilson: boil, buy, catalog
+2. Egi: chop, cookbook, delivery
+3. Eugene: fry, inventory, mix
+4. Akbar: move, redo, undo
+5. Salomo: start, exit, wait, main program
 
 ## Daftar Fitur dan Status Pengerjaan
 
