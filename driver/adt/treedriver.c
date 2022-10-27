@@ -2,16 +2,23 @@
 #include <stdio.h>
 
 typedef struct {
-    int id;
-    enum food_source method;
+    food_t food;
     int ingredient_count;
     int ingredients[10];
 } rec_t;
 
 void rec_create(rec_t *r, int id, enum food_source method, int count, int ingredients[])
 {
-    (*r).id = id;
-    (*r).method = method;
+    food_t food;
+    day_time_t t;
+    create_time(&t, 0,0,0);
+
+    food.id = id;
+    food.source = method;
+    food.name = "a";
+    food.expire_time = t;
+    food.delivery_time = t;
+
     (*r).ingredient_count = count;
 
     for (int i = 0; i < count; i++) {
@@ -39,7 +46,7 @@ int main()
     for (int i = 0; i < 7; i++) {
         rec_t item = rec_list[i];
         Tree new;
-        printf("food id %d ingredients count: %d\n", item.id, item.ingredient_count);
+        printf("food id %d ingredients count: %d\n", item.food.id, item.ingredient_count);
 
         if (item.ingredient_count != 0) {
             Address children[item.ingredient_count];
@@ -59,10 +66,10 @@ int main()
                 }
             }
 
-            new_tree(item.id, item.method, item.ingredient_count, children, &new);
+            new_tree(item.food, item.ingredient_count, children, &new);
         } else {
             Address empty[] = {NULL};
-            new_tree(item.id, item.method, item.ingredient_count, empty, &new);
+            new_tree(item.food, item.ingredient_count, empty, &new);
         }
 
         lt_insert_last(&tree_list, new);
