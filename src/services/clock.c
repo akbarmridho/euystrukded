@@ -1,5 +1,5 @@
-#include "../adt/boolean.h"
-#include "../adt/time.h"
+#include <stdio.h>
+#include "clock.h"
 
 /*
 Advance waktu sebanyak satu menit

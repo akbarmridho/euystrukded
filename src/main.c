@@ -1,3 +1,20 @@
+#include <stdio.h>
+#include "commands/boil.h"
+#include "commands/buy.h"
+#include "commands/catalog.h"
+#include "commands/chop.h"
+#include "commands/cookbook.h"
+#include "commands/delivery.h"
+#include "commands/exit.h"
+#include "commands/fry.h"
+#include "commands/inventory.h"
+#include "commands/mix.h"
+#include "commands/move.h"
+#include "commands/redo.h"
+#include "commands/start.h"
+#include "commands/undo.h"
+#include "commands/wait.h"
+
 /*
 Urutan program
 
