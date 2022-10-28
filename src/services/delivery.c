@@ -1,8 +1,9 @@
+#include <stdio.h>
+#include "delivery.h"
 #include "../adt/boolean.h"
 #include "../adt/time.h"
 #include "../adt/notification.h"
 #include "../commands/inventory.h"
-// terdapat delivery queue
 
 /*
 Kurangi waktu delivery pada delivery list sebanyak satu tick (menit)
@@ -16,4 +17,6 @@ kirim notifikasi
 barang yg dikirim adalah barang dengan delivery
 time nol
 */
-void execute_delivery();
+void execute_delivery() {
+    
+}

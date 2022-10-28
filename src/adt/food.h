@@ -1,5 +1,5 @@
-#ifndef __FOOD_h
-#define __FOOD_h
+#ifndef ADT_FOOD_h
+#define ADT_FOOD_h
 
 #include "wordmachine.h"
 #include "time.h"
@@ -17,8 +17,8 @@ typedef struct
 {
     int id;
     string name;
-    time_t expire_time;
-    time_t delivery_time;
+    day_time_t expire_time;
+    day_time_t delivery_time;
     enum food_source source;
 } food_t;
 
@@ -30,7 +30,7 @@ typedef struct
 #define SOURCE(f) (f).source
 
 /* KONSTRUKTOR */
-void create_food(food_t *f,int id, word_t name, time_t expire_time, time_t delivery_time, enum food_source source);
+void create_food(food_t *f,int id, word_t name, day_time_t expire_time, day_time_t delivery_time, enum food_source source);
 // I.S. f sembarang
 // F.S  f terdefinisi dengan atribut sesuai argumen
 
