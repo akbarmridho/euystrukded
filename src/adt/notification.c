@@ -4,6 +4,9 @@
 #include "boolean.h"
 
 // ------------KONSTRUKTOR------------ //
+
+/* I.S. n sembarang 
+   F.S. n kosong*/
 void create_notification (ListNotification *n) {
     int i;
     string s;
@@ -13,26 +16,26 @@ void create_notification (ListNotification *n) {
         notif(*n, i) = s ;
     }
 }
-/* I.S. n sembarang 
-   F.S. n kosong*/
 
 /* -----------PRIMITIF LAIN------------ */
-boolean is_empty(ListNotification n) {
-    return (list_length == 0);
-}
-/* mengembalikan true apabila List Nofitifikasi kosong */
 
+/* mengembalikan true apabila List Nofitifikasi kosong */
+boolean is_empty(ListNotification n) {
+    return (list_length(n) == 0);
+}
+
+/* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List n */
+/* yaitu antara indeks yang terdefinisi utk container*/
 boolean is_idx_valid(ListNotification n, idxtype i) {
     return (i >= IDX_MIN && i <= CAPACITY);
 }
-/* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List n */
-/* yaitu antara indeks yang terdefinisi utk container*/
 
+/* Mengirimkan true jika i adalah indeks yang terdefinisi utk List n */
 boolean is_idx_eff(ListNotification n, idxtype i) {
     return (i >= IDX_MIN && i < get_last_idx(n));
 }
-/* Mengirimkan true jika i adalah indeks yang terdefinisi utk List n */
 
+/* Mengembalikan panjang list notifikasi */
 int list_length(ListNotification n) {
     int i = 0;
     boolean mark = false;
@@ -53,17 +56,17 @@ int list_length(ListNotification n) {
         return i;
     }
 }
-/* Mengembalikan panjang list notifikasi */
 
+/* Mengembalikan nilai true apabila suatu notifikasi sama dengan sebuah string */
 boolean compare_str_notif(notification n, string s){
     int i = 0;
     boolean same = false;
 
-    if (strlen(n) != strlen(s)) {
+    if (str_len(n) != str_len(s)) {
         same = false;
     } else {
-        while (i < strlen(s) && same == true) {
-            if (kata(n,i) == kata(s,i)) {
+        while (i < str_len(s) && same == true) {
+            if (chars(n,i) == chars(s,i)) {
                 i += 1;
             } else {
                 same = false;
@@ -74,21 +77,23 @@ boolean compare_str_notif(notification n, string s){
     return same;
 }
 
+/* Mengembalikan indeks terakhir dari list notifikasi */
 int get_last_idx(ListNotification n) {
     if (isEmpty(n)) {
-        return 0;
+        return UNDEF;
     } else {
         return (list_length(n) - 1);
     }
 }
-/* Mengembalikan indeks terakhir dari list notifikasi */
 
+/* I.S. n terdefinisi, n mungkin kosong
+   F.S. s adalah elemen terakhir dari List Notifikasi */
 void insert_last(ListNotification *n, Eltype s) {
     notif(*n, list_length(*n)) = s;
 }
-/* I.S. n terdefinisi, n mungkin kosong
-   F.S. s adalah elemen terakhir dari List Notifikasi */
 
+/* I.S. n terdefinisi
+   F.S. n kosong, panjang n adalah 0 */
 void delete_last(ListNotification *n, Eltype *val) {
     string s;
     new_string(&s);
@@ -96,9 +101,9 @@ void delete_last(ListNotification *n, Eltype *val) {
     *val = notif(*n, get_last_idx(*n));
     notif(*n, get_last_idx(*n)) = s;
 }
-/* I.S. n terdefinisi
-   F.S. n kosong, panjang n adalah 0 */
 
+/* I.S. n terdefinisi dan tidak kosong
+   F.S. n kosong */
 void delete_list(ListNotification *n) {
     int i, pnjg = list_length(*n);
     Eltype val;
@@ -107,9 +112,9 @@ void delete_list(ListNotification *n) {
         delete_last(&n, &val);
     }
 }
-/* I.S. n terdefinisi dan tidak kosong
-   F.S. n kosong */
 
+/* I.S. n terdefinisi, n mungkin kosong
+   F.S. mencetak isi List Notifikasi */
 void print_notification(ListNotification n) {
     int i;
 
@@ -122,5 +127,16 @@ void print_notification(ListNotification n) {
         }
     }
 }
-/* I.S. n terdefinisi, n mungkin kosong
-   F.S. mencetak isi List Notifikasi */
+
+/* I.S. n terdefinisi, n tidak kosong 
+   F.S. copy paste n1 ke dalam n2 */
+ListNotification copy_notification(ListNotification n1, ListNotification n2) {
+    int i = 0;
+    create_notification(&n2);
+
+    for (i = 0; i < list_length(n1); i++) {
+        insert_last(&n2,notif(n1,i));
+    }
+
+    return n2;
+}
