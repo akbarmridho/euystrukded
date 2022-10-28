@@ -54,7 +54,7 @@ string copy_string(string s) {
     string sCopy;
     int i;
 
-    new_tring(&sCopy);
+    new_string(&sCopy);
     for (i = 0; i < str_len(s) + 1; i++) {
         chars(sCopy,i) = chars(s,i);
     }
@@ -87,7 +87,7 @@ string concat(string s1, string s2) {
     int i,j = 0;
     string sHasil;
 
-    newString(&sHasil);
+    new_string(&sHasil);
     for (i = 0; i < str_len(s1); i++) {
         chars(sHasil,i) = chars(s1,i);
     }
@@ -121,7 +121,7 @@ void print_string(string s) {
     int i = 0;
 
     for (i = 0; i < str_len(s); i++) {
-        printf(chars(s,i));
+        printf("%c",chars(s,i));
     }
 }
 
