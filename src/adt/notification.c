@@ -7,13 +7,13 @@
 
 /* I.S. n sembarang 
    F.S. n kosong*/
-void create_notification (ListNotification *n) {
+void create_notification(ListNotification *n) {
     int i;
     string s;
 
     new_string(&s);
     for (i = IDX_MIN; i < CAPACITY; i++) {
-        notif(*n, i) = s ;
+        notif(*n, i) = s;
     }
 }
 
@@ -41,23 +41,23 @@ int n_list_length(ListNotification n) {
     boolean mark = false;
     string s; // jadi mark
     new_string(&s);
-    
+
     if (n_is_empty(n)) {
         return 0;
     } else {
         while ((mark == false) && (i < MAX)) {
-            if (compare_str_notif(notif(n,i),s)) {
+            if (compare_str_notif(notif(n, i), s)) {
                 mark = true;
             } else {
                 i += 1;
             }
-        } 
+        }
         return i;
     }
 }
 
 /* Mengembalikan nilai true apabila suatu notifikasi sama dengan sebuah string */
-boolean compare_str_notif(notification n, string s){
+boolean compare_str_notif(notification n, string s) {
     int i = 0;
     boolean same = true;
 
@@ -65,7 +65,7 @@ boolean compare_str_notif(notification n, string s){
         same = false;
     } else {
         while (i < str_len(s) && same) {
-            if (chars(n,i) == chars(s,i)) {
+            if (chars(n, i) == chars(s, i)) {
                 i += 1;
             } else {
                 same = false;
@@ -117,11 +117,10 @@ void n_delete_list(ListNotification *n) {
 void print_notification(ListNotification n) {
     int i;
 
-   if (n_list_length(n) == 0) {
+    if (n_list_length(n) == 0) {
         printf("-");
-    }
-    else {
-        for (i = 0; i <= n_get_last_idx(n)-1; i++) {
+    } else {
+        for (i = 0; i <= n_get_last_idx(n) - 1; i++) {
             printf("i+1. %c,", notif(n, i));
         }
     }
@@ -129,13 +128,11 @@ void print_notification(ListNotification n) {
 
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */
-ListNotification copy_notification(ListNotification n1, ListNotification n2) {
+void copy_notification(ListNotification lIn, ListNotification *lOut) {
     int i = 0;
-    create_notification(&n2);
+    create_notification(lOut);
 
-    for (i = 0; i < n_list_length(n1); i++) {
-        n_insert_last(&n2,notif(n1,i));
+    for (i = 0; i < n_list_length(lIn); i++) {
+        n_insert_last(lOut, notif(lIn, i));
     }
-
-    return n2;
 }

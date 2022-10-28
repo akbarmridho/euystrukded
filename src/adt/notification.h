@@ -4,7 +4,7 @@
 #include "string.h"
 
 #define CAPACITY 100
-#define IDX_MIN 0 
+#define IDX_MIN 0
 #define IDX_UNDEF -1
 #define MARK '\0'
 #define MARK_LIST "999"
@@ -13,8 +13,7 @@ typedef string notification;
 typedef int idxtype;
 typedef string Eltype;
 
-typedef struct
-{
+typedef struct {
     notification notifications[CAPACITY];
     // ubah sesuai dengan implementasi
 } ListNotification;
@@ -28,7 +27,7 @@ typedef struct
 
 /* I.S. n sembarang 
    F.S. n kosong*/
-void create_notification (ListNotification *n);
+void create_notification(ListNotification *n);
 
 /* -----------PRIMITIF LAIN------------ */
 
@@ -69,5 +68,6 @@ void print_notification(ListNotification n);
 
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */
-ListNotification copy_notification(ListNotification n1, ListNotification n2);
+void copy_notification(ListNotification lIn, ListNotification *lOut);
+
 #endif
