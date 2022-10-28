@@ -33,35 +33,35 @@ void create_notification (ListNotification *n);
 /* -----------PRIMITIF LAIN------------ */
 
 /* mengembalikan true apabila List Nofitifikasi kosong */
-boolean is_empty(ListNotification n);
+boolean n_is_empty(ListNotification n);
 
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List n */
 /* yaitu antara indeks yang terdefinisi utk container*/
-boolean is_idx_valid(ListNotification n, idxtype i);
+boolean n_is_idx_valid(ListNotification n, idxtype i);
 
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk List n */
-boolean is_idx_eff(ListNotification n, idxtype i);
+boolean n_is_idx_eff(ListNotification n, idxtype i);
 
 /* Mengembalikan panjang list notifikasi */
-int list_length(ListNotification n);
+int n_list_length(ListNotification n);
 
 /* Mengembalikan nilai true apabila suatu notifikasi sama dengan sebuah string */
 boolean compare_str_notif(notification n, string s);
 
 /* Mengembalikan indeks terakhir dari list notifikasi */
-int get_last_idx(ListNotification n);
+int n_get_last_idx(ListNotification n);
 
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. s adalah elemen terakhir dari List Notifikasi */
-void insert_last(ListNotification *n, Eltype s);
+void n_insert_last(ListNotification *n, Eltype s);
 
 /* I.S. n terdefinisi
    F.S. n kosong, panjang n adalah 0 */
-void delete_last(ListNotification *n, Eltype *val);
+void n_delete_last(ListNotification *n, Eltype *val);
 
 /* I.S. n terdefinisi dan tidak kosong
    F.S. n kosong */
-void delete_list(ListNotification *n);
+void n_delete_list(ListNotification *n);
 
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. mencetak isi List Notifikasi */
