@@ -1,49 +1,57 @@
-#ifndef __STRING_H
-#define __STRING_H
+#ifndef ADT__STRING_H
+#define ADT__STRING_H
 
 #include "wordmachine.h"
 
-#define MAX 1000
+#define MAX 100
 #define UNDEF -1
-
-typedef char *String;
 
 typedef struct 
 {
-    char kata[MAX];
+    char chars[MAX];
 } string ;
 
 #define STRING_MARK '\0'
-#define kata(s,i) (s).kata[i]
+#define chars(s,i) (s).chars[i]
 
 /* ------------KONSTRUKTOR------------ */
-void new_string (string *str);
+
 /* F.S. string sembarang
    I.S. string terdefinisi*/
+void new_string (string *str);
 
 /* ------------PRIMITIF LAIN------------ */
-int strlen(string s);
+
 /* menghitung panjang string */
+int str_len(string s);
 
-char letter_at(string s, int x);
 /* mengambil suatu huruf dalam string di indeks ke-x */
+char letter_at(string s, int x);
 
-string char_to_string(char c);
 /* mengubah suatu char menjadi string */
+string char_to_string(char c[]);
 
-string cut_str(string s, int idxStart, int idxEnd);
 /* memotong suatu string mulai dari start indeks sampai ke end indeks */
+string cut_str(string s, int idxStart, int idxEnd);
 
-string copy_string(string s);
 /* mengcopy string */
+string copy_string(string s);
 
-string comparestr(string s1, string s2);
 /* membandingkan 2 string */
+boolean comparestr(string s1, string s2);
 
-string concat(string s1, string s2);
 /* menggabungkan 2 string */
+string concat(string s1, string s2);
 
-string word_to_string(word_t kata);
 /* mengubah word (dari word machine) menjadi string */
+string word_to_string(word_t kata);
+
+/* I.S. string terdefinisi dan tidak kosong 
+   F.S. mencetak string*/
+void print_string(string s);
+
+/* I.S. string terdefinisi, string mungkin kosong 
+   F.S. memasukkan suatu char dari word ke dalam string di posisi paling belakang */
+void insert_char_last(char c, string s);
 
 #endif
