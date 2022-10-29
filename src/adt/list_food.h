@@ -3,6 +3,8 @@
 
 #include "boolean.h"
 #include "food.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /*  Kamus Umum */
 #define IDX_MIN 0
@@ -43,12 +45,10 @@ I.S. l sembarang, capacity > 0
 F.S. Terbentuk list dinamis l kosong dengan kapasitas capacity
 */
 void create_list_food(ListFood *l, int capacity);
-
 /*
 I.S. l terdefinisi;
 F.S. (l) dikembalikan ke system, CAPACITY(l)=0; NEFF(l)=0 */
 void deallocate_list_food(ListFood *l);
-
 /*
 Banyaknya elemen
 Mengirimkan banyaknya elemen efektif list

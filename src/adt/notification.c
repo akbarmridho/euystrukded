@@ -7,65 +7,65 @@
 
 /* I.S. n sembarang 
    F.S. n kosong*/
-void create_notification (ListNotification *n) {
+void create_notification(ListNotification *n) {
     int i;
     string s;
 
     new_string(&s, CAPACITY);
     for (i = IDX_MIN; i < CAPACITY; i++) {
-        notif(*n, i) = s ;
+        notif(*n, i) = s;
     }
 }
 
 /* -----------PRIMITIF LAIN------------ */
 
 /* mengembalikan true apabila List Nofitifikasi kosong */
-boolean is_empty(ListNotification n) {
-    return (list_length(n) == 0);
+boolean n_is_empty(ListNotification n) {
+    return (n_list_length(n) == 0);
 }
 
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List n */
 /* yaitu antara indeks yang terdefinisi utk container*/
-boolean is_idx_valid(ListNotification n, idxtype i) {
+boolean n_is_idx_valid(ListNotification n, idxtype i) {
     return (i >= IDX_MIN && i <= CAPACITY);
 }
 
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk List n */
-boolean is_idx_eff(ListNotification n, idxtype i) {
-    return (i >= IDX_MIN && i < get_last_idx(n));
+boolean n_is_idx_eff(ListNotification n, idxtype i) {
+    return (i >= IDX_MIN && i < n_get_last_idx(n));
 }
 
 /* Mengembalikan panjang list notifikasi */
-int list_length(ListNotification n) {
+int n_list_length(ListNotification n) {
     int i = 0;
     boolean mark = false;
     string s; // jadi mark
     notification mark;
     new_string(&s, CAPACITY);
     
-    if (is_empty(n)) {
+    if (n_is_empty(n)) {
         return 0;
     } else {
         while ((mark == false) && (i < MAX)) {
-            if (compare_str_notif(notif(n,i),s)) {
+            if (compare_str_notif(notif(n, i), s)) {
                 mark = true;
             } else {
                 i += 1;
             }
-        } 
+        }
         return i;
     }
 }
 
 /* Mengembalikan nilai true apabila suatu notifikasi sama dengan sebuah string */
-boolean compare_str_notif(notification n, string s){
+boolean compare_str_notif(notification n, string s) {
     int i = 0;
-    boolean same = false;
+    boolean same = true;
 
     if (str_len(n) != str_len(s)) {
         same = false;
     } else {
-        while (i < str_len(s) && same == true) {
+        while (i < str_len(s) && same) {
             if (char(n,i) == char(s,i)) {
                 i += 1;
             } else {
@@ -78,38 +78,38 @@ boolean compare_str_notif(notification n, string s){
 }
 
 /* Mengembalikan indeks terakhir dari list notifikasi */
-int get_last_idx(ListNotification n) {
-    if (isEmpty(n)) {
+int n_get_last_idx(ListNotification n) {
+    if (n_is_empty(n)) {
         return UNDEF;
     } else {
-        return (list_length(n) - 1);
+        return (n_list_length(n) - 1);
     }
 }
 
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. s adalah elemen terakhir dari List Notifikasi */
-void insert_last(ListNotification *n, Eltype s) {
-    notif(*n, list_length(*n)) = s;
+void n_insert_last(ListNotification *n, Eltype s) {
+    notif(*n, n_list_length(*n)) = s;
 }
 
 /* I.S. n terdefinisi
    F.S. n kosong, panjang n adalah 0 */
-void delete_last(ListNotification *n, Eltype *val) {
+void n_delete_last(ListNotification *n, Eltype *val) {
     string s;
     new_string(&s,CAPACITY);
 
-    *val = notif(*n, get_last_idx(*n));
-    notif(*n, get_last_idx(*n)) = s;
+    *val = notif(*n, n_get_last_idx(*n));
+    notif(*n, n_get_last_idx(*n)) = s;
 }
 
 /* I.S. n terdefinisi dan tidak kosong
    F.S. n kosong */
-void delete_list(ListNotification *n) {
-    int i, pnjg = list_length(*n);
+void n_delete_list(ListNotification *n) {
+    int i, len = n_list_length(*n);
     Eltype val;
 
-    for (i = 0; i < pnjg; i++) {
-        delete_last(&n, &val);
+    for (i = 0; i < len; i++) {
+        n_delete_last(n, &val);
     }
 }
 
@@ -118,11 +118,10 @@ void delete_list(ListNotification *n) {
 void print_notification(ListNotification n) {
     int i;
 
-   if (list_length(n) == 0) {
+    if (n_list_length(n) == 0) {
         printf("-");
-    }
-    else {
-        for (i = 0; i <= get_last_idx(n)-1; i++) {
+    } else {
+        for (i = 0; i <= n_get_last_idx(n) - 1; i++) {
             printf("i+1. %c,", notif(n, i));
         }
     }
@@ -130,13 +129,11 @@ void print_notification(ListNotification n) {
 
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */
-ListNotification copy_notification(ListNotification n1, ListNotification n2) {
+void copy_notification(ListNotification lIn, ListNotification *lOut) {
     int i = 0;
-    create_notification(&n2);
+    create_notification(lOut);
 
-    for (i = 0; i < list_length(n1); i++) {
-        insert_last(&n2,notif(n1,i));
+    for (i = 0; i < n_list_length(lIn); i++) {
+        n_insert_last(lOut, notif(lIn, i));
     }
-
-    return n2;
 }
