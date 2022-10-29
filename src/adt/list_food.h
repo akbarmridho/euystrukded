@@ -67,6 +67,13 @@ F.S. lOut berisi salinan dari lIn (identik, nEff dan capacity sama)
 Proses : Menyalin isi lIn ke lOut */
 void list_food_copy(ListFood lIn, ListFood *lOut);
 
+
+/*
+I.S. l tidak kosong, l sembarang, idx valid pada l
+F.S. element pada index idx dihapus
+*/
+void list_food_delete(ListFood * l , int idx);
+
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
 int list_food_count_val(ListFood l, food_t val);
