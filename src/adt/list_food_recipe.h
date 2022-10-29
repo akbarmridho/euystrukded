@@ -1,5 +1,5 @@
-#ifndef __LIST_FOOD_RECIPE_H
-#define __LIST_FOOD_RECIPE_H
+#ifndef ADT_LIST_FOOD_RECIPE_H
+#define ADT_LIST_FOOD_RECIPE_H
 
 #include "boolean.h"
 #include "recipe.h"
@@ -14,9 +14,6 @@
 
 /* Indeks tak terdefinisi*/
 #define IDX_UNDEF -1
-
-/* Nilai elemen tak terdefinisi*/
-#define MARK -9999
 
 typedef struct
 {
@@ -59,7 +56,7 @@ disingkat menjadi lfr
 
 /* I.S. lfr sembarang
 F.S. Terbentuk List lfr kosong dengan kapasitas CAPACITY
-Proses: Inisialisasi semua elemen List lfr dengan MARK */
+Proses: Inisialisasi semua elemen List lfr dengan neff = 0 */
 void create_lfr(ListFoodRecipe *lfr);
 
 /*Banyaknya elemen
@@ -152,5 +149,8 @@ void lfr_delete_last(ListFoodRecipe *lfr, food_recipe_t *val);
  *    ...
  */
 void display_lfr(ListFoodRecipe lfr);
+
+/* mencari idx resep pada lfr berdasarkan food_id*/
+IdxType lfr_search_by_food_id(ListFoodRecipe lfr, int food_id);
 
 #endif

@@ -42,6 +42,9 @@ int main(){
      * Nasi goreng
      */
 
+    /* search by food id test, r1 is "Sate ayam" */
+    printf("'Sate ayam' located at index: %d\n\n", lfr_search_by_food_id(lfr, R_FOOD_ID(r1)));
+
     lfr_delete_at(&lfr, &val, 3);   /* delete last test */
     lfr_delete_at(&lfr, &val, 1);   /* delete test */
     lfr_delete_at(&lfr, &val, 0);   /* delete first test*/
