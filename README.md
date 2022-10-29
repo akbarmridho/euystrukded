@@ -2,9 +2,16 @@
 
 ## Deskripsi Program
 
-BNMO (dibaca: Binomo) adalah sebuah robot game milik Indra dan Doni. Akhir-akhir ini, Indra baru saja menjalin hubungan spesial dengan perempuan bernama Siska Kol. Dan dalam dekat waktu, Indra akan mengajak Siska Kol ke rumah untuk makan malam bersama Doni dan BNMO. Oleh karena itu, Indra meminta bantuan BNMO dan Doni untuk membantu mempersiapkan makan malam spesial tersebut. Saat itu juga, BNMO langsung tertarik untuk mengerjakan bagian masak karena ia sangat sering melihat video memasak di aplikasi toktok dan sangat terngiang-ngiang dengan “mari kita cobaaa”.
+BNMO (dibaca: Binomo) adalah sebuah robot game milik Indra dan Doni. Akhir-akhir ini, Indra baru saja menjalin hubungan
+spesial dengan perempuan bernama Siska Kol. Dan dalam dekat waktu, Indra akan mengajak Siska Kol ke rumah untuk makan
+malam bersama Doni dan BNMO. Oleh karena itu, Indra meminta bantuan BNMO dan Doni untuk membantu mempersiapkan makan
+malam spesial tersebut. Saat itu juga, BNMO langsung tertarik untuk mengerjakan bagian masak karena ia sangat sering
+melihat video memasak di aplikasi toktok dan sangat terngiang-ngiang dengan “mari kita cobaaa”.
 
-Namun, ada masalah. BNMO tidak tahu cara memasak dan Doni tidak bisa membantu persiapan karena ada hal lain. BNMO tidak bisa belajar dari video youcub karena BNMO adalah sebuah komputer sehingga hal yang paling mudah untuk dilakukan adalah membuatkan program simulasi untuk ditiru BNMO. Oleh karena itu, Doni meminta bantuan kalian untuk membuatkan program simulasi tersebut.
+Namun, ada masalah. BNMO tidak tahu cara memasak dan Doni tidak bisa membantu persiapan karena ada hal lain. BNMO tidak
+bisa belajar dari video youcub karena BNMO adalah sebuah komputer sehingga hal yang paling mudah untuk dilakukan adalah
+membuatkan program simulasi untuk ditiru BNMO. Oleh karena itu, Doni meminta bantuan kalian untuk membuatkan program
+simulasi tersebut.
 
 Alur dan struktur umum program ini dapat diakses melalui dokumen [berikut](CODE_STYLE.md).
 
@@ -27,6 +34,7 @@ ADT:
 5. Akbar: time, matrix, tree
 
 Services:
+
 1. Eugene: chopper, boiler
 2. Salomo: clock, delivery
 3. Akbar: notifier, history
@@ -34,6 +42,7 @@ Services:
 5. Egi: fryer, simulator
 
 Commands:
+
 1. Wilson: boil, buy, catalog
 2. Egi: chop, cookbook, delivery
 3. Eugene: fry, inventory, mix
@@ -42,23 +51,83 @@ Commands:
 
 ## Daftar Fitur dan Status Pengerjaan
 
-todo
+ADT
+
+| Nama             | Status |
+|------------------|--------|
+| Charmachine      | -      |
+| Worcmachine      | -      |
+| Stack            | -      |
+| Food             | -      |
+| List food        | -      |
+| List delivery    | -      |
+| List food recipe | -      |
+| Recipe           | ok     |
+| Point            | ok     |
+| String           | -      |
+| Notification     | -      |
+| Simulator        | -      |
+| Time             | ok     |
+| Matrix           | ok     |
+| Tree             | -      |
+
+Service
+
+| Nama      | Status |
+|-----------|--------|
+| Chopper   | -      |
+| Boiler    | -      |
+| Clock     | -      |
+| Delivery  | -      |
+| Notifier  | -      |
+| History   | -      |
+| Map       | -      |
+| Mixer     | -      |
+| Fryer     | -      |
+| Simulator | -      |
+
+Commands
+
+| Nama      | Status |
+|-----------|--------|
+| Boil      | -      |
+| Buy       | -      |
+| Catalog   | -      |
+| Chop      | -      |
+| Cookbook  | -      |
+| Delivery  | -      |
+| Fry       | -      |
+| Inventory | -      |
+| Mix       | -      |
+| Move      | -      |
+| Undo      | -      |
+| Redo      | -      |
+| Start     | -      |
+| Exit      | -      |
+| Wait      | -      |
 
 ## Setup and Installation
 
 1. Clone repo
+
 ```
 git clone git@github.com:haiakbar/euystrukded.git
 ```
+
 atau bila menggunakan https
+
 ```
 git clone https://github.com/haiakbar/euystrukded.git
 ```
+
 2. Compile the program
+
 ```
 todo
 ```
+
 3. Run the app
+
 ```
 todo
 ```
@@ -71,6 +140,7 @@ Format commit: `<type>: <subject>`
 Penamaan menggunakan kebab case
 
 Untuk type mengikuti semantic berikut.
+
 - `feat`: (new feature for the user, not a new feature for build script)
 - `fix`: (bug fix for the user, not a fix to a build script)
 - `docs`: (changes to the documentation)
@@ -82,12 +152,16 @@ Untuk type mengikuti semantic berikut.
 ## Pull Request
 
 Untuk melakukan pull request perlu mengikuti flow berikut.
+
 1. Saat selesai mengerjakan task, boleh langsung melakukan PR ke main dengan membuat PR dari branch pengerjaan ke `main`
-2. Merge untuk branch `main` boleh dilakukan setelah mendapatkan persetujuan dari minimal satu orang anggota kelompok lainnya.
+2. Merge untuk branch `main` boleh dilakukan setelah mendapatkan persetujuan dari minimal satu orang anggota kelompok
+   lainnya.
 3. Penamaan PR mengikuti format penamaan branch.
 4. Pada deskripsi PR mohon menyertakan format berikut.
-  - What PR About?
-  - Is there any problems in this PR?
+
+- What PR About?
+- Is there any problems in this PR?
+
 5. Mohon utamakan komunikasi, terutama untuk approval.
 
 ## Coding Style

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../../src/adt/recipe.h"
 
-int main(){
+int main() {
     int food_id, count;
     food_id = 42;
     count = 6;
@@ -12,6 +12,7 @@ int main(){
     create_recipe(&r, food_id, count, ingredients);
     printf("<ID> <Child> <Ingredient1> <Ingredient2> <...>\n");
     display_recipe(r);
+    putchar('\n');
 
     return 0;
 }
