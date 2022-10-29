@@ -55,6 +55,17 @@ F.S. lOut berisi salinan dari lIn (identik, nEff dan capacity sama)
 Proses : Menyalin isi lIn ke lOut */
 void list_delivery_copy(ListDelivery lIn, ListDelivery *lOut);
 
+/*
+I.S. l tidak kosong, l sembarang, idx valid pada l
+F.S. element pada index idx dihapus
+*/
+void list_delivery_delete(ListDelivery * l , int idx){
+    for (int i= idx;i<list_delivery_length(*l)-1;i++){
+        ELMT(*l,i) = ELMT(*l,i+1);
+    }
+    NEFF(*l)--;
+}
+
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
 int list_delivery_count_val(ListDelivery l, food_t val);
