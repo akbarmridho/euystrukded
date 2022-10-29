@@ -8,13 +8,7 @@
 /* I.S. n sembarang 
    F.S. n kosong*/
 void create_notification(ListNotification *n) {
-    int i;
-    string s;
-
-    new_string(&s, CAPACITY);
-    for (i = IDX_MIN; i < CAPACITY; i++) {
-        notif(*n, i) = s;
-    }
+    length(*n) = 0;
 }
 
 /* -----------PRIMITIF LAIN------------ */
@@ -37,24 +31,7 @@ boolean n_is_idx_eff(ListNotification n, idxtype i) {
 
 /* Mengembalikan panjang list notifikasi */
 int n_list_length(ListNotification n) {
-    int i = 0;
-    boolean mark = false;
-    string s; // jadi mark
-    notification mark;
-    new_string(&s, CAPACITY);
-    
-    if (n_is_empty(n)) {
-        return 0;
-    } else {
-        while ((mark == false) && (i < MAX)) {
-            if (compare_str_notif(notif(n, i), s)) {
-                mark = true;
-            } else {
-                i += 1;
-            }
-        }
-        return i;
-    }
+    return (length(n));
 }
 
 /* Mengembalikan nilai true apabila suatu notifikasi sama dengan sebuah string */
@@ -89,6 +66,7 @@ int n_get_last_idx(ListNotification n) {
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. s adalah elemen terakhir dari List Notifikasi */
 void n_insert_last(ListNotification *n, Eltype s) {
+    length(*n) += 1;
     notif(*n, n_list_length(*n)) = s;
 }
 
@@ -111,21 +89,12 @@ void n_delete_list(ListNotification *n) {
     for (i = 0; i < len; i++) {
         n_delete_last(n, &val);
     }
+
+    length(*n) =- 1;
 }
 
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. mencetak isi List Notifikasi */
-void print_notification(ListNotification n) {
-    int i;
-
-    if (n_list_length(n) == 0) {
-        printf("-");
-    } else {
-        for (i = 0; i <= n_get_last_idx(n) - 1; i++) {
-            printf("i+1. %c,", notif(n, i));
-        }
-    }
-}
 
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */
