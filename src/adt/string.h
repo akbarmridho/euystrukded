@@ -11,7 +11,7 @@ typedef struct
     char *chars;
     int neff;
     int capacity
-} string ;
+} string;
 
 #define STRING_MARK '\0'
 #define chars(s) (s).chars
