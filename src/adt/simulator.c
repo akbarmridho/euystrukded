@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "string.h"
 #include "point.h"
+#include "food.h"
 #include "list_food.h"
 #include "notification.h"
 #include "simulator.h"
@@ -12,10 +13,11 @@
 void create_simulator (simulator_t *sim) {
     ListFood l;
     time_t t;
+    food_t f;
+    word_t name;
 
-    new_string(&(name(*sim)));
+    new_string(&(name(*sim)),capacity(name(*sim)));
     create_point(point(*sim),0,0);
-    // create_food()
     create_time(&t,0,0,0);
     create_notification(&notification(*sim));
     create_list_food(&l, CAPACITY);
