@@ -14,11 +14,13 @@ typedef int idxtype;
 typedef string Eltype;
 
 typedef struct {
-    notification notifications[CAPACITY];
+   notification notifications[CAPACITY];
+   int length;
     // ubah sesuai dengan implementasi
 } ListNotification;
 
 #define notif(n, i) (n).notifications[(i)]
+#define length(n) (n).length
 
 // list of string
 // implementasi list boleh list statik atau dinamik
@@ -61,10 +63,6 @@ void n_delete_last(ListNotification *n, Eltype *val);
 /* I.S. n terdefinisi dan tidak kosong
    F.S. n kosong */
 void n_delete_list(ListNotification *n);
-
-/* I.S. n terdefinisi, n mungkin kosong
-   F.S. mencetak isi List Notifikasi */
-void print_notification(ListNotification n);
 
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */

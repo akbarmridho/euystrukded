@@ -4,7 +4,7 @@
 
 /* ------------KONSTRUKTOR------------ */
 void new_string (string *str, int cap) {
-    chars(*str) = (int*) malloc(cap * sizeof(int));
+    chars(*str) = (char*) malloc(cap * sizeof(char));
     neff(*str) = 0 ;
     capacity(*str) = cap;
 }
@@ -23,20 +23,30 @@ char letter_at(string s, int x) {
     return char(s,x);
 }
 
+void deallocate(string *str) {
+    capacity(*str) = 0;
+    neff(*str) = 0;
+    free(chars(*str));
+}
+
 /* mengubah suatu char menjadi string */
 string char_to_string(char c[]) {
     string sHasil;
-    int i = 0, count = 0;
+    int i = 0;
 
     while (c[i] != '\0') {
-        count += 1;
+        i++;
     }
 
-    new_string(&sHasil,count);
-    while (c[i] != '\0') {
-        char(sHasil,i) = c[i];
-        i += 1;
+    new_string(&sHasil,i);
+
+    for (int j = 0; j < i; j++) {
+        insert_char_last(c[j], &sHasil);
     }
+    // while (c[i] != '\0') {
+    //     insert_char_last(c[i], &sHasil);
+    //     i += 1;
+    // }
 
     return sHasil;
 }
@@ -56,10 +66,12 @@ string cut_str(string s, int idxStart, int idxEnd) {
 string copy_string(string s, string *sCopy) {
     int i;
 
-    new_string(&sCopy,capacity(s));
+    new_string(sCopy,capacity(s));
     for (i = 0; i < str_len(s) + 1; i++) {
         char(*sCopy,i) = char(s,i);
     }
+
+    neff(*sCopy) = neff(s);
 }
 
 
