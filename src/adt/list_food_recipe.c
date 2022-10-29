@@ -1,7 +1,7 @@
 /**
  * ADT LIST FOOD-RECIPE
  * @file: list_food_recipe.c
- * ver: 2022/10/28
+ * @date: 2022-10-28
  */
 
 #include "list_food_recipe.h"
@@ -23,7 +23,7 @@ void create_food_recipe(food_recipe_t *fr, food_t food, recipe_t recipe){
 /* *** LFR *** */
 /* I.S. lfr sembarang
 F.S. Terbentuk List lfr kosong dengan kapasitas CAPACITY
-Proses: Inisialisasi semua elemen List lfr dengan MARK */
+Proses: Inisialisasi semua elemen List lfr dengan neff = 0 */
 void create_lfr(ListFoodRecipe *lfr){
    LFR_NEFF(*lfr) = 0;
 }
@@ -207,4 +207,20 @@ void display_lfr(ListFoodRecipe lfr){
          putchar('\n');
       }
    }
+}
+
+/* mencari idx resep pada lfr berdasarkan food_id, return IDX_UNDEF jika tidak ada */
+IdxType lfr_search_by_food_id(ListFoodRecipe lfr, int food_id){
+   IdxType found_idx = IDX_UNDEF;
+   IdxType i = lfr_get_first_idx(lfr);
+   while (i <= lfr_get_last_idx(lfr) && found_idx == IDX_UNDEF){
+      food_recipe_t current = LFR_ELMT(lfr, i);
+      if (R_FOOD_ID(FR_RECIPE(current)) == food_id){
+         found_idx = i;
+      }
+      else{
+         i++;
+      }
+   }
+   return found_idx;
 }
