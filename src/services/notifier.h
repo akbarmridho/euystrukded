@@ -1,9 +1,14 @@
-#include "../adt/string.h"
+#ifndef SERVICE_NOTIFIER_H
+#define SERVICE_NOTIFIER_H
 
-// menambahkan message ke list notification
+#include "../adt/string.h"
+#include "../adt/notification.h"
+#include "../data/simulator.h"
+
 void notify(string notification);
 
-// clear notification. dilakukan saat???
 void clear_notification();
 
 void display_notification();
+
+#endif

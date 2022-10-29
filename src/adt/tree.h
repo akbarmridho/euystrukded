@@ -5,25 +5,29 @@
 
 #define TREE_CHILD_MAX 5
 #define TREE_LIST_MAX 100
-#define CHILDREN_MARK NULL
 
-#define T_ID(p) (p)->id
-#define T_METHOD(p) (p)->method
+#define T_FOOD(p) (p)->food
+#define T_ID(p) (p)->food.id
+#define T_METHOD(p) (p)->food.method
 #define T_CHILDREN(p, i) (p)->children[i]
 
 typedef struct treeNode *Address;
 typedef struct treeNode
 {
-    int id;
-    enum food_source method;
+    food_t food;
+    int children_count;
     Address children[TREE_CHILD_MAX];
 } tree_node_t;
 
 typedef Address Tree;
 
-Address new_tree_node(int id, enum food_source method);
+Address new_tree_node(food_t food);
 
-void new_tree(int id, enum food_source method, int child_count, Address children[], Tree* p);
+void new_empty_tree(food_t food, Tree *p);
+
+void new_tree(food_t food, int child_count, Address children[], Tree* p);
+
+void tree_insert_child(Address child, Tree p);
 
 void display_tree(Tree t);
 

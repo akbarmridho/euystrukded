@@ -1,18 +1,29 @@
-/*
-sumber data file history.h pada folder data
-terdapat dua:
-action stack, restore stack
+#ifndef SERVICE_HISTORY_H
+#define SERVICE_HISTORY_H
 
-ketika melakukan command, panggil backup state
-backup state akan disimpan ke stack
+#include "../data/simulator.h"
+#include "../data/delivery.h"
+#include "../data/history.h"
 
-ketika melakukan command undo, stack sekarang disimpan ke restore stack dan
-state sekarang diubah menjadi stack yang dipop dari backup stack
+/* Lakukan copy semua data penting ke state */
+state_t generate_state();
 
-jika undo terus, stack restore bertambah
-ketika melakukan aksi setelah command undo tanpa melakukan redo, stack restore akan direset
-*/
+/* set state program sekarang berdasarkan input */
+void set_state(state_t state);
 
+/* Copy current state, lalu push ke stack history */
 void backup_state();
 
+/* Pop stack history, lalu timpa current state. Untuk perintah UNDO */
 void restore_state();
+
+/* Pop stack restore, push current state ke history, timpa hasil restore ke current state. Untuk perintah REDO */
+void restore_backup_state();
+
+/* cek jika bisa undo */
+boolean is_able_to_restore();
+
+/* cek jika bisa redo */
+boolean is_able_to_restore_backup();
+
+#endif
