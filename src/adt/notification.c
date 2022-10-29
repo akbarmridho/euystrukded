@@ -11,7 +11,7 @@ void create_notification (ListNotification *n) {
     int i;
     string s;
 
-    new_string(&s);
+    new_string(&s, CAPACITY);
     for (i = IDX_MIN; i < CAPACITY; i++) {
         notif(*n, i) = s ;
     }
@@ -41,7 +41,7 @@ int list_length(ListNotification n) {
     boolean mark = false;
     string s; // jadi mark
     notification mark;
-    new_string(&s);
+    new_string(&s, CAPACITY);
     
     if (is_empty(n)) {
         return 0;
@@ -66,7 +66,7 @@ boolean compare_str_notif(notification n, string s){
         same = false;
     } else {
         while (i < str_len(s) && same == true) {
-            if (chars(n,i) == chars(s,i)) {
+            if (char(n,i) == char(s,i)) {
                 i += 1;
             } else {
                 same = false;
@@ -96,7 +96,7 @@ void insert_last(ListNotification *n, Eltype s) {
    F.S. n kosong, panjang n adalah 0 */
 void delete_last(ListNotification *n, Eltype *val) {
     string s;
-    new_string(&s);
+    new_string(&s,CAPACITY);
 
     *val = notif(*n, get_last_idx(*n));
     notif(*n, get_last_idx(*n)) = s;
