@@ -99,7 +99,7 @@ int list_food_count_val(ListFood l, food_t val){
     int count = 0;
     for (int i=0;i<list_food_length(l);i++){
         // COMPARE STRING <nanti di ubah> 
-        if (NAME(ELMT(l,i))==NAME(val)){
+        if (comparestr(FOOD_NAME(ELMT(l,i)),FOOD_NAME(val))){
             count ++;
         }
     }
@@ -142,7 +142,7 @@ void enqueue_food(ListFood *l, food_t val){
     }
     int i = list_food_length(*l);
     while (i>0){
-        if (TGT(EXPIRE_TIME(ELMT(*l,i-1)),EXPIRE_TIME(val))){
+        if (TGT(FOOD_EXPIRE_TIME(ELMT(*l,i-1)),FOOD_EXPIRE_TIME(val))){
             ELMT(*l,i) = ELMT(*l,i-1);
         } else{
             ELMT(*l,i) = val;
@@ -211,7 +211,7 @@ void shrink_list_food(ListFood *l, int num){
     if(NEFF(l2) > CAPACITY(l2)){
         NEFF(l2) = CAPACITY(l2);
     }
-    for(int i = 0; i < listLength(*l); i++){
+    for(int i = 0; i < list_food_length(*l); i++){
         ELMT(l2, i) = ELMT(*l, i);
     }
     *l = l2;
@@ -224,4 +224,12 @@ void compress_list_food(ListFood *l){
     shrink_list_food(l,CAPACITY(*l)-NEFF(*l));
 }
 
+/* Proses : Menampilkan isi list ke layar */
+void display_list_delivery(ListFood l){
+    printf("--------------------------------------\n");
+    for (int i =0;i<list_delivery_length(l);i++){
+        display_food(ELMT(l,i));
+        printf("--------------------------------------\n");
+    }
+}
 #endif
