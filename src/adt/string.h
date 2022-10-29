@@ -8,17 +8,22 @@
 
 typedef struct 
 {
-    char chars[MAX];
-} string ;
+    char *chars;
+    int neff;
+    int capacity
+} string;
 
 #define STRING_MARK '\0'
-#define chars(s,i) (s).chars[i]
+#define chars(s) (s).chars
+#define char(s,i) (s).chars[i]
+#define neff(s) (s).neff
+#define capacity(s) (s).capacity
 
 /* ------------KONSTRUKTOR------------ */
 
 /* F.S. string sembarang
    I.S. string terdefinisi*/
-void new_string (string *str);
+void new_string (string *str, int cap);
 
 /* ------------PRIMITIF LAIN------------ */
 
@@ -35,7 +40,7 @@ string char_to_string(char c[]);
 string cut_str(string s, int idxStart, int idxEnd);
 
 /* mengcopy string */
-string copy_string(string s);
+string copy_string(string s, string *sCopy);
 
 /* membandingkan 2 string */
 boolean comparestr(string s1, string s2);
@@ -52,6 +57,6 @@ void print_string(string s);
 
 /* I.S. string terdefinisi, string mungkin kosong 
    F.S. memasukkan suatu char dari word ke dalam string di posisi paling belakang */
-void insert_char_last(char c, string s);
+void insert_char_last(char c, string *s);
 
 #endif
