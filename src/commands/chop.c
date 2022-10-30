@@ -16,7 +16,7 @@ void do_chop() {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Chop) {
             lfr_insert_last(&chopables, current);
-            printf("   %d. ");
+            printf("   %d. ", i + 1);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
         }

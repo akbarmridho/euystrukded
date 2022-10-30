@@ -19,13 +19,13 @@
 
 word_t current_word;
 boolean end_word;
-simulator_t simulator;
-ListDelivery delivery;
-StackState history;
-StackState restore;
-ListFoodRecipe food_recipe;
-Matrix map;
-ListTree list_tree_recipe;
+//simulator_t simulator;
+//ListDelivery delivery;
+//StackState history;
+//StackState restore;
+//ListFoodRecipe food_recipe;
+//Matrix map;
+//ListTree list_tree_recipe;
 
 string get_name() {
     start_word();
@@ -60,8 +60,20 @@ int main() {
     }
 
     printf("Masukkan nama anda: ");
-    string name = get_name();
+    advance_word();
+    string name = word_to_string(current_word);
 
     start_program(name);
+
     display_info();
+    advance_word();
+    boolean exit = false;
+
+    while (!exit) {
+        if (comparestr(EXIT, word_to_string(current_word))) {
+            exit = true;
+        }
+    }
+
+    return 0;
 }

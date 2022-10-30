@@ -24,7 +24,7 @@ void do_fry() {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Fry) {
             lfr_insert_last(&fryables, current);
-            printf("   %d. ");
+            printf("   %d. ", i + 1);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
         }

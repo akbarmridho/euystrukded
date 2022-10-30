@@ -1,8 +1,8 @@
 #include "map.h"
 #include <stdio.h>
-
-simulator_t simulator;
-Matrix map;
+//
+//simulator_t simulator;
+//Matrix map;
 
 void display_map() {
     int k = 0, l = 0;

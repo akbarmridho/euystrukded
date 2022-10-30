@@ -37,6 +37,7 @@ void display_info() {
     write_day(time(simulator));
     printf(" Time: ");
     write_time(time(simulator));
+    printf("\n");
 
     display_notification();
     clear_notification();

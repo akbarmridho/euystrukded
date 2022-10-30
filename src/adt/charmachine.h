@@ -8,7 +8,8 @@
 #include "stdio.h"
 
 #define FILE_MARK EOF
-#define CLI_MARK '\n'
+//#define CLI_MARK '.'
+#define CLI_MARK '.'
 /* State Mesin */
 extern char current_char;
 extern boolean EOP;

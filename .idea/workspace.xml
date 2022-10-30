@@ -20,25 +20,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="update start and config initializer">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="YEYEYEYEYEYEY">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/list_food_recipe.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/list_food_recipe.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/wordmachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/wordmachine.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/cookbook.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/cookbook.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/configdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/adt/wordmachinedriver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/driver/adt/wordmachinedriver.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/wordmachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/wordmachine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/start.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/delivery.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/history.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/history.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/simulator.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/boiler.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/boiler.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/chopper.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/chopper.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/clock.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/clock.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/fryer.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/fryer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/history.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/history.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/mixer.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/mixer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/notifier.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/notifier.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,13 +99,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings"
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
@@ -144,7 +144,8 @@
       <workItem from="1667016975441" duration="7004000" />
       <workItem from="1667034301656" duration="783000" />
       <workItem from="1667102261812" duration="357000" />
-      <workItem from="1667102869540" duration="22666000" />
+      <workItem from="1667102869540" duration="22947000" />
+      <workItem from="1667128401080" duration="3455000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -398,7 +399,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667123572137</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="lakjsdlaskd bisa compile">
+      <created>1667126670775</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1667126670775</updated>
+    </task>
+    <task id="LOCAL-00038" summary="YEYEYEYEYEYEY">
+      <created>1667132186892</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1667132186892</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,8 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update: adt tree update" />
-    <MESSAGE value="setup: update data module declaration" />
     <MESSAGE value="refactor: add adt notification prefix" />
     <MESSAGE value="feat: notifier service" />
     <MESSAGE value="refactor: function renaming" />
@@ -441,7 +454,9 @@
     <MESSAGE value="misc dunno" />
     <MESSAGE value="update validator" />
     <MESSAGE value="update start and config initializer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update start and config initializer" />
+    <MESSAGE value="lakjsdlaskd bisa compile" />
+    <MESSAGE value="YEYEYEYEYEYEY" />
+    <option name="LAST_COMMIT_MESSAGE" value="YEYEYEYEYEYEY" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
