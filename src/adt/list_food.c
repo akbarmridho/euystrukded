@@ -85,7 +85,7 @@ int list_food_count_val(ListFood l, food_t val) {
 /* IDX_UNDEF jika kosong, 0 jika tidk kosong */
 int list_food_get_idx_head(ListFood l) {
     if (list_food_is_empty(l)) {
-        return IDX_UNDEF;
+        return LF_IDX_UNDEF;
     } else {
         return 0;
     }
@@ -94,7 +94,7 @@ int list_food_get_idx_head(ListFood l) {
 /* IDX_UNDEF jika kosong, neff-1 jika idak kosong*/
 int list_food_get_idx_tail(ListFood l) {
     if (list_food_is_empty(l)) {
-        return IDX_UNDEF;
+        return LF_IDX_UNDEF;
     } else {
         return (NEFF(l) - 1);
     }

@@ -7,7 +7,7 @@
 
 /*  didefinisikan di list_food.h */
 #define IDX_MIN 0
-#define IDX_UNDEF -1
+#define LD_IDX_UNDEF (-1)
 
 /* Definisi elemen dan koleksi objek */
 typedef food_t food_t; /* type elemen list */

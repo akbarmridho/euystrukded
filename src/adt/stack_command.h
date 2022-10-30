@@ -22,7 +22,7 @@ typedef struct {
     int top; /* alamat TOP: elemen puncak */
 } StackState;
 
-#define IDX_UNDEF -1
+#define S_IDX_UNDEF (-1)
 
 /*
 Sisanya implementasi sendiri :)

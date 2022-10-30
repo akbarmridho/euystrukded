@@ -9,7 +9,7 @@
 /*  Kamus Umum */
 #define IDX_MIN 0
 /* Indeks minimum list */
-#define IDX_UNDEF -1
+#define LF_IDX_UNDEF (-1)
 /* Indeks tak terdefinisi*/
 
 /* Definisi elemen dan koleksi objek */

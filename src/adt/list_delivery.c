@@ -86,7 +86,7 @@ int list_delivery_count_val(ListDelivery l, food_t val) {
 /* IDX_UNDEF jika kosong, 0 jika tidk kosong */
 int list_delivery_get_idx_head(ListDelivery l) {
     if (list_delivery_is_empty(l)) {
-        return IDX_UNDEF;
+        return LD_IDX_UNDEF;
     } else {
         return 0;
     }
@@ -95,7 +95,7 @@ int list_delivery_get_idx_head(ListDelivery l) {
 /* IDX_UNDEF jika kosong, neff-1 jika idak kosong*/
 int list_delivery_get_idx_tail(ListDelivery l) {
     if (list_delivery_is_empty(l)) {
-        return IDX_UNDEF;
+        return LD_IDX_UNDEF;
     } else {
         return NEFF(l) - 1;
     }

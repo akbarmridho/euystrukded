@@ -1,6 +1,4 @@
 #include "../../src/adt/food.h"
-#include "../../src/adt/time.h"
-#include "../../src/adt/string.h"
 
 
 int main() {

@@ -1,24 +1,22 @@
 /* File: mesinkata.h */
 /* Definisi Mesin Word: Model Akuisisi Versi I */
 
-#ifndef __WORD_MACHINE_H__
-#define __WORD_MACHINE_H__
+#ifndef ADT_WORD_MACHINE_H
+#define ADT_WORD_MACHINE_H
 
 #include "charmachine.h"
 
 #define NMax 50
 #define BLANK ' '
 
-typedef struct
-{
-   char tab_word[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */
-   int length;
+typedef struct {
+    char tab_word[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */
+    int length;
 } word_t;
 
 /* State Mesin Word */
 extern boolean end_word;
 extern word_t current_word;
-extern char current_char;
 
 /*
 Implementasikan ignore blank agar juga bisa menanggap \n sebagai blank

@@ -53,23 +53,23 @@ Commands:
 
 ADT
 
-| Nama             | Status |
-|------------------|--------|
-| Charmachine      | -      |
-| Wordmachine      | -      |
-| Stack            | -      |
-| Food             | ok     |
-| List food        | ok     |
-| List delivery    | ok     |
-| List food recipe | ok     |
-| Recipe           | ok     |
-| Point            | ok     |
-| String           | ok     |
-| Notification     | ok     |
-| Simulator        | ok     |
-| Time             | ok     |
-| Matrix           | ok     |
-| Tree             | ok     |
+| Nama             | Status  |
+|------------------|---------|
+| Charmachine      | perfect |
+| Wordmachine      | perfect |
+| Stack            | perfect |
+| Food             | perfect |
+| List food        | perfect |
+| List delivery    | perfect |
+| List food recipe | perfect |
+| Recipe           | perfect |
+| Point            | perfect |
+| String           | perfect |
+| Notification     | perfect |
+| Simulator        | perfect |
+| Time             | perfect |
+| Matrix           | perfect |
+| Tree             | perfect |
 
 Service
 

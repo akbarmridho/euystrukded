@@ -16,5 +16,4 @@ void create_simulator(simulator_t *sim, string name) {
     create_time(&time(*sim), 0, 0, 0);
     create_notification(&notification(*sim));
     create_list_food(&inventory(*sim), 50);
-
 }

@@ -1,8 +1,8 @@
 /* File: charmachine.h */
 /* Definisi Mesin Karakter */
 
-#ifndef __CHAR_MACHINE_H_
-#define __CHAR_MACHINE_H_
+#ifndef ADT_CHAR_MACHINE_H
+#define ADT_CHAR_MACHINE_H
 
 #include "boolean.h"
 #include "stdio.h"

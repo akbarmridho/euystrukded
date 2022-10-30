@@ -5,9 +5,6 @@
 
 #define NOTIFCAPACITY 20
 #define IDX_MIN 0
-#define IDX_UNDEF -1
-#define MARK '\0'
-#define MARK_LIST "999"
 
 typedef string notification;
 typedef int idxtype;
