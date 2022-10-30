@@ -40,6 +40,7 @@ void do_fry() {
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
         if (can_fry_food(recipe_tree)) {
+            backup_state();
             fry(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");

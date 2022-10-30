@@ -32,6 +32,7 @@ void do_chop() {
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
         if (can_chop_food(recipe_tree)) {
+            backup_state();
             chop(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");

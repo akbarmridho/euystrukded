@@ -34,6 +34,7 @@ void do_boil() {
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
         if (can_boil_food(recipe_tree)) {
+            backup_state();
             boil(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");

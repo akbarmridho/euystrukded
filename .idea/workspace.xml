@@ -20,21 +20,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="GATAU">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="glue the main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/buy.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/buy.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/catalog.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/start.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/boil.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/chop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/mix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/move.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/wait.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/wait.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/delivery.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,7 @@
       <workItem from="1667102261812" duration="357000" />
       <workItem from="1667102869540" duration="22947000" />
       <workItem from="1667128401080" duration="6409000" />
-      <workItem from="1667135728011" duration="504000" />
+      <workItem from="1667135728011" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -417,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667132813654</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="glue the main">
+      <created>1667136323491</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1667136323491</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: notifier service" />
     <MESSAGE value="refactor: function renaming" />
     <MESSAGE value="feat: history service" />
     <MESSAGE value="feat: initial undo redo implementation" />
@@ -460,7 +467,8 @@
     <MESSAGE value="lakjsdlaskd bisa compile" />
     <MESSAGE value="YEYEYEYEYEYEY" />
     <MESSAGE value="GATAU" />
-    <option name="LAST_COMMIT_MESSAGE" value="GATAU" />
+    <MESSAGE value="glue the main" />
+    <option name="LAST_COMMIT_MESSAGE" value="glue the main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

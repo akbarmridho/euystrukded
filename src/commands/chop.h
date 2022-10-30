@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "../services/chopper.h"
+#include "../services/history.h"
 #include "../utils/validator.h"
 #include "../data/simulator.h"
 #include "../data/configdata.h"

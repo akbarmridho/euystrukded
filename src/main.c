@@ -109,9 +109,6 @@ int main() {
             do_mix();
         } else if (startwith(current_input, MOVE)) {
             string direction = cut_str(current_input, 5, current_input.neff - 1);
-            printf("i run\n");
-            print_string(direction);
-            putchar('\n');
             cmd_move(direction);
             deallocate_string(&direction);
         } else if (comparestr(REDO, current_input)) {

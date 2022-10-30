@@ -17,9 +17,12 @@ void cmd_move(string direction) {
         dest = point_plus_delta(simulator.position, -0, 0);
     } else if (comparestr(direction, west)) {
         dest = point_plus_delta(simulator.position, -1, 0);
+    } else {
+        printf("dest not set\n");
     }
 
     if (is_able_move_to(dest)) {
+        backup_state();
         move(dest);
         next_tick();
         display_info();

@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "../services/mixer.h"
+#include "../services/history.h"
 #include "../utils/validator.h"
 
 void do_mix();
