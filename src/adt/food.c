@@ -27,6 +27,10 @@ void display_food(food_t food){
     case (Buy):
         printf("Buy\n");
         break;
+
+    case (Boil):
+        printf("Boil\n");
+        break;
     
     case (Chop):
         printf("Chop\n");
