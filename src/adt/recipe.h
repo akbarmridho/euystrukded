@@ -1,10 +1,9 @@
-#ifndef __RECIPE_h
-#define __RECIPE_h
+#ifndef ADT_RECIPE_H
+#define ADT_RECIPE_H
 
 #define MAX_RECIPE 10
 
-typedef struct
-{
+typedef struct {
     int food_id;
     int ingredients_count;
     int ingredients[MAX_RECIPE];
@@ -12,7 +11,7 @@ typedef struct
 
 /* *** SELEKTOR *** */
 #define R_FOOD_ID(recipe) (recipe).food_id
-#define R_ING_COUNT(recipe) (recipe).ingredients_count 
+#define R_ING_COUNT(recipe) (recipe).ingredients_count
 #define R_ING_LIST_ELMT(recipe, idx) (recipe).ingredients[idx]
 
 /* *** KONSTRUKTOR *** */

@@ -2,13 +2,12 @@
 /* Tanggal: 3 September 2022 */
 /* *** Definisi ABSTRACT DATA TYPE POINT *** */
 
-#ifndef POINT_H
-#define POINT_H
+#ifndef ADT_POINT_H
+#define ADT_POINT_H
 
 #include "boolean.h"
 
-typedef struct
-{
+typedef struct {
     int x; /* absis   */
     int y; /* ordinat */
 } point_t;

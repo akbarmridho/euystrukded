@@ -1,5 +1,4 @@
 #include "tree.h"
-#include "list_food_recipe.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -87,8 +86,7 @@ Tree lt_search_by_id(ListTree *l, int id) {
     }
 }
 
-void add_from_food_recipe(ListTree *l, ListFoodRecipe lfr, food_recipe_t fr)
-{
+void add_from_food_recipe(ListTree *l, ListFoodRecipe lfr, food_recipe_t fr) {
     Tree search;
 
     Tree try = lt_search_by_id(l, fr.recipe.food_id);
