@@ -165,23 +165,45 @@ void lfr_delete_last(ListFoodRecipe *lfr, food_recipe_t *val) {
  *       BOIL - Telur
  *    ...
  */
-void display_lfr(ListFoodRecipe lfr) {
-    printf("List Resep\n");
-    printf("(aksi yang diperlukan - bahan...)\n");
-    if (!lfr_is_empty(lfr)) {
-        for (int i = lfr_get_first_idx(lfr); i <= lfr_get_last_idx(lfr); i++) {
-            recipe_t rec = FR_RECIPE(LFR_ELMT(lfr, i));
-            food_t food = FR_FOOD(LFR_ELMT(lfr, i));
 
-            printf("   %d. ", (i + 1));
-            print_string(FOOD_NAME(food));
-            putchar('\n');
-            printf("      <Source-%d> - ", FOOD_SOURCE(food));
-            for (int j = 0; j < R_ING_COUNT(rec); j++) {
-                printf("<Ingredient-%d>", R_ING_LIST_ELMT(rec, j));
-                if (j != R_ING_COUNT(rec) - 1) {
-                    printf(" - ");
-                }
+void display_lfr(ListFoodRecipe lfr){
+   printf("List Resep\n");
+   printf("(aksi yang diperlukan - bahan...)\n");
+   if (!lfr_is_empty(lfr)){
+      for (int i = lfr_get_first_idx(lfr); i <= lfr_get_last_idx(lfr); i++){
+         recipe_t rec = FR_RECIPE(LFR_ELMT(lfr, i));
+         food_t food = FR_FOOD(LFR_ELMT(lfr, i));
+
+         printf("   %d. ", (i + 1));
+         print_string(FOOD_NAME(food));
+         putchar('\n');
+         switch (FOOD_SOURCE(food))
+         {
+         case (Buy):
+            printf("      Buy - ");
+            break;
+         
+         case (Chop):
+            printf("      Chop - ");
+            break;
+
+         case (Mix):
+            printf("      Mix - ");
+            break;
+
+         case (Fry):
+            printf("      Fry - ");
+            break;
+
+         case (Boil):
+            printf("      Boil - ");
+            break;
+         }
+         for (int j = 0; j < R_ING_COUNT(rec); j++){
+            int id = lfr_search_by_food_id(lfr, R_ING_LIST_ELMT(rec, j));
+            print_string(FOOD_NAME(FR_FOOD(LFR_ELMT(lfr, id))));
+            if (j != R_ING_COUNT(rec) - 1){
+               printf(" - ");
             }
             putchar('\n');
         }
