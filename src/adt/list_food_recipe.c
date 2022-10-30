@@ -195,9 +195,9 @@ void display_lfr(ListFoodRecipe lfr){
          food_t food = FR_FOOD(LFR_ELMT(lfr, i));
 
          printf("   %d. ", (i + 1));
-         print_string(NAME(food));
+         print_string(FOOD_NAME(food));
          putchar('\n');
-         printf("      <Source-%d> - ", SOURCE(food));
+         printf("      <Source-%d> - ", FOOD_SOURCE(food));
          for (int j = 0; j < R_ING_COUNT(rec); j++){
             printf("<Ingredient-%d>", R_ING_LIST_ELMT(rec, j));
             if (j != R_ING_COUNT(rec) - 1){

@@ -1,3 +1,4 @@
+#include "../../src/adt/string.h"
 #include "../../src/adt/tree.h"
 #include <stdio.h>
 
@@ -7,18 +8,19 @@ typedef struct {
     int ingredients[10];
 } rec_t;
 
-void rec_create(rec_t *r, int id, enum food_source method, int count, int ingredients[])
-{
+void rec_create(rec_t *r, int id, enum food_source method, int count, int ingredients[]) {
     food_t food;
     day_time_t t;
-    create_time(&t, 0,0,0);
+    create_time(&t, 0, 0, 0);
 
     food.id = id;
     food.source = method;
-    food.name = "a";
+    char str[] = "BBaka";
+    food.name = char_to_string(str);
     food.expire_time = t;
     food.delivery_time = t;
 
+    (*r).food = food;
     (*r).ingredient_count = count;
 
     for (int i = 0; i < count; i++) {
@@ -26,16 +28,15 @@ void rec_create(rec_t *r, int id, enum food_source method, int count, int ingred
     }
 }
 
-int main()
-{
+int main() {
     rec_t minyak, ayam_tepung, ayam_potong, ayam_mentah, tepung, air, ayam_goreng;
-    rec_create(&minyak, 1, Buy, 0, (int[]){0});
-    rec_create(&ayam_mentah, 2, Buy, 0, (int[]){0});
-    rec_create(&ayam_potong, 3, Chop, 1,(int[]){2});
-    rec_create(&tepung, 4, Buy, 0, (int[]){0});
-    rec_create(&air, 5, Buy, 0, (int[]){0});
-    rec_create(&ayam_tepung, 6, Mix, 3, (int[]){3, 4, 5});
-    rec_create(&ayam_goreng,  7, Fry, 2, (int[]){6, 1});
+    rec_create(&minyak, 1, Buy, 0, (int[]) {0});
+    rec_create(&ayam_mentah, 2, Buy, 0, (int[]) {0});
+    rec_create(&ayam_potong, 3, Chop, 1, (int[]) {2});
+    rec_create(&tepung, 4, Buy, 0, (int[]) {0});
+    rec_create(&air, 5, Buy, 0, (int[]) {0});
+    rec_create(&ayam_tepung, 6, Mix, 3, (int[]) {3, 4, 5});
+    rec_create(&ayam_goreng, 7, Fry, 2, (int[]) {6, 1});
 
     rec_t rec_list[] = {minyak, ayam_mentah, ayam_potong, tepung, air, ayam_tepung, ayam_goreng};
 

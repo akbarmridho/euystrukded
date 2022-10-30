@@ -3,13 +3,17 @@
 
 #include "../adt/list_food_recipe.h"
 #include "../adt/matrix.h"
+#include "../adt/tree.h"
 
 extern ListFoodRecipe food_recipe;
 extern Matrix map;
+extern ListTree list_tree_recipe;
 
 void load_map();
 
 void load_food_recipe();
+
+void build_tree_recipe();
 
 #endif
 
