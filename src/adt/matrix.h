@@ -38,6 +38,8 @@ IdxType mat_get_last_idx_row(Matrix m);
 /* Mengirimkan Index kolom terbesar m */
 IdxType mat_get_last_idx_col(Matrix m);
 
+boolean mat_is_idx_valid(Matrix m, int i, int j);
+
 /* I.S. m terdefinisi
 F.S. Nilai m(i,j) ditulis ke layar per baris per kolom, masing-masing elemen per baris
 dipisahkan sebuah spasi. Baris terakhir tidak diakhiri dengan newline

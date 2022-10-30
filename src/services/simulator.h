@@ -21,6 +21,8 @@ F.S. Info simulator tampil pada layar
 */
 void display_info();
 
+void move(point_t destination);
+
 /*
     Mengembalikan true jika object disekitar simulator, 
     mengembalikan false jika tidak

@@ -30,7 +30,8 @@ void display_map() {
 
 
 boolean is_able_move_to(point_t destination) {
-    return (MAT_ELMT(map, ABSIS(destination), ORDINAT(destination)) == '#');
+    return mat_is_idx_valid(map, destination.x, destination.y) &&
+           (MAT_ELMT(map, ABSIS(destination), ORDINAT(destination)) == '#');
 }
 
 point_t get_char_pos(char c) {

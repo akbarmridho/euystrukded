@@ -14,6 +14,10 @@ IdxType mat_get_last_idx_col(Matrix m) {
     return MAT_COL_EFF(m) - 1;
 }
 
+boolean mat_is_idx_valid(Matrix m, int i, int j) {
+    return i >= 0 && j >= 0 && j <= mat_get_last_idx_col(m) && i <= mat_get_last_idx_row(m);
+}
+
 void display_matrix(Matrix m) {
     for (int i = 0; i < MAT_COL_EFF(m) + 2; i++) {
         putchar('*');
