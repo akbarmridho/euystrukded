@@ -18,7 +18,8 @@ void cmd_move(string direction) {
     } else if (comparestr(direction, west)) {
         dest = point_plus_delta(simulator.position, -1, 0);
     } else {
-        printf("dest not set\n");
+        printf("Masukan salah\n");
+        return;
     }
 
     if (is_able_move_to(dest)) {

@@ -47,6 +47,7 @@ string get_name() {
 }
 
 int main() {
+    setvbuf(stdout, NULL, _IONBF, 0);
     printf("Selamat datang di dinner dash!\n");
     printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
 
@@ -109,6 +110,7 @@ int main() {
             do_mix();
         } else if (startwith(current_input, MOVE)) {
             string direction = cut_str(current_input, 5, current_input.neff - 1);
+
             cmd_move(direction);
             deallocate_string(&direction);
         } else if (comparestr(REDO, current_input)) {

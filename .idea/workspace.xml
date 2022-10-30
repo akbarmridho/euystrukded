@@ -20,22 +20,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="glue the main">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="call backup state every side effect command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/move.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/wait.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/wait.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/clock.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/clock.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +135,7 @@
       <workItem from="1667102261812" duration="357000" />
       <workItem from="1667102869540" duration="22947000" />
       <workItem from="1667128401080" duration="6409000" />
-      <workItem from="1667135728011" duration="1189000" />
+      <workItem from="1667135728011" duration="3512000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -425,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667136323491</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="call backup state every side effect command">
+      <created>1667136953574</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1667136953574</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +442,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: function renaming" />
     <MESSAGE value="feat: history service" />
     <MESSAGE value="feat: initial undo redo implementation" />
     <MESSAGE value="setup: add map service header" />
@@ -468,7 +466,8 @@
     <MESSAGE value="YEYEYEYEYEYEY" />
     <MESSAGE value="GATAU" />
     <MESSAGE value="glue the main" />
-    <option name="LAST_COMMIT_MESSAGE" value="glue the main" />
+    <MESSAGE value="call backup state every side effect command" />
+    <option name="LAST_COMMIT_MESSAGE" value="call backup state every side effect command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -477,6 +476,21 @@
           <url>file://$PROJECT_DIR$/src/commands/buy.h</url>
           <line>3</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.c</url>
+          <line>113</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/commands/move.c</url>
+          <line>24</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/commands/move.c</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

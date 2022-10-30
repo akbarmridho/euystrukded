@@ -57,9 +57,12 @@ string cut_str(string s, int idxStart, int idxEnd) {
     int i;
 
     new_string(&sHasil, idxEnd - idxStart + 1);
-    for (i = idxStart; i < idxEnd + 1; i++) {
-        char(sHasil, i) = char(s, i);
+    for (i = 0; i < idxEnd - idxStart + 1; i++) {
+        char(sHasil, i) = char(s, i + idxStart);
+        neff(sHasil)++;
     }
+
+    return sHasil;
 }
 
 /* mengcopy string */
