@@ -23,9 +23,10 @@ void do_mix() {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Mix) {
             lfr_insert_last(&mixables, current);
-            printf("   %d. ");
+            printf("   %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
+            counter++;
         }
     }
     printf("\nKirim 0 untuk exit.\n");

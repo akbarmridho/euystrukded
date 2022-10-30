@@ -17,13 +17,15 @@ void do_boil() {
 
     printf("List Bahan Makanan yang Bisa Dibuat:\n");
     /* display and store fryable recipes in fryables */
+    int counter = 1;
     for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++) {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Boil) {
             lfr_insert_last(&boilable, current);
-            printf("   %d. ", i + 1);
+            printf("   %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
+            counter++;
         }
     }
     printf("\nKirim 0 untuk exit.\n");
