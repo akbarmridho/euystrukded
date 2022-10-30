@@ -79,12 +79,12 @@ Service
 | Boiler    | ok     |
 | Clock     | ok     |
 | Delivery  | ok     |
-| Notifier  | -      |
+| Notifier  | ok     |
 | History   | ok     |
 | Map       | ok     |
 | Mixer     | -      |
 | Fryer     | ok     |
-| Simulator | -      |
+| Simulator | ok     |
 
 Commands
 

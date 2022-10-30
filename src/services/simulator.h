@@ -1,3 +1,12 @@
+#ifndef SERVICE_SIMULATOR_H
+#define SERVICE_SIMULATOR_H
+
+#include "../adt/point.h"
+#include "../adt/simulator.h"
+#include "../adt/list_food.h"
+#include "../adt/time.h"
+#include "../data/simulator.h"
+
 /*
 Kurangi waktu kadaluarsa inventory
 bila ada yg kadaluarsa, tambahkan ke notification lalu tambahkan ke food history
@@ -49,3 +58,5 @@ boolean is_able_to_fry();
 boolean is_able_to_mix();
 
 // is able to buy dll
+
+#endif

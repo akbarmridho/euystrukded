@@ -3,8 +3,6 @@
 #include "../data/configdata.h"
 #include "../data/simulator.h"
 
-Matrix map;
-
 void display_map() {
     int k = 0, l = 0;
     for (int i = 0; i < MAT_ROW_EFF(map) + 2; i++) {
