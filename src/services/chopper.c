@@ -7,6 +7,8 @@
 
 #include "chopper.h"
 
+//simulator_t simulator;
+
 /*
  * CHOPPER CHECK
  * mengecek apakah bahan baku tersedia untuk melakukan proses chop

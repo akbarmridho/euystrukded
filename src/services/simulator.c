@@ -1,7 +1,8 @@
 #include "map.h"
 #include "simulator.h"
 #include "notifier.h"
-#include <math.h>
+
+//simulator_t simulator;
 
 /*
 Kurangi waktu kadaluarsa inventory
@@ -48,7 +49,7 @@ void display_info() {
 boolean is_near(point_t object) {
     double del_abs = ABSIS(object) - ABSIS(position(simulator));
     double del_ord = ORDINAT(object) - ORDINAT(position(simulator));
-    return (pow(del_abs, 2) + pow(del_ord, 2)) <= 2;
+    return (del_abs * del_abs) + (del_ord * del_ord) <= 2;
 }
 
 void move(point_t destination) {

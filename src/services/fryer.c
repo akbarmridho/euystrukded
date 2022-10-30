@@ -1,5 +1,7 @@
 #include "fryer.h"
 
+//simulator_t simulator;
+
 boolean can_fry_food(Tree recipe_tree) {
     /* Cek apakah bahan tersedia di inventory */
     /* (bahan untuk fry sebanyak recipe_tree.childer_count) */

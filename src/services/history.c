@@ -1,5 +1,8 @@
 #include "history.h"
 
+//StackState history;
+//StackState restore;
+
 state_t generate_state() {
     // copy inventory
     ListFood inventory_copy;
