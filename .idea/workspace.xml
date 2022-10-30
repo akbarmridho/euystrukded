@@ -20,28 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="feat: command move">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/cookbook.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/cookbook.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/inventory.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/inventory.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/inventory.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/inventory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/redo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/redo.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/redo.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/redo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/undo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/undo.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/undo.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/undo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/wait.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.c" afterDir="false" />
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="misc dunno">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +115,7 @@
       <workItem from="1667016975441" duration="7004000" />
       <workItem from="1667034301656" duration="783000" />
       <workItem from="1667102261812" duration="357000" />
-      <workItem from="1667102869540" duration="17427000" />
+      <workItem from="1667102869540" duration="17654000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -354,7 +334,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667119086322</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="check commands correctness">
+      <created>1667121395307</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1667121395307</updated>
+    </task>
+    <task id="LOCAL-00033" summary="misc dunno">
+      <created>1667121491018</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1667121491032</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,8 +366,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: initial adt matrix implementation" />
-    <MESSAGE value="docs: add pembagian tugas" />
     <MESSAGE value="feat: add adt tree" />
     <MESSAGE value="refactor: rename header, time_t to day_time_t" />
     <MESSAGE value="update: adt tree update" />
@@ -397,7 +389,9 @@
     <MESSAGE value="clock, delivery, history, map, fryer service" />
     <MESSAGE value="simulator, notifier, map service" />
     <MESSAGE value="feat: command move" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: command move" />
+    <MESSAGE value="check commands correctness" />
+    <MESSAGE value="misc dunno" />
+    <option name="LAST_COMMIT_MESSAGE" value="misc dunno" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
