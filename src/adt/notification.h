@@ -1,9 +1,9 @@
-#ifndef ADT__NOTIFICATION_H
-#define ADT__NOTIFICATION_H
+#ifndef ADT_NOTIFICATION_H
+#define ADT_NOTIFICATION_H
 
 #include "string.h"
 
-#define CAPACITY 100
+#define NOTIFCAPACITY 20
 #define IDX_MIN 0
 #define IDX_UNDEF -1
 #define MARK '\0'
@@ -14,8 +14,8 @@ typedef int idxtype;
 typedef string Eltype;
 
 typedef struct {
-   notification notifications[CAPACITY];
-   int length;
+    notification notifications[NOTIFCAPACITY];
+    int length;
     // ubah sesuai dengan implementasi
 } ListNotification;
 

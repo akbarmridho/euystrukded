@@ -21,7 +21,7 @@ boolean n_is_empty(ListNotification n) {
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List n */
 /* yaitu antara indeks yang terdefinisi utk container*/
 boolean n_is_idx_valid(ListNotification n, idxtype i) {
-    return (i >= IDX_MIN && i <= CAPACITY);
+    return (i >= IDX_MIN && i <= NOTIFCAPACITY);
 }
 
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk List n */
@@ -43,7 +43,7 @@ boolean compare_str_notif(notification n, string s) {
         same = false;
     } else {
         while (i < str_len(s) && same) {
-            if (char(n,i) == char(s,i)) {
+            if (char(n, i) == char(s, i)) {
                 i += 1;
             } else {
                 same = false;
@@ -66,18 +66,15 @@ int n_get_last_idx(ListNotification n) {
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. s adalah elemen terakhir dari List Notifikasi */
 void n_insert_last(ListNotification *n, Eltype s) {
-    length(*n) += 1;
     notif(*n, n_list_length(*n)) = s;
+    length(*n) += 1;
 }
 
 /* I.S. n terdefinisi
    F.S. n kosong, panjang n adalah 0 */
 void n_delete_last(ListNotification *n, Eltype *val) {
-    string s;
-    new_string(&s,CAPACITY);
-
     *val = notif(*n, n_get_last_idx(*n));
-    notif(*n, n_get_last_idx(*n)) = s;
+    length(*n) -= 1;
 }
 
 /* I.S. n terdefinisi dan tidak kosong
@@ -89,8 +86,6 @@ void n_delete_list(ListNotification *n) {
     for (i = 0; i < len; i++) {
         n_delete_last(n, &val);
     }
-
-    length(*n) =- 1;
 }
 
 /* I.S. n terdefinisi, n mungkin kosong

@@ -43,11 +43,11 @@ Services:
 
 Commands:
 
-1. Wilson: boil, buy, catalog
+1. Wilson: config data, buy, catalog
 2. Egi: chop, cookbook, delivery
 3. Eugene: fry, inventory, mix
 4. Akbar: move, redo, undo
-5. Salomo: start, exit, wait, main program
+5. Salomo: start, exit, wait, main program, boil
 
 ## Daftar Fitur dan Status Pengerjaan
 
@@ -58,18 +58,18 @@ ADT
 | Charmachine      | -      |
 | Worcmachine      | -      |
 | Stack            | -      |
-| Food             | -      |
+| Food             | ok     |
 | List food        | -      |
 | List delivery    | -      |
 | List food recipe | -      |
 | Recipe           | ok     |
 | Point            | ok     |
-| String           | -      |
-| Notification     | -      |
+| String           | ok     |
+| Notification     | ok     |
 | Simulator        | -      |
 | Time             | ok     |
 | Matrix           | ok     |
-| Tree             | -      |
+| Tree             | ok     |
 
 Service
 

@@ -3,14 +3,12 @@
 
 int main() {
     char a[] = "salomo";
-    string str;
-    new_string(&str, 100);
     printf("Halo %s", a);
 
-    str = char_to_string(a);
+    string str = char_to_string(a);
     print_string(str);
 
-    printf("%s", &a);
+    printf("%s\n", a);
 
     return 0;
 }
