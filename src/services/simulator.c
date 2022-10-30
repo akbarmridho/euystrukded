@@ -40,6 +40,7 @@ void display_info() {
     printf("\n");
 
     display_notification();
+    putchar('\n');
     clear_notification();
 
     display_map();

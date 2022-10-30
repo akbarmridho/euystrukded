@@ -6,25 +6,23 @@
  */
 #include "buy.h"
 
-simulator_t simulator;
-ListFoodRecipe food_recipe;
 
 /* command buy */
-void cmd_buy(){
+void cmd_buy() {
     ListFoodRecipe purchaseable;
     create_lfr(&purchaseable);
-    
+
     printf("======================\n");
     printf("=        BUY         =\n");
     printf("======================\n");
 
     printf("List Bahan Makanan:\n");
-    
+
     /* display and store buyable recipes in purchasable */
     int counter = 1;
-    for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++){
+    for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++) {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
-        if (FOOD_SOURCE(FR_FOOD(current)) == Fry){
+        if (FOOD_SOURCE(FR_FOOD(current)) == Fry) {
             lfr_insert_last(&purchaseable, current);
             printf("   %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
@@ -36,10 +34,10 @@ void cmd_buy(){
         }
     }
     printf("\nKirim 0 untuk exit.\n");
-    
+
     /* input user choice */
-    int choice = validate_int(0, LFR_NEFF(purchaseable),char_to_string("Enter Command: "));
-    while (choice != 0){
+    int choice = validate_int(0, LFR_NEFF(purchaseable), char_to_string("Enter Command: "));
+    while (choice != 0) {
         food_t purchase = FR_FOOD(LFR_ELMT(purchaseable, choice));
         string name = FOOD_NAME(purchase);
 
@@ -55,6 +53,6 @@ void cmd_buy(){
         printf(".\n");
 
         putchar('\n');
-        choice = validate_int(0, LFR_NEFF(purchaseable),char_to_string("Enter Command: "));
+        choice = validate_int(0, LFR_NEFF(purchaseable), char_to_string("Enter Command: "));
     }
 }

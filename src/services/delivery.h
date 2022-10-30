@@ -12,8 +12,6 @@
 #include "../data/delivery.h"
 // terdapat delivery queue
 
-extern ListDelivery delivery;
-
 /*
 Kurangi waktu delivery pada delivery list sebanyak satu tick (menit)
 panggil execute delivery

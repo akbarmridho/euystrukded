@@ -1,7 +1,5 @@
 #include "delivery.h"
 
-ListDelivery delivery;
-
 //simulator_t simulator;
 //ListDelivery delivery;
 
@@ -47,6 +45,6 @@ boolean is_deltimefood_zero(food_t food) {
 }
 
 /* menambahkan food ke list delivery */
-void add_to_delivery_list(food_t purchased){
+void add_to_delivery_list(food_t purchased) {
     enqueue_delivery(&delivery, purchased);
 }

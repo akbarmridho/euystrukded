@@ -20,24 +20,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="YEYEYEYEYEYEY">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="GATAU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/adt/wordmachinedriver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/driver/adt/wordmachinedriver.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/wordmachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/wordmachine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/buy.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/buy.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/catalog.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/start.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/history.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/history.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/simulator.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/delivery.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,30 +79,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu-22.04/home/barcode/kulyahsmt3/euystrukded",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "structure.view.defaults.are.configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/home/barcode/kulyahsmt3/euystrukded&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
@@ -145,7 +141,8 @@
       <workItem from="1667034301656" duration="783000" />
       <workItem from="1667102261812" duration="357000" />
       <workItem from="1667102869540" duration="22947000" />
-      <workItem from="1667128401080" duration="3455000" />
+      <workItem from="1667128401080" duration="6409000" />
+      <workItem from="1667135728011" duration="504000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -413,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667132186892</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="GATAU">
+      <created>1667132813654</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1667132813654</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +435,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: add adt notification prefix" />
     <MESSAGE value="feat: notifier service" />
     <MESSAGE value="refactor: function renaming" />
     <MESSAGE value="feat: history service" />
@@ -456,7 +459,19 @@
     <MESSAGE value="update start and config initializer" />
     <MESSAGE value="lakjsdlaskd bisa compile" />
     <MESSAGE value="YEYEYEYEYEYEY" />
-    <option name="LAST_COMMIT_MESSAGE" value="YEYEYEYEYEYEY" />
+    <MESSAGE value="GATAU" />
+    <option name="LAST_COMMIT_MESSAGE" value="GATAU" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/commands/buy.h</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
