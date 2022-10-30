@@ -25,7 +25,7 @@ void do_mix(){
     int counter = 1;
     for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++){
         food_recipe_t current = LFR_ELMT(food_recipe, i);
-        if (FOOD_SOURCE(FR_FOOD(current)) == Fry){
+        if (FOOD_SOURCE(FR_FOOD(current)) == Mix){
             lfr_insert_last(&mixables, current);
             printf("   %d. ");
             print_string(FOOD_NAME(FR_FOOD(current)));
@@ -41,8 +41,8 @@ void do_mix(){
         string name = FOOD_NAME(FR_FOOD(LFR_ELMT(mixables, choice)));
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
-        if (can_fry_food(result_id, recipe_tree)){
-            fry(result_id, recipe_tree);
+        if (can_mix_food(recipe_tree)){
+            mix(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");
         }

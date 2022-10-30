@@ -41,8 +41,8 @@ void do_fry(){
         string name = FOOD_NAME(FR_FOOD(LFR_ELMT(fryables, choice)));
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
-        if (can_fry_food(result_id, recipe_tree)){
-            fry(result_id, recipe_tree);
+        if (can_fry_food(recipe_tree)){
+            fry(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");
         }
