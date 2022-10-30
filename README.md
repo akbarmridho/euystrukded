@@ -75,8 +75,8 @@ Service
 
 | Nama      | Status |
 |-----------|--------|
-| Chopper   | -      |
-| Boiler    | -      |
+| Chopper   | ok     |
+| Boiler    | ok     |
 | Clock     | -      |
 | Delivery  | -      |
 | Notifier  | -      |
