@@ -131,4 +131,7 @@ I.S. List tidak kosong
 F.S. Ukuran nEff = capacity */
 void compress_list_food(ListFood *l);
 
+/* Proses : Menampilkan isi list ke layar */
+void display_list_food(ListFood l);
+
 #endif
