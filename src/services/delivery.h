@@ -2,6 +2,9 @@
 #include "../adt/time.h"
 #include "../adt/notification.h"
 #include "../commands/inventory.h"
+#include "../adt/list_food.h"
+#include "../adt/list_delivery.h"
+#include "../adt/food.h"
 // terdapat delivery queue
 
 /*
@@ -16,4 +19,7 @@ kirim notifikasi
 barang yg dikirim adalah barang dengan delivery
 time nol
 */
-void execute_delivery();
+void execute_delivery(food_t f);
+
+/* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */
+boolean is_deltimefood_zero(food_t food);
