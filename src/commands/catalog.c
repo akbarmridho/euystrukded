@@ -11,16 +11,9 @@ void display() {
         if (food_recipe.contents[i].food.expire_time.dd == 0 && food_recipe.contents[i].food.expire_time.hh == 0 &&
             food_recipe.contents[i].food.expire_time.mm == 0) {
             printf("0");
-        } else {
-            if (food_recipe.contents[i].food.expire_time.dd != 0) {
-                printf("%d hari ", food_recipe.contents[i].food.expire_time.dd);
-            }
-            if (food_recipe.contents[i].food.delivery_time.hh != 0) {
-                printf("%d jam ", food_recipe.contents[i].food.expire_time.hh);
-            }
-            if (food_recipe.contents[i].food.delivery_time.mm != 0) {
-                printf("%d menit - ", food_recipe.contents[i].food.expire_time.mm);
-            }
+        }else{
+            write_fulltime(food_recipe.contents[i].food.expire_time);
+            printf(" - ");
         }
         if (food_recipe.contents[i].food.source == Buy) {
             printf("BUY - ");
@@ -37,16 +30,8 @@ void display() {
         if (food_recipe.contents[i].food.delivery_time.dd == 0 && food_recipe.contents[i].food.delivery_time.hh == 0 &&
             food_recipe.contents[i].food.delivery_time.mm == 0) {
             printf("0");
-        } else {
-            if (food_recipe.contents[i].food.delivery_time.dd != 0) {
-                printf("%d hari", food_recipe.contents[i].food.delivery_time.dd);
-            }
-            if (food_recipe.contents[i].food.delivery_time.hh != 0) {
-                printf("%d jam", food_recipe.contents[i].food.delivery_time.hh);
-            }
-            if (food_recipe.contents[i].food.delivery_time.mm != 0) {
-                printf("%d menit", food_recipe.contents[i].food.delivery_time.mm);
-            }
+        }else{
+            write_fulltime(food_recipe.contents[i].food.delivery_time);
         }
         printf("\n");
     }

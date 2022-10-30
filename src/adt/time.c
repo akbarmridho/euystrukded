@@ -23,6 +23,27 @@ void write_day(day_time_t t)
     printf("Day %d", DAY(t));
 }
 
+void write_fulltime(day_time_t t){
+    int total = 0;
+    if (DAY(t) != 0){
+        printf("%d hari", DAY(t));
+        total++;
+    }
+    if (HOUR(t) != 0){
+        if (total > 0){
+            putchar(' ');
+        }
+        printf("%d jam", HOUR(t));
+        total++;
+    }
+    if (MINUTE(t) != 0){
+        if (total > 0){
+            putchar(' ');
+        }
+        printf("%d menit", MINUTE(t));
+    }
+}
+
 long time_to_minute(day_time_t t)
 {
     return 24*60*DAY(t) + 60*HOUR(t) + MINUTE(t);

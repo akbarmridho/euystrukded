@@ -1,6 +1,6 @@
 #include "delivery.h"
-#include "notifier.h"
-#include "../data/delivery.h"
+
+ListDelivery delivery;
 
 //simulator_t simulator;
 //ListDelivery delivery;
@@ -44,4 +44,9 @@ void execute_delivery() {
 /* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */
 boolean is_deltimefood_zero(food_t food) {
     return time_to_minute(FOOD_DELIVERY_TIME(food)) == 0;
+}
+
+/* menambahkan food ke list delivery */
+void add_to_delivery_list(food_t purchased){
+    enqueue_delivery(&delivery, purchased);
 }
