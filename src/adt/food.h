@@ -1,5 +1,5 @@
-#ifndef ADT_FOOD_h
-#define ADT_FOOD_h
+#ifndef ADT_FOOD_H
+#define ADT_FOOD_H
 
 #include "time.h"
 #include "string.h"

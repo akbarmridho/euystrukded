@@ -1,36 +1,9 @@
-#ifndef __LIST_FOOD_H
-#define __LIST_FOOD_H
-
 #include "boolean.h"
 #include "food.h"
 #include "list_food.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-/*  Kamus Umum */
-#define IDX_MIN 0
-/* Indeks minimum list */
-#define IDX_UNDEF -1
-/* Indeks tak terdefinisi*/
-
-/* Definisi elemen dan koleksi objek */
-typedef int IdxType;
-typedef struct {
-    food_t *buffer; /* memori tempat penyimpan elemen (container) */
-    int nEff;       /* >=0, banyaknya elemen efektif */
-    int capacity;   /* ukuran elemen */
-} ListFood;
-/* Indeks yang digunakan [0..capacity-1] */
-/* Jika l adalah : ListFood, cara deklarasi dan akses: */
-/* Deklarasi : l : ListFood */
-/* Maka cara akses:
-   l.nEff      untuk mengetahui banyaknya elemen
-   l.buffer    untuk mengakses seluruh nilai elemen list
-   l.buffer[i] untuk mengakses elemen ke-i */
-/* Definisi :
-  list kosong: l.nEff = 0
-  Definisi elemen pertama : l.buffer[i] dengan i=0
-  Definisi elemen terakhir yang terdefinisi: l.buffer[i] dengan i=l.capacity */
 
 /* ********** SELEKTOR ********** */
 #define NEFF(l) (l).nEff
@@ -239,5 +212,3 @@ void display_list_food(ListFood l) {
         printf("--------------------------------------\n");
     }
 }
-
-#endif

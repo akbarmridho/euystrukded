@@ -1,7 +1,6 @@
 #include "../../src/adt/food.h"
 #include "../../src/adt/time.h"
 #include "../../src/adt/string.h"
-// gcc food_driver.c "../../src/adt/food.c" "../../src/adt/time.c" "../../src/adt/string.c" -o food
 
 
 int main() {

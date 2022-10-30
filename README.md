@@ -56,17 +56,17 @@ ADT
 | Nama             | Status |
 |------------------|--------|
 | Charmachine      | -      |
-| Worcmachine      | -      |
+| Wordmachine      | -      |
 | Stack            | -      |
 | Food             | ok     |
-| List food        | -      |
-| List delivery    | -      |
-| List food recipe | -      |
+| List food        | ok     |
+| List delivery    | ok     |
+| List food recipe | ok     |
 | Recipe           | ok     |
 | Point            | ok     |
 | String           | ok     |
 | Notification     | ok     |
-| Simulator        | -      |
+| Simulator        | ok     |
 | Time             | ok     |
 | Matrix           | ok     |
 | Tree             | ok     |
