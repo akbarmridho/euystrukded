@@ -1,3 +1,6 @@
+#ifndef SERVICE_DELIVERY_H
+#define SERVICE_DELIVERY_H
+
 #include "../adt/boolean.h"
 #include "../adt/time.h"
 #include "../adt/notification.h"
@@ -19,7 +22,9 @@ kirim notifikasi
 barang yg dikirim adalah barang dengan delivery
 time nol
 */
-void execute_delivery(food_t f);
+void execute_delivery();
 
 /* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */
 boolean is_deltimefood_zero(food_t food);
+
+#endif

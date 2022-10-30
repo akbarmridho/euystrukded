@@ -32,7 +32,7 @@ int str_len(string s);
 /* mengambil suatu huruf dalam string di indeks ke-x */
 char letter_at(string s, int x);
 
-void deallocate(string *str);
+void deallocate_string(string *str);
 
 /* mengubah suatu char menjadi string */
 string char_to_string(char c[]);

@@ -23,7 +23,7 @@ char letter_at(string s, int x) {
     return char(s, x);
 }
 
-void deallocate(string *str) {
+void deallocate_string(string *str) {
     capacity(*str) = 0;
     neff(*str) = 0;
     free(chars(*str));

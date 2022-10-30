@@ -7,18 +7,17 @@
 
 /*  Kamus Umum */
 /* Kapasitas penyimpanan */
-#define CAPACITY 100
+#define LFR_CAPACITY 100
 
 /* Indeks minimum list */
 #define IDX_MIN 0
 
 /* Indeks tak terdefinisi*/
-#define IDX_UNDEF -1
+#define LFR_IDX_UNDEF (-1)
 
-typedef struct
-{
-   food_t food;
-   recipe_t recipe;
+typedef struct {
+    food_t food;
+    recipe_t recipe;
 } food_recipe_t;
 
 /* SELEKTOR food_recipe_t */
@@ -32,10 +31,9 @@ void create_food_recipe(food_recipe_t *fr, food_t food, recipe_t recipe);
 /* *** LIST FOOD RECIPE *** */
 /* Definisi elemen dan koleksi objek */
 typedef int IdxType;
-typedef struct
-{
-   food_recipe_t contents[CAPACITY]; /* memori tempat penyimpan elemen (container) */
-   int neff;  /* banyak elemen efektif*/
+typedef struct {
+    food_recipe_t contents[LFR_CAPACITY]; /* memori tempat penyimpan elemen (container) */
+    int neff;  /* banyak elemen efektif*/
 } ListFoodRecipe;
 /* Indeks yang digunakan [0..CAPACITY-1] */
 /* Jika lfr adalah ListFoodRecipe, cara deklarasi dan akses: */
@@ -73,18 +71,6 @@ IdxType lfr_get_first_idx(ListFoodRecipe lfr);
 Prekondisi : List lfr tidak kosong
 Mengirimkan indeks elemen lfr terakhir */
 IdxType lfr_get_last_idx(ListFoodRecipe lfr);
-
-/*
-Mengirimkan true jika i adalah indeks yang valid utk kapasitas List lfr
-yaitu antara indeks yang terdefinisi utk container
-*/
-boolean lfr_is_idx_valid(ListFoodRecipe lfr, IdxType i);
-
-/*
-Mengirimkan true jika i adalah indeks yang terdefinisi utk List lfr
-yaitu antara 0..length(lfr)-1
-*/
-boolean lfr_is_idx_eff(ListFoodRecipe lfr, IdxType i);
 
 /* Mengirimkan true jika List lfr kosong, mengirimkan false jika tidak */
 boolean lfr_is_empty(ListFoodRecipe lfr);

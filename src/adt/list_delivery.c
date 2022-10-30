@@ -1,30 +1,8 @@
-#ifndef __LIST_DELIVERY_H
-#define __LIST_DELIVERY_H
-
 #include "boolean.h"
 #include "list_delivery.h"
 #include "list_food.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-/*  didefinisikan di list_food.h */
-// #define IDX_MIN 0
-// #define IDX_UNDEF -1
-
-/* Definisi elemen dan koleksi objek */
-typedef food_t food_t; /* type elemen list */
-typedef int IdxType;
-typedef struct {
-    food_t *buffer; /* memori tempat penyimpan elemen (container) */
-    int nEff;       /* >=0, banyaknya elemen efektif */
-    int capacity;   /* ukuran elemen */
-} ListDelivery;
-
-/* didefinisikan di list_food.h */
-// #define NEFF(l) (l).nEff
-// #define BUFFER(l) (l).buffer
-// #define ELMT(l, i) (l).buffer[i]
-// #define CAPACITY(l) (l).capacity
 
 /* ********** KONSTRUKTOR ********** */
 /*
@@ -108,7 +86,7 @@ int list_delivery_count_val(ListDelivery l, food_t val) {
 /* IDX_UNDEF jika kosong, 0 jika tidk kosong */
 int list_delivery_get_idx_head(ListDelivery l) {
     if (list_delivery_is_empty(l)) {
-        return IDX_UNDEF;
+        return LD_IDX_UNDEF;
     } else {
         return 0;
     }
@@ -117,7 +95,7 @@ int list_delivery_get_idx_head(ListDelivery l) {
 /* IDX_UNDEF jika kosong, neff-1 jika idak kosong*/
 int list_delivery_get_idx_tail(ListDelivery l) {
     if (list_delivery_is_empty(l)) {
-        return IDX_UNDEF;
+        return LD_IDX_UNDEF;
     } else {
         return NEFF(l) - 1;
     }
@@ -234,5 +212,3 @@ void display_list_delivery(ListDelivery l) {
         printf("--------------------------------------\n");
     }
 }
-
-#endif

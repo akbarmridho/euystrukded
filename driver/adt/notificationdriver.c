@@ -14,4 +14,10 @@ int main() {
         putchar('\n');
     }
 
+    string res;
+    n_delete_last(&ln, &res);
+    printf("len equal to 0 %d\n", n_list_length(ln));
+    print_string(res);
+    putchar('\n');
+
 }

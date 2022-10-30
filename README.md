@@ -53,38 +53,38 @@ Commands:
 
 ADT
 
-| Nama             | Status |
-|------------------|--------|
-| Charmachine      | -      |
-| Worcmachine      | -      |
-| Stack            | -      |
-| Food             | ok     |
-| List food        | -      |
-| List delivery    | -      |
-| List food recipe | -      |
-| Recipe           | ok     |
-| Point            | ok     |
-| String           | ok     |
-| Notification     | ok     |
-| Simulator        | -      |
-| Time             | ok     |
-| Matrix           | ok     |
-| Tree             | ok     |
+| Nama             | Status  |
+|------------------|---------|
+| Charmachine      | perfect |
+| Wordmachine      | perfect |
+| Stack            | perfect |
+| Food             | perfect |
+| List food        | perfect |
+| List delivery    | perfect |
+| List food recipe | perfect |
+| Recipe           | perfect |
+| Point            | perfect |
+| String           | perfect |
+| Notification     | perfect |
+| Simulator        | perfect |
+| Time             | perfect |
+| Matrix           | perfect |
+| Tree             | perfect |
 
 Service
 
 | Nama      | Status |
 |-----------|--------|
-| Chopper   | -      |
-| Boiler    | -      |
-| Clock     | -      |
-| Delivery  | -      |
-| Notifier  | -      |
-| History   | -      |
-| Map       | -      |
+| Chopper   | ok     |
+| Boiler    | ok     |
+| Clock     | ok     |
+| Delivery  | ok     |
+| Notifier  | ok     |
+| History   | ok     |
+| Map       | ok     |
 | Mixer     | -      |
-| Fryer     | -      |
-| Simulator | -      |
+| Fryer     | ok     |
+| Simulator | ok     |
 
 Commands
 

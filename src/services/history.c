@@ -1,10 +1,5 @@
 #include "history.h"
 
-simulator_t simulator;
-StackState history;
-StackState restore;
-ListDelivery delivery;
-
 state_t generate_state() {
     // copy inventory
     ListFood inventory_copy;
@@ -22,13 +17,8 @@ state_t generate_state() {
     ListDelivery delivery_copy;
     list_delivery_copy(delivery, &delivery_copy);
 
-    // copy notification
-    ListNotification notification_copy;
-    copy_notification(simulator.notification, &notification_copy);
-
     state_t backup;
 
-    backup.notification = notification_copy;
     backup.delivery = delivery_copy;
     backup.time = dt_copy;
     backup.position = point_copy;
@@ -42,7 +32,6 @@ void set_state(state_t state) {
     create_point(&simulator.position, state.position.x, state.position.y);
     create_time(&simulator.time, state.time.dd, state.time.hh, state.time.mm);
     list_delivery_copy(state.delivery, &delivery);
-    copy_notification(state.notification, &simulator.notification);
 }
 
 void backup_state() {

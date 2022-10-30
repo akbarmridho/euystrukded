@@ -6,10 +6,6 @@ void create_matrix(int nRows, int nCols, Matrix *m) {
     MAT_COL_EFF(*m) = nCols;
 }
 
-boolean is_matrix_idx_valid(int i, int j) {
-    return (i >= 0 && i < ROW_CAP) && (j >= 0 && j < COL_CAP);
-}
-
 IdxType mat_get_last_idx_row(Matrix m) {
     return MAT_ROW_EFF(m) - 1;
 }
@@ -18,8 +14,8 @@ IdxType mat_get_last_idx_col(Matrix m) {
     return MAT_COL_EFF(m) - 1;
 }
 
-boolean mat_is_idx_eff(Matrix m, IdxType i, IdxType j) {
-    return i >= 0 && i <= mat_get_last_idx_row(m) && j >= 0 && j <= mat_get_last_idx_col(m);
+boolean mat_is_idx_valid(Matrix m, int i, int j) {
+    return i >= 0 && j >= 0 && j <= mat_get_last_idx_col(m) && i <= mat_get_last_idx_row(m);
 }
 
 void display_matrix(Matrix m) {

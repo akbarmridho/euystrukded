@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "notification.h"
 #include "string.h"
 #include "boolean.h"
@@ -94,10 +93,9 @@ void n_delete_list(ListNotification *n) {
 /* I.S. n terdefinisi, n tidak kosong 
    F.S. copy paste n1 ke dalam n2 */
 void copy_notification(ListNotification lIn, ListNotification *lOut) {
-    int i = 0;
     create_notification(lOut);
 
-    for (i = 0; i < n_list_length(lIn); i++) {
+    for (int i = 0; i < n_list_length(lIn); i++) {
         n_insert_last(lOut, notif(lIn, i));
     }
 }

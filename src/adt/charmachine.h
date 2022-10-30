@@ -1,8 +1,8 @@
 /* File: charmachine.h */
 /* Definisi Mesin Karakter */
 
-#ifndef __CHAR_MACHINE_H_
-#define __CHAR_MACHINE_H_
+#ifndef ADT_CHAR_MACHINE_H
+#define ADT_CHAR_MACHINE_H
 
 #include "boolean.h"
 #include "stdio.h"
@@ -15,15 +15,15 @@ extern boolean EOP;
 
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
-
    source bisa berupa stdin atau file
    parameter is_file bisa berupa
-
    I.S. : sembarang
    F.S. : current_char adalah karakter pertama pada pita
           Jika current_char != MARK maka EOP akan padam (false)
           Jika current_char = MARK maka EOP akan menyala (true) */
-void start(FILE *source, boolean is_file);
+// void start(FILE *source, boolean is_file);
+
+void start();
 
 /* Pita dimajukan satu karakter.
    I.S. : Karakter pada jendela = current_char, current_char != MARK

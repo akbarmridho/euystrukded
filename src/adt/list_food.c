@@ -1,36 +1,9 @@
-#ifndef __LIST_FOOD_H
-#define __LIST_FOOD_H
-
 #include "boolean.h"
 #include "food.h"
 #include "list_food.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-/*  Kamus Umum */
-#define IDX_MIN 0
-/* Indeks minimum list */
-#define IDX_UNDEF -1
-/* Indeks tak terdefinisi*/
-
-/* Definisi elemen dan koleksi objek */
-typedef int IdxType;
-typedef struct {
-    food_t *buffer; /* memori tempat penyimpan elemen (container) */
-    int nEff;       /* >=0, banyaknya elemen efektif */
-    int capacity;   /* ukuran elemen */
-} ListFood;
-/* Indeks yang digunakan [0..capacity-1] */
-/* Jika l adalah : ListFood, cara deklarasi dan akses: */
-/* Deklarasi : l : ListFood */
-/* Maka cara akses:
-   l.nEff      untuk mengetahui banyaknya elemen
-   l.buffer    untuk mengakses seluruh nilai elemen list
-   l.buffer[i] untuk mengakses elemen ke-i */
-/* Definisi :
-  list kosong: l.nEff = 0
-  Definisi elemen pertama : l.buffer[i] dengan i=0
-  Definisi elemen terakhir yang terdefinisi: l.buffer[i] dengan i=l.capacity */
 
 /* ********** SELEKTOR ********** */
 #define NEFF(l) (l).nEff
@@ -112,7 +85,7 @@ int list_food_count_val(ListFood l, food_t val) {
 /* IDX_UNDEF jika kosong, 0 jika tidk kosong */
 int list_food_get_idx_head(ListFood l) {
     if (list_food_is_empty(l)) {
-        return IDX_UNDEF;
+        return LF_IDX_UNDEF;
     } else {
         return 0;
     }
@@ -121,7 +94,7 @@ int list_food_get_idx_head(ListFood l) {
 /* IDX_UNDEF jika kosong, neff-1 jika idak kosong*/
 int list_food_get_idx_tail(ListFood l) {
     if (list_food_is_empty(l)) {
-        return IDX_UNDEF;
+        return LF_IDX_UNDEF;
     } else {
         return (NEFF(l) - 1);
     }
@@ -239,5 +212,3 @@ void display_list_food(ListFood l) {
         printf("--------------------------------------\n");
     }
 }
-
-#endif

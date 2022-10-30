@@ -1,31 +1,21 @@
-#include <stdio.h>
 #include "delivery.h"
-#include "../adt/boolean.h"
-#include "../adt/time.h"
-#include "../adt/notification.h"
-#include "../commands/inventory.h"
-#include "../adt/list_food.h"
-#include "../adt/list_delivery.h"
-#include "../adt/food.h"
 #include "notifier.h"
 #include "../data/delivery.h"
-#include "../data/simulator.h"
-
-ListDelivery delivery;
-simulator_t simulator;
 
 /*
 Kurangi waktu delivery pada delivery list sebanyak satu tick (menit)
 panggil execute delivery
 */
 void delivery_next_tick() {
-    int i = 0;
-    for (i = 0; i < list_delivery_length; i++) {
-        pprev_n_minute(&DELIVERY_TIME(ELMT(simulator.inventory,i)), 1);
+    for (int i = 0; i < list_delivery_length(delivery); i++) {
+        pprev_n_minute(&FOOD_DELIVERY_TIME(delivery.buffer[i]), 1);
+    }
 
-        if (is_deltimefood_zero(ELMT(simulator.inventory,i))) {
-            execute_delivery(ELMT(simulator.inventory,i)); 
-        }
+    int j = 0;
+
+    while (j < list_delivery_length(delivery) && is_deltimefood_zero(ELMT(delivery, 0))) {
+        execute_delivery();
+        j++;
     }
 }
 
@@ -35,13 +25,20 @@ kirim notifikasi
 barang yg dikirim adalah barang dengan delivery
 time nol
 */
-void execute_delivery(food_t food) {
-    enqueue(&simulator.inventory, food);
+void execute_delivery() {
+    food_t food;
     dequeue_delivery(&delivery, &food);
-    notify(NAME(food));
+
+    enqueue_food(&simulator.inventory, food);
+
+    char base[] = "Makanan ";
+    char end[] = " telah sampai";
+
+
+    notify(concat(concat(char_to_string(base), FOOD_NAME(food)), char_to_string(end)));
 }
 
 /* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */
 boolean is_deltimefood_zero(food_t food) {
-    return (&DELIVERY_TIME(food) == 0);
+    return time_to_minute(FOOD_DELIVERY_TIME(food)) == 0;
 }
