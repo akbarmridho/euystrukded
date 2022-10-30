@@ -20,6 +20,7 @@ void start() {
           Jika  current_char = MARK maka EOP akan menyala (true) */
 void advance() {
     retval = fscanf(pita, "%c", &current_char);
+
     EOP = (current_char == CLI_MARK);
     if (EOP) {
         fclose(pita);

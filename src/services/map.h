@@ -2,6 +2,8 @@
 #define SERVICE_MAP_H
 
 #include "../adt/point.h"
+#include "../data/simulator.h"
+#include "../data/configdata.h"
 
 // tampilkan juga posisi player saat ini
 void display_map();
