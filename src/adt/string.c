@@ -57,9 +57,12 @@ string cut_str(string s, int idxStart, int idxEnd) {
     int i;
 
     new_string(&sHasil, idxEnd - idxStart + 1);
-    for (i = idxStart; i < idxEnd + 1; i++) {
-        char(sHasil, i) = char(s, i);
+    for (i = 0; i < idxEnd - idxStart + 1; i++) {
+        char(sHasil, i) = char(s, i + idxStart);
+        neff(sHasil)++;
     }
+
+    return sHasil;
 }
 
 /* mengcopy string */
@@ -95,6 +98,25 @@ boolean comparestr(string s1, string s2) {
     return same;
 }
 
+boolean startwith(string full, string start) {
+    int i = 0;
+    boolean same = true;
+
+    if (str_len(full) < str_len(start)) {
+
+        same = false;
+    } else {
+        while (i < str_len(start) && same) {
+            if (char(full, i) == char(start, i)) {
+                i++;
+            } else {
+                same = false;
+            }
+        }
+    }
+
+    return same;
+}
 
 /* menggabungkan 2 string */
 string concat(string s1, string s2) {

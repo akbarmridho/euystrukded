@@ -34,11 +34,14 @@ void display_info() {
     write_point(position(simulator));
     printf("\n");
 
+    printf("Day ");
     write_day(time(simulator));
     printf(" Time: ");
     write_time(time(simulator));
+    printf("\n");
 
     display_notification();
+    putchar('\n');
     clear_notification();
 
     display_map();

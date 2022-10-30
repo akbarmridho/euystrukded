@@ -43,6 +43,8 @@ void write_time(day_time_t t);
 
 void write_day(day_time_t t);
 
+void write_fulltime(day_time_t t);
+
 /*
 Diberikan sebuah TIME, mengonversi jumlah menit dari hari ke-nol menuju menit terakhir pada hari tertentu
 Rumus : menit = 24*60*day + 60*hour + menit

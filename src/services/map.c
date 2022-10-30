@@ -1,8 +1,8 @@
 #include "map.h"
 #include <stdio.h>
-
-simulator_t simulator;
-Matrix map;
+//
+//simulator_t simulator;
+//Matrix map;
 
 void display_map() {
     int k = 0, l = 0;
@@ -11,10 +11,10 @@ void display_map() {
             if (j == 0 || j == MAT_COL_EFF(map) + 1 || i == 0 || i == MAT_ROW_EFF(map) + 1) {
                 printf("* ");
             } else {
-                if (MAT_ELMT(map, k, l) == '#') {
-                    printf("  ");
-                } else if (simulator.position.x == k && simulator.position.y == l) {
+                if (simulator.position.x == l && simulator.position.y == k) {
                     printf("S ");
+                } else if (MAT_ELMT(map, k, l) == '#') {
+                    printf("  ");
                 } else {
                     printf("%c ", MAT_ELMT(map, k, l));
                 }

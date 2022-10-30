@@ -23,9 +23,10 @@ void do_mix() {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Mix) {
             lfr_insert_last(&mixables, current);
-            printf("   %d. ");
+            printf("   %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
+            counter++;
         }
     }
     printf("\nKirim 0 untuk exit.\n");
@@ -38,6 +39,7 @@ void do_mix() {
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
         if (can_mix_food(recipe_tree)) {
+            backup_state();
             mix(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");

@@ -24,9 +24,10 @@ void do_fry() {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
         if (FOOD_SOURCE(FR_FOOD(current)) == Fry) {
             lfr_insert_last(&fryables, current);
-            printf("   %d. ");
+            printf("   %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
             putchar('\n');
+            counter++;
         }
     }
     printf("\nKirim 0 untuk exit.\n");
@@ -39,6 +40,7 @@ void do_fry() {
         Tree recipe_tree = lt_search_by_id(&list_tree_recipe, result_id);
 
         if (can_fry_food(recipe_tree)) {
+            backup_state();
             fry(recipe_tree);
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\n");

@@ -7,7 +7,7 @@
 #include "charmachine.h"
 
 #define NMax 50
-#define BLANK ' '
+#define BLANK '\n'
 
 typedef struct {
     char tab_word[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */

@@ -52,6 +52,8 @@ string concat(string s1, string s2);
 /* mengubah word (dari word machine) menjadi string */
 string word_to_string(word_t kata);
 
+boolean startwith(string full, string start);
+
 /* I.S. string terdefinisi dan tidak kosong 
    F.S. mencetak string*/
 void print_string(string s);

@@ -43,9 +43,9 @@ void load_map(char *path) {
             // printf("%d\n", found_row);
             if (found_row) {
                 // printf("1\n");
-                if(temp == ' '){
+                if (temp == ' ') {
                     //blablabla
-                }else{
+                } else {
                     if (!found_col) {
                         if(temp >= '0' && temp<= '9'){
                             int convertion = (int) temp - 48;
@@ -89,6 +89,8 @@ void load_map(char *path) {
         }
     }
     fclose(fp);
+
+    display_matrix(map);
 }
 
 void load_food_recipe(char * path_food, char * path_recipe) {
