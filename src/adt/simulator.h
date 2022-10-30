@@ -32,7 +32,7 @@ create simumlator, dll
 
 /* I.S. simulator sembarang
    F.S. simlator terdefinisi, dengan nama pengguna dan lokasi simulator serta inventory makanan tersimpan di dalam simulator*/
-void create_simulator (simulator_t *sim);
+void create_simulator (simulator_t *sim, string name);
 
 /* ------------PRIMITIF LAIN------------ */
 
