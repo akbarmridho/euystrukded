@@ -2,11 +2,12 @@
 #define __LIST_DELIVERY_H
 
 #include "boolean.h"
+#include <stdlib.h>
 #include "list_food.h"
 
 /*  didefinisikan di list_food.h */
-// #define IDX_MIN 0
-// #define IDX_UNDEF -1
+#define IDX_MIN 0
+#define IDX_UNDEF -1
 
 /* Definisi elemen dan koleksi objek */
 typedef food_t food_t; /* type elemen list */
@@ -59,12 +60,7 @@ void list_delivery_copy(ListDelivery lIn, ListDelivery *lOut);
 I.S. l tidak kosong, l sembarang, idx valid pada l
 F.S. element pada index idx dihapus
 */
-void list_delivery_delete(ListDelivery * l , int idx){
-    for (int i= idx;i<list_delivery_length(*l)-1;i++){
-        ELMT(*l,i) = ELMT(*l,i+1);
-    }
-    NEFF(*l)--;
-}
+void list_delivery_delete(ListDelivery * l , int idx);
 
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
@@ -118,4 +114,6 @@ I.S. List tidak kosong
 F.S. Ukuran nEff = capacity */
 void compress_list_delivery(ListDelivery *l);
 
+/* Proses : Menampilkan isi list ke layar */
+void display_list_delivery(ListDelivery l);
 #endif
