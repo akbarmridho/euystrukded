@@ -18,6 +18,7 @@ typedef struct
 /* State Mesin Word */
 extern boolean end_word;
 extern word_t current_word;
+extern char current_char;
 
 /*
 Implementasikan ignore blank agar juga bisa menanggap \n sebagai blank
@@ -36,7 +37,8 @@ F.S. : end_word = true, dan CC = MARK;
           atau end_word = false, CWord adalah kata yang sudah diakuisisi,
           CC karakter pertama sesudah karakter terakhir kata
 */
-void start_word(FILE *source, boolean is_file);
+// void start_word(FILE *source, boolean is_file);
+void start_word();
 
 /* I.S. : CC adalah karakter pertama kata yang akan diakuisisi
    F.S. : CWord adalah kata terakhir yang sudah diakuisisi,
