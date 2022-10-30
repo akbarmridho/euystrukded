@@ -1,7 +1,6 @@
 #include "charmachine.h"
 #include "wordmachine.h"
 
-
 char current_char;
 boolean EOP;
 //boolean end_word;

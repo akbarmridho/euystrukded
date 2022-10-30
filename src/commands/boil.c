@@ -3,10 +3,6 @@
 #include "boiler.h"
 #include "../utils/validator.h"
 
-simulator_t simulator;
-ListFoodRecipe food_recipe;
-ListTree list_tree_recipe;
-
 /* Melakukan command boil pada makanan */
 void do_boil() {
     ListFoodRecipe boilable;

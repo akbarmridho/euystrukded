@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "adt/charmachine.h"
+#include "adt/wordmachine.h"
 #include "commands/boil.h"
 #include "commands/buy.h"
 #include "commands/catalog.h"
@@ -15,22 +17,51 @@
 #include "commands/undo.h"
 #include "commands/wait.h"
 
-/*
-Urutan program
+word_t current_word;
+boolean end_word;
+simulator_t simulator;
+ListDelivery delivery;
+StackState history;
+StackState restore;
+ListFoodRecipe food_recipe;
+Matrix map;
+ListTree list_tree_recipe;
 
-CLI:
-tampilkan CLI
-START
-EXIT???
+string get_name() {
+    start_word();
+    string result;
+    boolean defined = false;
 
-load config data
-semua data tersebut disimpan sebagai eksternal variabel pada modul di folder data
+    while (!end_word) {
+        if (defined) {
+            result = concat(result, concat(char_to_string(" "), word_to_string(current_word)));
+        } else {
+            result = word_to_string(current_word);
+            defined = true;
+        }
 
-services bisa mengakses dan mengubah data
-sebisa mungkin, aksi yang mengubah source data dilakukan pada folder services, bukan commands
+        advance_word();
+    }
 
-tampilkan map
-waiting for command
+    return result;
+}
 
+int main() {
+    printf("Selamat datang di dinner dash!\n");
+    printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
 
-*/
+    string START = char_to_string("START");
+    string EXIT = char_to_string("EXIT");
+
+    start_word();
+
+    if (!comparestr(START, word_to_string(current_word))) {
+        return 0;
+    }
+
+    printf("Masukkan nama anda: ");
+    string name = get_name();
+
+    start_program(name);
+    display_info();
+}
