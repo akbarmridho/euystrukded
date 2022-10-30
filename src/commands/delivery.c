@@ -11,10 +11,8 @@ void display_delivery() {
             printf("    ");
             printf("%d. ", i + 1);
             print_string(FOOD_NAME(ELMT(delivery, i)));
-            printf(" - %d hari %d jam %d menit",
-                   DAY(FOOD_DELIVERY_TIME(ELMT(delivery, i))),
-                   HOUR(FOOD_DELIVERY_TIME(ELMT(delivery, i))),
-                   MINUTE(FOOD_DELIVERY_TIME(ELMT(delivery, i))));
+            printf(" - ");
+            write_fulltime(FOOD_DELIVERY_TIME(ELMT(delivery, i)));
             putchar('\n');
         }
     }

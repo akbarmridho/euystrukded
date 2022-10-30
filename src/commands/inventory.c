@@ -15,17 +15,9 @@ void cmd_inventory() {
         food_t food = ELMT(inv_list, i);
         printf("   %d. ", (i + 1));
         print_string(FOOD_NAME(food));
-        printf(" -");
-
-        if (DAY(FOOD_EXPIRE_TIME(food)) != 0) {
-            printf(" %d hari", DAY(FOOD_EXPIRE_TIME(food)));
-        }
-        if (HOUR(FOOD_EXPIRE_TIME(food)) != 0) {
-            printf(" %d jam", HOUR(FOOD_EXPIRE_TIME(food)));
-        }
-        if (MINUTE(FOOD_EXPIRE_TIME(food)) != 0) {
-            printf(" %d menit", MINUTE(FOOD_EXPIRE_TIME(food)));
-        }
+        printf(" - ");
+        write_fulltime(FOOD_EXPIRE_TIME(food));
+        
         putchar('\n');
     }
 }
