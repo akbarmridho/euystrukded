@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="euystrukded" targetName="euystrukded" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-WSL" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="WSL" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="feat: command move">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/chop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/chop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/chop.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/cookbook.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/cookbook.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/delivery.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/inventory.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/inventory.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/inventory.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/inventory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/mix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/redo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/redo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/redo.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/redo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/undo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/undo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/undo.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/undo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/wait.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validator.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-WSL" />
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="2.4" />
+  </component>
+  <component name="ProjectId" id="2Ga8jBYU2ruA9yEH5EvMfWSrI9v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/home/barcode/kulyahsmt3/euystrukded&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="" />
+      <created>1666615466450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666615466450</updated>
+      <workItem from="1666615468152" duration="583000" />
+      <workItem from="1666616071694" duration="6582000" />
+      <workItem from="1666622738503" duration="327000" />
+      <workItem from="1666668834834" duration="70000" />
+      <workItem from="1666668960498" duration="1834000" />
+      <workItem from="1666673441524" duration="1883000" />
+      <workItem from="1666677577126" duration="302000" />
+      <workItem from="1666681699750" duration="1992000" />
+      <workItem from="1666685199264" duration="334000" />
+      <workItem from="1666689420131" duration="301000" />
+      <workItem from="1666773441239" duration="186000" />
+      <workItem from="1666832183696" duration="7995000" />
+      <workItem from="1666853393023" duration="3578000" />
+      <workItem from="1666862019561" duration="3015000" />
+      <workItem from="1666873694726" duration="1938000" />
+      <workItem from="1666877272130" duration="532000" />
+      <workItem from="1666943694112" duration="1703000" />
+      <workItem from="1666961157059" duration="4309000" />
+      <workItem from="1667016975441" duration="7004000" />
+      <workItem from="1667034301656" duration="783000" />
+      <workItem from="1667102261812" duration="357000" />
+      <workItem from="1667102869540" duration="17427000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: initial adt time implementation">
+      <created>1666620382095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666620382095</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: add idea config files">
+      <created>1666620523396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666620523396</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: initial adt matrix implementation">
+      <created>1666622479404</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666622479404</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docs: add pembagian tugas">
+      <created>1666836889121</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666836889121</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add adt tree">
+      <created>1666839896838</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666839896838</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: rename header, time_t to day_time_t">
+      <created>1666840089852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666840089852</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update: adt tree update">
+      <created>1666876724627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666876724627</updated>
+    </task>
+    <task id="LOCAL-00008" summary="setup: update data module declaration">
+      <created>1666877242679</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666877242679</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: add adt notification prefix">
+      <created>1666945065949</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666945065949</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: notifier service">
+      <created>1666945090456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666945090456</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: function renaming">
+      <created>1666964221815</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666964221815</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: history service">
+      <created>1666964239094</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666964239094</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: initial undo redo implementation">
+      <created>1666965283374</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666965283374</updated>
+    </task>
+    <task id="LOCAL-00014" summary="setup: add map service header">
+      <created>1667020640460</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667020640460</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: display notification update message">
+      <created>1667026141444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1667026141444</updated>
+    </task>
+    <task id="LOCAL-00016" summary="final: adt matrix, point, recipe, time">
+      <created>1667028468389</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1667028468389</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update: add list tree recipe to global vars">
+      <created>1667034495625</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667034495625</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update: add list tree recipe to global vars">
+      <created>1667034840411</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667034840411</updated>
+    </task>
+    <task id="LOCAL-00019" summary="final: tree and food driver">
+      <created>1667104901623</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1667104901623</updated>
+    </task>
+    <task id="LOCAL-00020" summary="semifinal: string and notification driver">
+      <created>1667106699357</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1667106699357</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: from branch adt egi">
+      <created>1667109038553</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1667109038553</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update: some adt driver">
+      <created>1667110690130</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667110690130</updated>
+    </task>
+    <task id="LOCAL-00023" summary="adt finalization">
+      <created>1667113332129</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667113332129</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: do not backup notification">
+      <created>1667113502355</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1667113502355</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix: do not backup notification">
+      <created>1667113608587</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1667113608587</updated>
+    </task>
+    <task id="LOCAL-00026" summary="delete unnecesary param">
+      <created>1667114064245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1667114064245</updated>
+    </task>
+    <task id="LOCAL-00027" summary="clock, delivery, history, map, fryer service">
+      <created>1667116939556</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1667116939556</updated>
+    </task>
+    <task id="LOCAL-00028" summary="clock, delivery, history, map, fryer service">
+      <created>1667117057790</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1667117057790</updated>
+    </task>
+    <task id="LOCAL-00029" summary="simulator, notifier, map service">
+      <created>1667118019749</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667118019749</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: command move">
+      <created>1667119048940</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1667119048940</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: command move">
+      <created>1667119086322</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1667119086322</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: initial adt matrix implementation" />
+    <MESSAGE value="docs: add pembagian tugas" />
+    <MESSAGE value="feat: add adt tree" />
+    <MESSAGE value="refactor: rename header, time_t to day_time_t" />
+    <MESSAGE value="update: adt tree update" />
+    <MESSAGE value="setup: update data module declaration" />
+    <MESSAGE value="refactor: add adt notification prefix" />
+    <MESSAGE value="feat: notifier service" />
+    <MESSAGE value="refactor: function renaming" />
+    <MESSAGE value="feat: history service" />
+    <MESSAGE value="feat: initial undo redo implementation" />
+    <MESSAGE value="setup: add map service header" />
+    <MESSAGE value="fix: display notification update message" />
+    <MESSAGE value="final: adt matrix, point, recipe, time" />
+    <MESSAGE value="update: add list tree recipe to global vars" />
+    <MESSAGE value="final: tree and food driver" />
+    <MESSAGE value="semifinal: string and notification driver" />
+    <MESSAGE value="feat: from branch adt egi" />
+    <MESSAGE value="update: some adt driver" />
+    <MESSAGE value="adt finalization" />
+    <MESSAGE value="fix: do not backup notification" />
+    <MESSAGE value="delete unnecesary param" />
+    <MESSAGE value="clock, delivery, history, map, fryer service" />
+    <MESSAGE value="simulator, notifier, map service" />
+    <MESSAGE value="feat: command move" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: command move" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
