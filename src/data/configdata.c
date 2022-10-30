@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "configdata.h"
 
+ListFoodRecipe food_recipe;
+Matrix map;
+ListTree list_tree_recipe;
 
 int convert(char cc) {
     return (cc - 48);
@@ -31,20 +34,27 @@ void load_map(char *path) {
         if (count == 0 && temp != '\n') {
             if (temp != ' ' && !found_row) {
                 int convertion = (int) temp - 48;
-                // printf("%d", convertion);
+                // printf("%d\n", convertion);
                 size.row = size.row * 10 + convertion;
                 // found_row= true;
             } else {
                 found_row = true;
             }
+            // printf("%d\n", found_row);
             if (found_row) {
-                if (temp != ' ' && !found_col) {
-                    int convertion = (int) temp - 48;
-                    // printf("\n%d\n", convertion);
-                    size.col = size.col * 10 + convertion;
-                    // found_col= true;
-                } else {
-                    found_col = true;
+                // printf("1\n");
+                if(temp == ' '){
+                    //blablabla
+                }else{
+                    if (!found_col) {
+                        int convertion = (int) temp - 48;
+                        // printf("\n%d\n", convertion);
+                        size.col = size.col * 10 + convertion;
+                        // found_col= true;
+                    } else {
+                        found_col = true;
+                        printf("1\n");
+                    }
                 }
             }
         } else if (temp != '\n') {
@@ -54,7 +64,7 @@ void load_map(char *path) {
         }
         // printf("%c", temp);
     }
-    // printf("%d %d\n", size.row, size.col);
+    printf("%d %d\n", size.row, size.col);
     fclose(fp);
     // Matrix map;
     create_matrix(size.row, size.col, &map);

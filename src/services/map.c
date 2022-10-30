@@ -1,9 +1,8 @@
 #include "map.h"
 #include <stdio.h>
-#include "../data/configdata.h"
-#include "../data/simulator.h"
 
-//Matrix map;
+simulator_t simulator;
+Matrix map;
 
 void display_map() {
     int k = 0, l = 0;
@@ -26,6 +25,7 @@ void display_map() {
         if (i != 0) {
             k++;
         }
+        printf("\n");
     }
     printf("\n");
 }
