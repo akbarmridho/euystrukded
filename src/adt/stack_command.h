@@ -13,7 +13,6 @@ typedef struct {
     point_t position;
     day_time_t time;
     ListDelivery delivery;
-    ListNotification notification;
 } state_t;
 
 typedef struct {
