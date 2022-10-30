@@ -4,14 +4,20 @@
 #include "../adt/list_food_recipe.h"
 #include "../adt/matrix.h"
 #include "../adt/tree.h"
+#include "../adt/list_food.h"
+#include "../adt/recipe.h"
+#include "../adt/string.h"
+#include "../adt/list_delivery.h"
+#include "../adt/food.h"
+#include "../adt/simulator.h"
 
 extern ListFoodRecipe food_recipe;
 extern Matrix map;
 extern ListTree list_tree_recipe;
 
-void load_map(char * path);
+void load_map(char *path);
 
-void load_food_recipe(char * path_food, char * path_recipe);
+void load_food_recipe(char *path_food, char *path_recipe);
 
 void build_tree_recipe();
 

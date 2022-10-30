@@ -2,6 +2,9 @@
 #include "notifier.h"
 #include "../data/delivery.h"
 
+//simulator_t simulator;
+//ListDelivery delivery;
+
 /*
 Kurangi waktu delivery pada delivery list sebanyak satu tick (menit)
 panggil execute delivery

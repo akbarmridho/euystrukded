@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "configdata.h"
-#include "../adt/matrix.h"
-#include "../adt/list_food.h"
-#include "../adt/recipe.h"
-#include "../adt/string.h"
+
 
 int convert(char cc) {
     return (cc - 48);

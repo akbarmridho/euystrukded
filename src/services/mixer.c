@@ -7,11 +7,13 @@
 
 #include "mixer.h"
 
+//simulator_t simulator;
+
 /*
  * MIXER CHECK
  * mengecek apakah bahan baku tersedia untuk melakukan proses mix
  */
-boolean can_mix_food(Tree recipe_tree){
+boolean can_mix_food(Tree recipe_tree) {
     /* Cek apakah bahan tersedia di inventory */
     /* (bahan untuk mix sebanyak recipe_tree.children_count) */
     int i = 0;
@@ -34,7 +36,7 @@ boolean can_mix_food(Tree recipe_tree){
  * panggil ticker
  * enqueue hasil ke inventory
 */
-boolean mix(Tree recipe_tree){
+boolean mix(Tree recipe_tree) {
     food_t result = T_FOOD(recipe_tree);
     for (int i = 0; i < recipe_tree->children_count; i++) {
         food_t raw = T_FOOD(T_CHILDREN(recipe_tree, i));

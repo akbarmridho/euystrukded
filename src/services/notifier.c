@@ -1,5 +1,7 @@
 #include "notifier.h"
 
+//simulator_t simulator;
+
 void notify(string notification) {
     n_insert_last(&simulator.notification, notification);
 }
