@@ -4,6 +4,12 @@
 #include "../adt/list_food_recipe.h"
 #include "../adt/matrix.h"
 #include "../adt/tree.h"
+#include "../adt/list_food.h"
+#include "../adt/recipe.h"
+#include "../adt/string.h"
+#include "../adt/list_delivery.h"
+#include "../adt/food.h"
+#include "../adt/simulator.h"
 
 extern ListFoodRecipe food_recipe;
 extern Matrix map;

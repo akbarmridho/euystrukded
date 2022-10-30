@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "configdata.h"
-#include "../adt/matrix.h"
-#include "../adt/list_food.h"
-#include "../adt/recipe.h"
-#include "../adt/string.h"
+
 
 Matrix map;
 ListFoodRecipe food_recipe;
