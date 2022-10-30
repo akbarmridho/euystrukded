@@ -197,9 +197,31 @@ void display_lfr(ListFoodRecipe lfr){
          printf("   %d. ", (i + 1));
          print_string(FOOD_NAME(food));
          putchar('\n');
-         printf("      <Source-%d> - ", FOOD_SOURCE(food));
+         switch (FOOD_SOURCE(food))
+         {
+         case (Buy):
+            printf("      Buy - ");
+            break;
+         
+         case (Chop):
+            printf("      Chop - ");
+            break;
+
+         case (Mix):
+            printf("      Mix - ");
+            break;
+
+         case (Fry):
+            printf("      Fry - ");
+            break;
+
+         case (Boil):
+            printf("      Boil - ");
+            break;
+         }
          for (int j = 0; j < R_ING_COUNT(rec); j++){
-            printf("<Ingredient-%d>", R_ING_LIST_ELMT(rec, j));
+            int id = lfr_search_by_food_id(lfr, R_ING_LIST_ELMT(rec, j));
+            print_string(FOOD_NAME(FR_FOOD(LFR_ELMT(lfr, id))));
             if (j != R_ING_COUNT(rec) - 1){
                printf(" - ");
             }
