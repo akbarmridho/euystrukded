@@ -7,6 +7,7 @@
 
 enum food_source {
     Buy,
+    Boil,
     Chop,
     Mix,
     Fry
