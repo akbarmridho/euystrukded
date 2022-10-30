@@ -3,6 +3,9 @@
 
 int main() {
     simulator_t sim;
+    char a[] = "salomo";
+    string name;
 
-    create_simulator(&sim);
+    name = char_to_string(a);
+    create_simulator(&sim, name);
 }
