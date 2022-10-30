@@ -7,6 +7,7 @@
 
 Matrix map;
 ListFoodRecipe food_recipe;
+ListTree list_tree_recipe;
 
 int convert(char cc){
     return(cc-48);
@@ -342,4 +343,10 @@ void load_food_recipe(char * path_food, char * path_recipe){
     /*neff lfr*/
     food_recipe.neff= i-1;
     fclose(fp_recipe);
+}
+
+void build_tree_recipe(){
+    for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++){
+        add_from_food_recipe(&list_tree_recipe, food_recipe, LFR_ELMT(food_recipe, i));
+    }
 }
