@@ -1,13 +1,11 @@
-#ifndef COMMAND_CHOP_h
-#define COMMAND_CHOP_h
+#ifndef COMMAND_CHOP_H
+#define COMMAND_CHOP_H
 
 #include <stdio.h>
-#include "..\services\chopper.h"
-#include "..\utils\validator.h"
-
-extern simulator_t simulator;
-extern ListFoodRecipe food_recipe;
-extern ListTree list_tree_recipe;
+#include "../services/chopper.h"
+#include "../utils/validator.h"
+#include "../data/simulator.h"
+#include "../data/configdata.h"
 
 void do_chop();
 

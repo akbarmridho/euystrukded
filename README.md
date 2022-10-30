@@ -82,7 +82,7 @@ Service
 | Notifier  | ok     |
 | History   | ok     |
 | Map       | ok     |
-| Mixer     | -      |
+| Mixer     | ok     |
 | Fryer     | ok     |
 | Simulator | ok     |
 
@@ -90,21 +90,21 @@ Commands
 
 | Nama      | Status |
 |-----------|--------|
-| Boil      | -      |
+| Boil      | ok     |
 | Buy       | -      |
 | Catalog   | -      |
-| Chop      | -      |
-| Cookbook  | -      |
-| Delivery  | -      |
-| Fry       | -      |
-| Inventory | -      |
-| Mix       | -      |
-| Move      | -      |
-| Undo      | -      |
-| Redo      | -      |
+| Chop      | ok     |
+| Cookbook  | ok     |
+| Delivery  | ok     |
+| Fry       | ok     |
+| Inventory | ok     |
+| Mix       | ok     |
+| Move      | ok     |
+| Undo      | ok     |
+| Redo      | ok     |
 | Start     | -      |
 | Exit      | -      |
-| Wait      | -      |
+| Wait      | ok     |
 
 ## Setup and Installation
 

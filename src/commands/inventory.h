@@ -1,9 +1,7 @@
-#ifndef COMMAND_INVENTORY_h
-#define COMMAND_INVENTORY_h
+#ifndef COMMAND_INVENTORY_H
+#define COMMAND_INVENTORY_H
 
-#include "..\adt\simulator.h"
-
-extern simulator_t simulator;
+#include "../services/simulator.h"
 
 void cmd_inventory();
 

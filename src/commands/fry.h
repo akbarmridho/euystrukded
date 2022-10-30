@@ -1,13 +1,9 @@
-#ifndef COMMAND_FRY_h
-#define COMMAND_FRY_h
+#ifndef COMMAND_FRY_H
+#define COMMAND_FRY_H
 
 #include <stdio.h>
-#include "..\services\fryer.h"
-#include "..\utils\validator.h"
-
-extern simulator_t simulator;
-extern ListFoodRecipe food_recipe;
-extern ListTree list_tree_recipe;
+#include "../services/fryer.h"
+#include "../utils/validator.h"
 
 void do_fry();
 
