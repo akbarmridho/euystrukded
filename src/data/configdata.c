@@ -383,12 +383,14 @@ void load_food_recipe(char * path_food, char * path_recipe) {
     boolean found_id_child = false;
     recipe_t recipe;
     int i = 0;
+    int idx_lfr= 0;
     while (!feof(fp_recipe)) {
         int val = fgetc(fp_recipe);
         if (count != 0) {
-            if (val != '\n') {
+            if (val != '\n' && !feof(fp_recipe)) {
+                // printf("1 ");
                 if (val != ' ' && !found_id_recipe) {
-                    printf("1 ");
+                    // printf("1 ");
                     if(val >= '0' && val <= '9'){
                         int convertion = (int) val - 48;
                         id_recipe = id_recipe * 10 + convertion;
@@ -415,56 +417,79 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                         if(val >= '0' && val <= '9'){
                             int convertion = (int) val - 48;
                             id_child = id_child * 10 + convertion;
+                            // printf("%d ", id_child);
                         }
-                    } else {
+                    }else {
                         found_id_child = true;
                     }
                 }
                 if (found_id_child) {
                     list_ingredient[index_ing] = id_child;
+                    // printf("%d ", id_child);
                     id_child = 0;
                     index_ing++;
                     found_id_child = false;
+                    counter_dummy_child= 0;
                 }
             } else {
+                list_ingredient[index_ing]= id_child;
                 create_recipe(&recipe, id_recipe, total_recipe, list_ingredient);
-                printf("%d ", recipe.food_id);
-                printf("-\n");
+                // printf("%d ", recipe.ingredients_count);
+                // for(int i= 0; i<recipe.ingredients_count; i++){
+                //     printf("%d ", recipe.ingredients[i]);
+                // }
+                id_child= 0;
+                // printf("-\n");
                 id_recipe = 0;
                 total_recipe = 0;
                 index_ing = 0;
+                counter_dummy_total= 0;
+                counter_dummy_child= 0;
                 found_id_recipe = false;
                 found_id_child = false;
                 found_total_recipe = false;
                 boolean found = false;
+                // printf("%d ", food.buffer[1].id == recipe.food_id);
                 while (!found) {
+                    // printf("1 ");
+                    // found= true;
                     if (food.buffer[i].id == recipe.food_id) {
+                        // printf("1 ");
+                        // printf("%d ", food.buffer[i].id);
                         found = true;
                         food_recipe_t food_recipe_temp;
                         food_recipe_temp.food = food.buffer[i];
                         food_recipe_temp.recipe = recipe;
-                        food_recipe.contents[i] = food_recipe_temp;
-                        i++;
+                        food_recipe.contents[idx_lfr] = food_recipe_temp;
+                        idx_lfr ++;
                     }
+                    i++;
                 }
             }
         }
+        if(val == '\n'){
+            count++;
+        }
     }
+    // printf("%d ", idx_lfr);
     /*Untuk buy*/
     food_recipe_t food_recipe_temp;
-    for (int j = 0; j < index + 1; j++) {
+    for (int j = 0; j < index ; j++) {
         if (food.buffer[j].source == Buy) {
             int temp[] = {0};
+            // printf("%d ", food.buffer[j].id);
             create_recipe(&recipe, food.buffer[j].id, 0, temp);
             food_recipe_temp.food = food.buffer[j];
             food_recipe_temp.recipe = recipe;
-            food_recipe.contents[i] = food_recipe_temp;
-            i++;
+            food_recipe.contents[idx_lfr] = food_recipe_temp;
+            idx_lfr++;
         }
     }
     /*neff lfr*/
-    food_recipe.neff = i - 1;
+    food_recipe.neff = idx_lfr-1;
     fclose(fp_recipe);
+    // printf("%d ", food_recipe.neff);
+    // printf("%d ", food_recipe.contents[3].recipe.ingredients_count);
 }
 
 void build_tree_recipe() {
