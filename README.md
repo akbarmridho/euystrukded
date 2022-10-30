@@ -43,40 +43,40 @@ Services:
 
 Commands:
 
-1. Wilson: boil, buy, catalog
+1. Wilson: config data, buy, catalog
 2. Egi: chop, cookbook, delivery
 3. Eugene: fry, inventory, mix
 4. Akbar: move, redo, undo
-5. Salomo: start, exit, wait, main program
+5. Salomo: start, exit, wait, main program, boil
 
 ## Daftar Fitur dan Status Pengerjaan
 
 ADT
 
-| Nama             | Status |
-|------------------|--------|
-| Charmachine      | -      |
-| Worcmachine      | -      |
-| Stack            | -      |
-| Food             | -      |
-| List food        | -      |
-| List delivery    | -      |
-| List food recipe | -      |
-| Recipe           | ok     |
-| Point            | ok     |
-| String           | -      |
-| Notification     | -      |
-| Simulator        | -      |
-| Time             | ok     |
-| Matrix           | ok     |
-| Tree             | -      |
+| Nama             | Status  |
+|------------------|---------|
+| Charmachine      | perfect |
+| Wordmachine      | perfect |
+| Stack            | perfect |
+| Food             | perfect |
+| List food        | perfect |
+| List delivery    | perfect |
+| List food recipe | perfect |
+| Recipe           | perfect |
+| Point            | perfect |
+| String           | perfect |
+| Notification     | perfect |
+| Simulator        | perfect |
+| Time             | perfect |
+| Matrix           | perfect |
+| Tree             | perfect |
 
 Service
 
 | Nama      | Status |
 |-----------|--------|
-| Chopper   | -      |
-| Boiler    | -      |
+| Chopper   | ok     |
+| Boiler    | ok     |
 | Clock     | -      |
 | Delivery  | -      |
 | Notifier  | -      |

@@ -1,5 +1,5 @@
-#ifndef __LIST_FOOD_H
-#define __LIST_FOOD_H
+#ifndef ADT_LIST_FOOD_H
+#define ADT_LIST_FOOD_H
 
 #include "boolean.h"
 #include "food.h"
@@ -9,16 +9,15 @@
 /*  Kamus Umum */
 #define IDX_MIN 0
 /* Indeks minimum list */
-#define IDX_UNDEF -1
+#define LF_IDX_UNDEF (-1)
 /* Indeks tak terdefinisi*/
 
 /* Definisi elemen dan koleksi objek */
 typedef int IdxType;
-typedef struct
-{
-   food_t *buffer; /* memori tempat penyimpan elemen (container) */
-   int nEff;       /* >=0, banyaknya elemen efektif */
-   int capacity;   /* ukuran elemen */
+typedef struct {
+    food_t *buffer; /* memori tempat penyimpan elemen (container) */
+    int nEff;       /* >=0, banyaknya elemen efektif */
+    int capacity;   /* ukuran elemen */
 } ListFood;
 /* Indeks yang digunakan [0..capacity-1] */
 /* Jika l adalah : ListFood, cara deklarasi dan akses: */
@@ -45,10 +44,12 @@ I.S. l sembarang, capacity > 0
 F.S. Terbentuk list dinamis l kosong dengan kapasitas capacity
 */
 void create_list_food(ListFood *l, int capacity);
+
 /*
 I.S. l terdefinisi;
 F.S. (l) dikembalikan ke system, CAPACITY(l)=0; NEFF(l)=0 */
 void deallocate_list_food(ListFood *l);
+
 /*
 Banyaknya elemen
 Mengirimkan banyaknya elemen efektif list
@@ -72,7 +73,7 @@ void list_food_copy(ListFood lIn, ListFood *lOut);
 I.S. l tidak kosong, l sembarang, idx valid pada l
 F.S. element pada index idx dihapus
 */
-void list_food_delete(ListFood * l , int idx);
+void list_food_delete(ListFood *l, int idx);
 
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
@@ -130,5 +131,8 @@ void shrink_list_food(ListFood *l, int num);
 I.S. List tidak kosong
 F.S. Ukuran nEff = capacity */
 void compress_list_food(ListFood *l);
+
+/* Proses : Menampilkan isi list ke layar */
+void display_list_food(ListFood l);
 
 #endif

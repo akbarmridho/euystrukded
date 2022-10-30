@@ -5,7 +5,7 @@
 void create_stack(StackState *S, int capacity) {
     (*S).max_capacity = capacity;
     (*S).buffer = (state_t *) malloc((*S).max_capacity * sizeof(state_t));
-    (*S).top = IDX_UNDEF;
+    (*S).top = S_IDX_UNDEF;
 }
 
 boolean stack_is_full(StackState S) {
@@ -19,12 +19,12 @@ void expand_stack(StackState *S) {
 
 void dealocate_stack(StackState *S) {
     (*S).max_capacity = 0;
-    (*S).top = IDX_UNDEF;
+    (*S).top = S_IDX_UNDEF;
     free((*S).buffer);
 }
 
 boolean stack_is_empty(StackState S) {
-    return (S.top == IDX_UNDEF);
+    return (S.top == S_IDX_UNDEF);
 }
 
 void stack_push(StackState *S, state_t val) {

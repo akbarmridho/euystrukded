@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "string.h"
 #include "point.h"
 #include "food.h"
@@ -11,11 +10,10 @@
 
 /* I.S. simulator sembarang
    F.S. simlator terdefinisi, dengan nama pengguna dan lokasi simulator serta inventory makanan tersimpan di dalam simulator*/
-void create_simulator (simulator_t *sim, string name) {
-    new_string(&name,MAX);
-    create_point(&position(*sim),0,0);
-    create_time(&time(*sim),0,0,0);
+void create_simulator(simulator_t *sim, string name) {
+    new_string(&name, MAX);
+    create_point(&position(*sim), 0, 0);
+    create_time(&time(*sim), 0, 0, 0);
     create_notification(&notification(*sim));
-    create_list_food(&inventory(*sim), CAPACITY);
-
+    create_list_food(&inventory(*sim), 50);
 }

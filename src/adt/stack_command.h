@@ -13,7 +13,6 @@ typedef struct {
     point_t position;
     day_time_t time;
     ListDelivery delivery;
-    ListNotification notification;
 } state_t;
 
 typedef struct {
@@ -22,7 +21,7 @@ typedef struct {
     int top; /* alamat TOP: elemen puncak */
 } StackState;
 
-#define IDX_UNDEF -1
+#define S_IDX_UNDEF (-1)
 
 /*
 Sisanya implementasi sendiri :)

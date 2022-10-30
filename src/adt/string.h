@@ -1,13 +1,12 @@
-#ifndef ADT__STRING_H
-#define ADT__STRING_H
+#ifndef ADT_STRING_H
+#define ADT_STRING_H
 
 #include "wordmachine.h"
 
 #define MAX 100
 #define UNDEF -1
 
-typedef struct 
-{
+typedef struct {
     char *chars;
     int neff;
     int capacity;
@@ -15,7 +14,7 @@ typedef struct
 
 #define STRING_MARK '\0'
 #define chars(s) (s).chars
-#define char(s,i) (s).chars[i]
+#define char(s, i) (s).chars[i]
 #define neff(s) (s).neff
 #define capacity(s) (s).capacity
 
@@ -23,7 +22,7 @@ typedef struct
 
 /* F.S. string sembarang
    I.S. string terdefinisi*/
-void new_string (string *str, int cap);
+void new_string(string *str, int cap);
 
 /* ------------PRIMITIF LAIN------------ */
 

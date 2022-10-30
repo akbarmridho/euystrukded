@@ -3,9 +3,9 @@
 #include "string.h"
 
 /* ------------KONSTRUKTOR------------ */
-void new_string (string *str, int cap) {
-    chars(*str) = (char*) malloc(cap * sizeof(char));
-    neff(*str) = 0 ;
+void new_string(string *str, int cap) {
+    chars(*str) = (char *) malloc(cap * sizeof(char));
+    neff(*str) = 0;
     capacity(*str) = cap;
 }
 /* F.S. string sembarang
@@ -20,7 +20,7 @@ int str_len(string s) {
 
 /* mengambil suatu huruf dalam string di indeks ke-x */
 char letter_at(string s, int x) {
-    return char(s,x);
+    return char(s, x);
 }
 
 void deallocate(string *str) {
@@ -38,7 +38,7 @@ string char_to_string(char c[]) {
         i++;
     }
 
-    new_string(&sHasil,i);
+    new_string(&sHasil, i);
 
     for (int j = 0; j < i; j++) {
         insert_char_last(c[j], &sHasil);
@@ -56,9 +56,9 @@ string cut_str(string s, int idxStart, int idxEnd) {
     string sHasil;
     int i;
 
-    new_string(&sHasil, idxEnd -idxStart + 1);
+    new_string(&sHasil, idxEnd - idxStart + 1);
     for (i = idxStart; i < idxEnd + 1; i++) {
-        char(sHasil,i) = char(s,i);
+        char(sHasil, i) = char(s, i);
     }
 }
 
@@ -66,9 +66,9 @@ string cut_str(string s, int idxStart, int idxEnd) {
 string copy_string(string s, string *sCopy) {
     int i;
 
-    new_string(sCopy,capacity(s));
+    new_string(sCopy, capacity(s));
     for (i = 0; i < str_len(s) + 1; i++) {
-        char(*sCopy,i) = char(s,i);
+        char(*sCopy, i) = char(s, i);
     }
 
     neff(*sCopy) = neff(s);
@@ -78,13 +78,13 @@ string copy_string(string s, string *sCopy) {
 /* membandingkan 2 string */
 boolean comparestr(string s1, string s2) {
     int i = 0;
-    boolean same = false;
+    boolean same = true;
 
     if (str_len(s1) != str_len(s2)) {
         same = false;
     } else {
         while (i < str_len(s1) && same == true) {
-            if (char(s1,i) == char(s2,i)) {
+            if (char(s1, i) == char(s2, i)) {
                 i += 1;
             } else {
                 same = false;
@@ -98,17 +98,17 @@ boolean comparestr(string s1, string s2) {
 
 /* menggabungkan 2 string */
 string concat(string s1, string s2) {
-    int i,j = 0;
+    int i, j = 0;
     string sHasil;
 
-    new_string(&sHasil,capacity(s1) + capacity(s2));
+    new_string(&sHasil, capacity(s1) + capacity(s2));
     for (i = 0; i < str_len(s1); i++) {
-        char(sHasil,i) = char(s1,i);
+        char(sHasil, i) = char(s1, i);
     }
 
     i += 1;
-    while (char(s2,j) != STRING_MARK) {
-        char(sHasil,i) = char(s2,j);
+    while (char(s2, j) != STRING_MARK) {
+        char(sHasil, i) = char(s2, j);
         j++;
         i++;
     }
@@ -120,7 +120,7 @@ string concat(string s1, string s2) {
 string word_to_string(word_t word) {
     string sHasil;
     int i;
-    new_string(&sHasil,capacity(sHasil));
+    new_string(&sHasil, capacity(sHasil));
 
     for (i = 0; i < word.length; i++) {
         insert_char_last(word.tab_word[i], &sHasil);

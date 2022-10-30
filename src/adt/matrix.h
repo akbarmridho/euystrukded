@@ -32,18 +32,11 @@ void create_matrix(int nRows, int nCols, Matrix *m);
 #define MAT_COL_EFF(M) (M).colEff
 #define MAT_ELMT(M, i, j) (M).mem[(i)][(j)]
 
-/* *** Selektor "Dunia Matrix" *** */
-boolean is_matrix_idx_valid(int i, int j);
-/* Mengirimkan true jika i, j adalah index yang valid untuk matriks apa pun */
-
 /* Mengirimkan Index baris terbesar m */
 IdxType mat_get_last_idx_row(Matrix m);
 
 /* Mengirimkan Index kolom terbesar m */
 IdxType mat_get_last_idx_col(Matrix m);
-
-/* Mengirimkan true jika i, j adalah Index efektif bagi m */
-boolean mat_is_idx_eff(Matrix m, IdxType i, IdxType j);
 
 /* I.S. m terdefinisi
 F.S. Nilai m(i,j) ditulis ke layar per baris per kolom, masing-masing elemen per baris

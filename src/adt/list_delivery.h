@@ -1,18 +1,18 @@
-#ifndef __LIST_DELIVERY_H
-#define __LIST_DELIVERY_H
+#ifndef ADT_LIST_DELIVERY_H
+#define ADT_LIST_DELIVERY_H
 
 #include "boolean.h"
+#include <stdlib.h>
 #include "list_food.h"
 
 /*  didefinisikan di list_food.h */
-// #define IDX_MIN 0
-// #define IDX_UNDEF -1
+#define IDX_MIN 0
+#define LD_IDX_UNDEF (-1)
 
 /* Definisi elemen dan koleksi objek */
 typedef food_t food_t; /* type elemen list */
 typedef int IdxType;
-typedef struct
-{
+typedef struct {
     food_t *buffer; /* memori tempat penyimpan elemen (container) */
     int nEff;       /* >=0, banyaknya elemen efektif */
     int capacity;   /* ukuran elemen */
@@ -59,12 +59,7 @@ void list_delivery_copy(ListDelivery lIn, ListDelivery *lOut);
 I.S. l tidak kosong, l sembarang, idx valid pada l
 F.S. element pada index idx dihapus
 */
-void list_delivery_delete(ListDelivery * l , int idx){
-    for (int i= idx;i<list_delivery_length(*l)-1;i++){
-        ELMT(*l,i) = ELMT(*l,i+1);
-    }
-    NEFF(*l)--;
-}
+void list_delivery_delete(ListDelivery *l, int idx);
 
 /* Menghasilkan berapa banyak kemunculan val di l
 Jika l kosong menghasilkan 0 */
@@ -102,6 +97,7 @@ int dequeue_delivery(ListDelivery *l, food_t *val);
 
 /* Hitung banyaknya makanan yang bisa dideliver sekarang (delivery time nol)*/
 int count_to_deliver(ListDelivery *l);
+
 /*
 Proses : Menambahkan capacity l sebanyak num
 I.S. List sudah terdefinisi
@@ -117,5 +113,8 @@ void shrink_list_delivery(ListDelivery *l, int num);
 I.S. List tidak kosong
 F.S. Ukuran nEff = capacity */
 void compress_list_delivery(ListDelivery *l);
+
+/* Proses : Menampilkan isi list ke layar */
+void display_list_delivery(ListDelivery l);
 
 #endif

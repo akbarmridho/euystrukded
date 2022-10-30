@@ -1,30 +1,22 @@
-/* File: mesinkata.h */
-/* Definisi Mesin Word: Model Akuisisi Versi I */
-
-#ifndef ADT_WORD_MACHINE_H
-#define ADT_WORD_MACHINE_H
-
 #include "charmachine.h"
+#include "wordmachine.h"
 
-#define NMax 50
-#define BLANK ' '
 
-typedef struct {
-    char tab_word[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */
-    int length;
-} word_t;
-
-/* State Mesin Word */
-extern boolean end_word;
-extern word_t current_word;
+char current_char;
+boolean EOP;
+//boolean end_word;
+//word_t current_word;
 
 /*
-Implementasikan ignore blank agar juga bisa menanggap \n sebagai blank
 Mengabaikan satu atau beberapa BLANK
 I.S. : CC sembarang
-F.S. : CC ≠ BLANK atau CC = MARK */
-void ignore_blank();
-
+F.S. : CC ≠ BLANK atau CC = MARK 
+*/
+void ignore_blank() {
+    while (current_char == BLANK && current_char != CLI_MARK) {
+        advance();
+    }
+}
 /*
 source bisa berupa stdin atau file
 parameter is_file bisa berupa
@@ -34,14 +26,31 @@ F.S. : end_word = true, dan CC = MARK;
           CC karakter pertama sesudah karakter terakhir kata
 */
 // void start_word(FILE *source, boolean is_file);
-void start_word();
+void start_word() {
+    start();
+    ignore_blank();
+    if (current_char == CLI_MARK) {
+        end_word = true;
+    } else {
+        end_word = false;
+        copy_word();
+    }
+}
 
 /* I.S. : CC adalah karakter pertama kata yang akan diakuisisi
    F.S. : CWord adalah kata terakhir yang sudah diakuisisi,
           CC adalah karakter pertama dari kata berikutnya, mungkin MARK
           Jika CC = MARK, end_word = true.
    Proses : Akuisisi kata menggunakan procedure SalinWord */
-void advance_word();
+void advance_word() {
+    ignore_blank();
+    if (current_char == CLI_MARK) {
+        end_word = true;
+    } else {
+        copy_word();
+        end_word = false;
+    }
+}
 
 /* Mengakuisisi kata, menyimpan dalam CWord
    I.S. : CC adalah karakter pertama dari kata
@@ -49,6 +58,12 @@ void advance_word();
           CC = BLANK atau CC = MARK;
           CC adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
-void copy_word();
-
-#endif
+void copy_word() {
+    int i = 0;
+    while ((current_char != CLI_MARK) && (current_char != BLANK) && (i < NMax)) {
+        current_word.tab_word[i] = current_char;
+        advance();
+        i++;
+    }
+    current_word.length = i;
+}
