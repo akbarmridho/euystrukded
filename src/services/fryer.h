@@ -1,12 +1,11 @@
+#ifndef SERVICE_FRYER_H
+#define SERVICE_FRYER_H
+
 #include "clock.h"
 #include "../data/simulator.h"
 #include "../data/configdata.h"
 #include "../adt/boolean.h"
 #include "../adt/tree.h"
-
-extern simulator_t simulator;
-extern ListFoodRecipe food_recipe;
-extern ListTree list_tree_recipe;
 
 
 /*
@@ -24,3 +23,5 @@ boolean can_fry_food(Tree recipe_tree);
  * enqueue hasil ke inventory
 */
 boolean fry(Tree recipe_tree);
+
+#endif

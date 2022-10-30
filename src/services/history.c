@@ -1,10 +1,5 @@
 #include "history.h"
 
-simulator_t simulator;
-StackState history;
-StackState restore;
-ListDelivery delivery;
-
 state_t generate_state() {
     // copy inventory
     ListFood inventory_copy;

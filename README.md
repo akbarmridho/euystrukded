@@ -77,13 +77,13 @@ Service
 |-----------|--------|
 | Chopper   | ok     |
 | Boiler    | ok     |
-| Clock     | -      |
-| Delivery  | -      |
+| Clock     | ok     |
+| Delivery  | ok     |
 | Notifier  | -      |
-| History   | -      |
-| Map       | -      |
+| History   | ok     |
+| Map       | ok     |
 | Mixer     | -      |
-| Fryer     | -      |
+| Fryer     | ok     |
 | Simulator | -      |
 
 Commands

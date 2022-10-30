@@ -7,8 +7,6 @@
 
 #include "boiler.h"
 
-simulator_t simulator;
-
 /*
  * BOILER CHECK
  * mengecek apakah bahan baku tersedia untuk melakukan proses boil
