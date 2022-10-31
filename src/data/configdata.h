@@ -10,10 +10,13 @@
 #include "../adt/list_delivery.h"
 #include "../adt/food.h"
 #include "../adt/simulator.h"
+#include "../utils/parser.h"
 
 extern ListFoodRecipe food_recipe;
 extern Matrix map;
 extern ListTree list_tree_recipe;
+
+extern boolean DEBUG;
 
 void load_map(char *path);
 

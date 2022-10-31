@@ -41,7 +41,7 @@ string char_to_string(char c[]);
 string cut_str(string s, int idxStart, int idxEnd);
 
 /* mengcopy string */
-string copy_string(string s, string *sCopy);
+void copy_string(string s, string *sCopy);
 
 /* membandingkan 2 string */
 boolean comparestr(string s1, string s2);

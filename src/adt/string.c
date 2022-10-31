@@ -66,7 +66,7 @@ string cut_str(string s, int idxStart, int idxEnd) {
 }
 
 /* mengcopy string */
-string copy_string(string s, string *sCopy) {
+void copy_string(string s, string *sCopy) {
     int i;
 
     new_string(sCopy, capacity(s));

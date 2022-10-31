@@ -42,6 +42,4 @@ void lt_insert_last(ListTree *l, Tree item);
 
 Tree lt_search_by_id(ListTree *l, int id);
 
-void add_from_food_recipe(ListTree *l, ListFoodRecipe lfr, food_recipe_t fr);
-
 #endif

@@ -20,28 +20,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="bugfix: move command">
-      <change afterPath="$PROJECT_DIR$/src/commands/processor.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/processor.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/parser.c" afterDir="false" />
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="come random thingsss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/list_food_recipe.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/list_food_recipe.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/list_food_recipe.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/list_food_recipe.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/wordmachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/wordmachine.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/boil.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/boil.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/fry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/mix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/mix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/tree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/configdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +137,8 @@
       <workItem from="1667173506278" duration="66000" />
       <workItem from="1667173977954" duration="22000" />
       <workItem from="1667184465013" duration="5942000" />
-      <workItem from="1667190622403" duration="3128000" />
+      <workItem from="1667190622403" duration="3297000" />
+      <workItem from="1667195149627" duration="6892000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -458,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667187902374</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="come random thingsss">
+      <created>1667193944118</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1667193944118</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: display notification update message" />
     <MESSAGE value="final: adt matrix, point, recipe, time" />
     <MESSAGE value="update: add list tree recipe to global vars" />
     <MESSAGE value="final: tree and food driver" />
@@ -501,7 +497,8 @@
     <MESSAGE value="move finalyy bisa" />
     <MESSAGE value="add build script" />
     <MESSAGE value="bugfix: move command" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: move command" />
+    <MESSAGE value="come random thingsss" />
+    <option name="LAST_COMMIT_MESSAGE" value="come random thingsss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
