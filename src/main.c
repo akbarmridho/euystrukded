@@ -133,6 +133,8 @@ int main() {
             sscanf(time_s, "%d %d", &hour, &minute);
             wait(hour, minute);
             deallocate_string(&time);
+        } else {
+            printf("Perintah tidak dikenali.\n");
         }
 
         deallocate_string(&current_input);

@@ -20,14 +20,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="call backup state every side effect command">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="move finalyy bisa">
+      <change afterPath="$PROJECT_DIR$/compile-linux.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compile-windows.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/clock.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/clock.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +95,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -135,7 +132,10 @@
       <workItem from="1667102261812" duration="357000" />
       <workItem from="1667102869540" duration="22947000" />
       <workItem from="1667128401080" duration="6409000" />
-      <workItem from="1667135728011" duration="3512000" />
+      <workItem from="1667135728011" duration="4960000" />
+      <workItem from="1667173506278" duration="66000" />
+      <workItem from="1667173977954" duration="22000" />
+      <workItem from="1667184465013" duration="2008000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -424,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667136953574</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="move finalyy bisa">
+      <created>1667139288341</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1667139288341</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: history service" />
     <MESSAGE value="feat: initial undo redo implementation" />
     <MESSAGE value="setup: add map service header" />
     <MESSAGE value="fix: display notification update message" />
@@ -467,7 +473,8 @@
     <MESSAGE value="GATAU" />
     <MESSAGE value="glue the main" />
     <MESSAGE value="call backup state every side effect command" />
-    <option name="LAST_COMMIT_MESSAGE" value="call backup state every side effect command" />
+    <MESSAGE value="move finalyy bisa" />
+    <option name="LAST_COMMIT_MESSAGE" value="move finalyy bisa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -476,11 +483,6 @@
           <url>file://$PROJECT_DIR$/src/commands/buy.h</url>
           <line>3</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/main.c</url>
-          <line>113</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/commands/move.c</url>

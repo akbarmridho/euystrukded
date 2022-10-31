@@ -91,8 +91,8 @@ Commands
 | Nama      | Status |
 |-----------|--------|
 | Boil      | ok     |
-| Buy       | -      |
-| Catalog   | -      |
+| Buy       | ok     |
+| Catalog   | ok     |
 | Chop      | ok     |
 | Cookbook  | ok     |
 | Delivery  | ok     |
@@ -102,8 +102,8 @@ Commands
 | Move      | ok     |
 | Undo      | ok     |
 | Redo      | ok     |
-| Start     | -      |
-| Exit      | -      |
+| Start     | ok     |
+| Exit      | ok     |
 | Wait      | ok     |
 
 ## Setup and Installation
@@ -122,14 +122,76 @@ git clone https://github.com/haiakbar/euystrukded.git
 
 2. Compile the program
 
+### Windows
+
+Pastikan gcc dan cmake telah terinstall. Buka terminal pada folder project, lalu buat Makefiles dengan perintah
+
 ```
-todo
+cmake -B build . -G "MinGW Makefiles"
+```
+
+Setelah berhasil, pindah ke folder build
+
+```
+cd build
+```
+
+Jalankan makefile
+
+```
+mingw32-make
+```
+
+Sebagai alternatif, bisa jalankan script compile dengan memanggil
+
+```
+./compile-windows.ps1
+```
+
+### Linux
+
+Buka terminal pada folder project, lalu buat Makefiles dengan perintah
+
+```
+cmake -B build .
+```
+
+Setelah berhasil, pindah ke folder build
+
+```
+cd build
+```
+
+Jalankan makefile
+
+```
+make
+```
+
+Sebagai alternatif, bisa jalankan script compile dengan memanggil
+
+```
+./compile-linux.sh
 ```
 
 3. Run the app
 
+Pada folder build, jalankan perintah
+
 ```
-todo
+./euystrukded
+```
+
+atau jalankan
+
+```
+./run.ps1
+```
+
+atau
+
+```
+./run.sh
 ```
 
 ## Branching and Commit Messages

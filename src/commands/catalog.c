@@ -3,7 +3,7 @@
 
 void display_catalog() {
     printf("List Makanan\n");
-    printf("nama - durasi kadaluarsa - aksi yang diperlukan - delivery time\n");
+    printf("(nama - durasi kadaluarsa - aksi yang diperlukan - delivery time)\n");
     for (int i = 0; i < neff(food_recipe); i++) {
         printf("%d. ", i + 1);
         print_string(food_recipe.contents[i].food.name);
