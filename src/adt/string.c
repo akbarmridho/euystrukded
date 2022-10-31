@@ -120,19 +120,16 @@ boolean startwith(string full, string start) {
 
 /* menggabungkan 2 string */
 string concat(string s1, string s2) {
-    int i, j = 0;
     string sHasil;
 
     new_string(&sHasil, capacity(s1) + capacity(s2));
-    for (i = 0; i < str_len(s1); i++) {
-        char(sHasil, i) = char(s1, i);
+
+    for (int i = 0; i < str_len(s1); i++) {
+        insert_char_last(letter_at(s1, i), &sHasil);
     }
 
-    i += 1;
-    while (char(s2, j) != STRING_MARK) {
-        char(sHasil, i) = char(s2, j);
-        j++;
-        i++;
+    for (int i = 0; i < str_len(s2); i++) {
+        insert_char_last(letter_at(s2, i), &sHasil);
     }
 
     return sHasil;

@@ -1,10 +1,9 @@
-//
-// Created by akbar on 31/10/2022.
-//
-
 #include "display.h"
 
 void clear_display() {
+    if (DEBUG) {
+        return;
+    }
 #ifdef __WIN32
     system("cls");
 #else

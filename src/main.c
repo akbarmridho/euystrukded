@@ -40,7 +40,6 @@ string get_name() {
 
 int main() {
     printf("Selamat datang di dinner dash!\n");
-    printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
 
     string START = char_to_string("START");
     string EXIT = char_to_string("EXIT");
@@ -58,27 +57,32 @@ int main() {
     string UNDO = char_to_string("UNDO");
     string WAIT = char_to_string("WAIT");
 
+    string name;
 
-    start_word();
-
-    if (!comparestr(START, word_to_string(current_word))) {
-        return 0;
+    if (!DEBUG) {
+        printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
+        start_word();
+        if (!comparestr(START, word_to_string(current_word))) {
+            return 0;
+        }
+        printf("Masukkan nama anda: ");
+        advance_word();
+        name = word_to_string(current_word);
+    } else {
+        name = char_to_string("DEBUG PROFILE");
     }
-
-
-    printf("Masukkan nama anda: ");
-    advance_word();
-    string name = word_to_string(current_word);
 
     start_program(name);
-
-    if (!CONFIG_DEBUG) {
-        clear_display();
-    }
-
+    clear_display();
     display_info();
     printf("Enter command: ");
-    advance_word();
+
+    if (DEBUG) {
+        start_word();
+    } else {
+        advance_word();
+    }
+
     boolean exit = false;
 
     while (!exit) {
@@ -88,27 +92,22 @@ int main() {
             exit = true;
             continue;
         } else if (comparestr(BOIL, current_input)) {
-//            do_boil();
             process_request(Boil);
         } else if (comparestr(BUY, current_input)) {
-//            cmd_buy();
             process_request(Buy);
         } else if (comparestr(CATALOG, current_input)) {
             display_catalog();
         } else if (comparestr(CHOP, current_input)) {
-//            do_chop();
             process_request(Chop);
         } else if (comparestr(COOKBOOK, current_input)) {
             cookbook();
         } else if (comparestr(DELIVERY, current_input)) {
             display_delivery();
         } else if (comparestr(FRY, current_input)) {
-//            do_fry();
             process_request(Fry);
         } else if (comparestr(INVENTORY, current_input)) {
             cmd_inventory();
         } else if (comparestr(MIX, current_input)) {
-//            do_mix();
             process_request(Mix);
         } else if (startwith(current_input, MOVE)) {
             string direction = cut_str(current_input, 5, current_input.neff - 1);

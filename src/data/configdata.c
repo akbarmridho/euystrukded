@@ -5,7 +5,7 @@ ListFoodRecipe food_recipe;
 Matrix map;
 ListTree list_tree_recipe;
 
-boolean DEBUG = true;
+boolean DEBUG = false;
 boolean CONFIG_DEBUG = false;
 boolean MAP_DEBUG = false;
 boolean FOOD_DEBUG = false;

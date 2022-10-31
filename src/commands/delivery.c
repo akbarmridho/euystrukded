@@ -16,4 +16,6 @@ void display_delivery() {
             putchar('\n');
         }
     }
+
+    printf("\nEnter command: ");
 }
