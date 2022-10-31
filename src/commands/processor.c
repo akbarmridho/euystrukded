@@ -87,7 +87,7 @@ void process_request(enum food_source source) {
     int choice = validate_int(0, counter, prompt);
 
     if (choice == 0) {
-        system("clear");
+        clear_display();
         display_info();
         return;
     }

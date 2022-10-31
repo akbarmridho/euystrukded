@@ -1,9 +1,13 @@
 #include "../services/clock.h"
 #include "wait.h"
 
-void wait(int x, int y) {
+void wait(int hour, int minute) {
     backup_state();
-    for (int i = 0; i < y + x * 60; i++) {
+    for (int i = 0; i < minute + hour * 60; i++) {
         next_tick();
     }
+
+    clear_display();
+    display_info();
+    printf("Enter command: ");
 }

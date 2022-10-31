@@ -27,7 +27,7 @@ void cmd_move(string direction) {
         backup_state();
         move(dest);
         next_tick();
-        system("clear");
+        clear_display();
         display_info();
     } else {
         printf("Anda tidak bisa bergerak ke sana :(\n");

@@ -48,7 +48,7 @@ boolean list_delivery_is_full(ListDelivery l) {
 F.S. lOut berisi salinan dari lIn (identik, nEff dan capacity sama)
 Proses : Menyalin isi lIn ke lOut */
 void list_delivery_copy(ListDelivery lIn, ListDelivery *lOut) {
-    deallocate_list_delivery(lOut);
+//    deallocate_list_delivery(lOut);
     create_list_delivery(lOut, CAPACITY(lIn));
     NEFF(*lOut) = NEFF(lIn);
     for (int i = 0; i < list_delivery_length(lIn); i++) {

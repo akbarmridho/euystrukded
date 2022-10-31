@@ -55,7 +55,7 @@ boolean list_food_is_full(ListFood l) {
 F.S. lOut berisi salinan dari lIn (identik, nEff dan capacity sama)
 Proses : Menyalin isi lIn ke lOut */
 void list_food_copy(ListFood lIn, ListFood *lOut) {
-    deallocate_list_food(lOut);
+//    deallocate_list_food(lOut);
     create_list_food(lOut, CAPACITY(lIn));
     NEFF(*lOut) = NEFF(lIn);
     for (int i = 0; i < list_food_length(lIn); i++) {

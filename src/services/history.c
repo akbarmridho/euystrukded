@@ -8,14 +8,6 @@ state_t generate_state() {
     ListFood inventory_copy;
     list_food_copy(simulator.inventory, &inventory_copy);
 
-    // copy position
-    point_t point_copy;
-    create_point(&point_copy, simulator.position.x, simulator.position.y);
-
-    // copy time
-    day_time_t dt_copy;
-    create_time(&dt_copy, simulator.time.dd, simulator.time.hh, simulator.time.mm);
-
     // copy list delivery
     ListDelivery delivery_copy;
     list_delivery_copy(delivery, &delivery_copy);
@@ -23,8 +15,8 @@ state_t generate_state() {
     state_t backup;
 
     backup.delivery = delivery_copy;
-    backup.time = dt_copy;
-    backup.position = point_copy;
+    backup.time = simulator.time;
+    backup.position = simulator.position;
     backup.inventory = inventory_copy;
 
     return backup;
@@ -32,13 +24,14 @@ state_t generate_state() {
 
 void set_state(state_t state) {
     list_food_copy(state.inventory, &simulator.inventory);
-    create_point(&simulator.position, state.position.x, state.position.y);
-    create_time(&simulator.time, state.time.dd, state.time.hh, state.time.mm);
+    simulator.time = state.time;
+    simulator.position = state.position;
     list_delivery_copy(state.delivery, &delivery);
 }
 
 void backup_state() {
     state_t backup = generate_state();
+    printf("before stack push\n");
     stack_push(&history, backup);
 
     state_t dump;

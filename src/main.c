@@ -129,6 +129,7 @@ int main() {
             }
 
             time_s[time.neff] = '\0';
+
             int hour;
             int minute;
 
