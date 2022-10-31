@@ -39,7 +39,10 @@ string get_name() {
 }
 
 int main() {
-    printf("Selamat datang di dinner dash!\n");
+    clear_display();
+    print_splash_screen();
+
+    printf("\nSelamat datang di Sumeru! Nikmati berbagai hidangan yang ada di seluruh penjuru Tevyat\n");
 
     string START = char_to_string("START");
     string EXIT = char_to_string("EXIT");
@@ -60,7 +63,7 @@ int main() {
     string name;
 
     if (!DEBUG) {
-        printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
+        printf("\nKetik START untuk mulai atau EXIT untuk keluar\n");
         start_word();
         if (!comparestr(START, word_to_string(current_word))) {
             return 0;
@@ -143,7 +146,7 @@ int main() {
                 printf("Format wait salah! Gunakan WAIT JAM MENIT atau WAIT MENIT\n");
                 printf("\nEnter command: ");
             }
-            
+
             deallocate_string(&time);
         } else {
             printf("Perintah tidak dikenali.\n");
