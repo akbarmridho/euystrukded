@@ -1,16 +1,12 @@
 #include <stdio.h>
 #include "adt/charmachine.h"
 #include "adt/wordmachine.h"
-#include "commands/boil.h"
 #include "commands/buy.h"
 #include "commands/catalog.h"
-#include "commands/chop.h"
 #include "commands/cookbook.h"
 #include "commands/delivery.h"
 #include "commands/exit.h"
-#include "commands/fry.h"
 #include "commands/inventory.h"
-#include "commands/mix.h"
 #include "commands/move.h"
 #include "commands/redo.h"
 #include "commands/start.h"
@@ -69,9 +65,15 @@ int main() {
     if (!DEBUG) {
         printf("\nKetik START untuk mulai atau EXIT untuk keluar\n");
         start_word();
-        if (!comparestr(START, word_to_string(current_word))) {
-            printf("Perintah tidak dikenali.\n");
-            return 0;
+        while (!comparestr(START, word_to_string(current_word))) {
+            if (comparestr(EXIT, word_to_string(current_word))){
+                printf("Bye Bye!~\n");
+                return 0;
+            }
+            else if (!comparestr(START, word_to_string(current_word))){
+                printf("Perintah tidak dikenali. Ketik START untuk mulai atau EXIT untuk keluar.\n");
+                advance_word();
+            }
         }
         printf("Masukkan nama anda: ");
         advance_word();
@@ -166,5 +168,9 @@ int main() {
         advance_word();
     }
 
+    printf("Bye Bye, ");
+    print_string(name);
+    printf("!~ <3");
+    putchar('\n');
     return 0;
 }

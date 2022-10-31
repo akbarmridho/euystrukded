@@ -1,2 +1,3 @@
 cd build
 ./euystrukded
+cd ..
