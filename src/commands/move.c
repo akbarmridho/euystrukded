@@ -31,6 +31,7 @@ void cmd_move(string direction) {
         display_info();
     } else {
         printf("Anda tidak bisa bergerak ke sana :(\n");
-        printf("Enter command: ");
     }
+
+    printf("Enter command: ");
 }

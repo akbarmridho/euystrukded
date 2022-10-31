@@ -156,11 +156,13 @@ void load_food_recipe(char *path_food, char *path_recipe) {
                 } else {
                     // count++;
                     counter++;
-                    ELMT(food, index).name = name;
+                    string strcpy;
+                    copy_string(name, &strcpy);
+                    ELMT(food, index).name = strcpy;
                     // printf("%s\n", ELMT(food, index).name);
                     // print_string(ELMT(food, index).name);
                     // printf("\n");
-                    deallocate_string(&name);
+//                    deallocate_string(&name);
                     new_string(&name, 100);
                 }
             } else if (counter == 2) {

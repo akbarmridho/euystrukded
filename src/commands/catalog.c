@@ -35,4 +35,6 @@ void display_catalog() {
         }
         printf("\n");
     }
+
+    printf("\nEnter command: ");
 }

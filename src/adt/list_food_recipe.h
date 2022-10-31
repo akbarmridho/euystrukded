@@ -139,4 +139,6 @@ void display_lfr(ListFoodRecipe lfr);
 /* mencari idx resep pada lfr berdasarkan food_id*/
 IdxType lfr_search_by_food_id(ListFoodRecipe lfr, int food_id);
 
+IdxType lfr_search_n_first_by_source(ListFoodRecipe lfr, enum food_source source, int nth);
+
 #endif

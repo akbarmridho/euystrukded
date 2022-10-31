@@ -34,7 +34,6 @@ void display_info() {
     write_point(position(simulator));
     printf("\n");
 
-    printf("Day ");
     write_day(time(simulator));
     printf(" Time: ");
     write_time(time(simulator));
@@ -46,7 +45,7 @@ void display_info() {
 
     display_map();
     printf("\n");
-    printf("Enter Command: ");
+//    printf("Enter Command: ");
 }
 
 boolean is_near(point_t object) {

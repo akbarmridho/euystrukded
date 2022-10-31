@@ -48,9 +48,13 @@ point_t get_char_pos(char c) {
         while (j < MAT_COL_EFF(map) && !found) {
             if (MAT_ELMT(map, i, j) == c) {
                 found = true;
-                create_point(&destination, i, j);
-            }
+                create_point(&destination, j, i);
+            } else {
+                j++;
+            };
         }
+
+        i++;
     }
 
     return destination;

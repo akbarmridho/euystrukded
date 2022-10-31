@@ -16,16 +16,8 @@
 #include "commands/start.h"
 #include "commands/undo.h"
 #include "commands/wait.h"
+#include "commands/processor.h"
 
-word_t current_word;
-boolean end_word;
-//simulator_t simulator;
-//ListDelivery delivery;
-//StackState history;
-//StackState restore;
-//ListFoodRecipe food_recipe;
-//Matrix map;
-//ListTree list_tree_recipe;
 
 string get_name() {
     start_word();
@@ -82,6 +74,7 @@ int main() {
     system("clear");
 
     display_info();
+    printf("Enter command: ");
     advance_word();
     boolean exit = false;
 
@@ -92,23 +85,28 @@ int main() {
             exit = true;
             continue;
         } else if (comparestr(BOIL, current_input)) {
-            do_boil();
+//            do_boil();
+            process_request(Boil);
         } else if (comparestr(BUY, current_input)) {
-            cmd_buy();
+//            cmd_buy();
+            process_request(Buy);
         } else if (comparestr(CATALOG, current_input)) {
             display_catalog();
         } else if (comparestr(CHOP, current_input)) {
-            do_chop();
+//            do_chop();
+            process_request(Chop);
         } else if (comparestr(COOKBOOK, current_input)) {
             cookbook();
         } else if (comparestr(DELIVERY, current_input)) {
             display_delivery();
         } else if (comparestr(FRY, current_input)) {
-            do_fry();
+//            do_fry();
+            process_request(Fry);
         } else if (comparestr(INVENTORY, current_input)) {
             cmd_inventory();
         } else if (comparestr(MIX, current_input)) {
-            do_mix();
+//            do_mix();
+            process_request(Mix);
         } else if (startwith(current_input, MOVE)) {
             string direction = cut_str(current_input, 5, current_input.neff - 1);
 

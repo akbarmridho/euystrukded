@@ -3,8 +3,8 @@
 
 char current_char;
 boolean EOP;
-//boolean end_word;
-//word_t current_word;
+boolean end_word;
+word_t current_word;
 
 /*
 Mengabaikan satu atau beberapa BLANK

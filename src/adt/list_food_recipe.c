@@ -224,3 +224,27 @@ IdxType lfr_search_by_food_id(ListFoodRecipe lfr, int food_id) {
     }
     return found_idx;
 }
+
+/* Mencari indeks makanan ke-nth dengan food_source source */
+IdxType lfr_search_n_first_by_source(ListFoodRecipe lfr, enum food_source source, int nth) {
+    boolean found = false;
+
+    int i = 0;
+    while (!found && i <= lfr_get_last_idx(lfr)) {
+        if (FR_FOOD(LFR_ELMT(lfr, i)).source == source) {
+            if (nth == 1) {
+                found = true;
+            } else {
+                nth--;
+            }
+        } else {
+            i++;
+        }
+    }
+
+    if (found) {
+        return i;
+    }
+
+    return LFR_IDX_UNDEF;
+}
