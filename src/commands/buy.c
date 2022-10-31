@@ -38,7 +38,8 @@ void cmd_buy() {
         return;
     }
 
-    string prompt = char_to_string("Masukkan pilihan: (ketik 0 untuk membatalkan)");
+    printf("\nKirim 0 untuk exit.\n\n");
+    string prompt = char_to_string("Enter command: ");
     int choice = validate_int(0, counter, prompt);
 
     while (choice != 0) {

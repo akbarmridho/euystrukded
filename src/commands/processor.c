@@ -62,10 +62,6 @@ void process_request(enum food_source source) {
             counter++;
             printf("  %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
-
-            printf(" (");
-            write_fulltime(FOOD_DELIVERY_TIME(FR_FOOD(current)));
-            printf(")\n");
         }
     }
 
@@ -73,8 +69,8 @@ void process_request(enum food_source source) {
         printf("Tidak ada resep yang tersedia\nEnter command: ");
         return;
     }
-
-    string prompt = char_to_string("Masukkan pilihan: (ketik 0 untuk membatalkan)");
+    printf("\nKirim 0 untuk exit.\n\n");
+    string prompt = char_to_string("Enter command: ");
     int choice = validate_int(0, counter, prompt);
 
     if (choice == 0) {

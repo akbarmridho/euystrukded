@@ -17,6 +17,8 @@
 #include "commands/undo.h"
 #include "commands/wait.h"
 #include "commands/processor.h"
+#include "commands/clear.h"
+#include "commands/help.h"
 #include "utils/display.h"
 
 string get_name() {
@@ -59,6 +61,8 @@ int main() {
     string REDO = char_to_string("REDO");
     string UNDO = char_to_string("UNDO");
     string WAIT = char_to_string("WAIT");
+    string CLEAR = char_to_string("CLEAR");
+    string HELP = char_to_string("HELP");
 
     string name;
 
@@ -66,6 +70,7 @@ int main() {
         printf("\nKetik START untuk mulai atau EXIT untuk keluar\n");
         start_word();
         if (!comparestr(START, word_to_string(current_word))) {
+            printf("Perintah tidak dikenali.\n");
             return 0;
         }
         printf("Masukkan nama anda: ");
@@ -121,6 +126,10 @@ int main() {
             redo();
         } else if (comparestr(UNDO, current_input)) {
             undo();
+        } else if (comparestr(CLEAR, current_input)) {
+            cmd_clear();
+        } else if (comparestr(HELP, current_input)) {
+            cmd_main_help();
         } else if (startwith(current_input, WAIT)) {
             string time = cut_str(current_input, 5, current_input.neff - 1);
 
@@ -149,7 +158,8 @@ int main() {
 
             deallocate_string(&time);
         } else {
-            printf("Perintah tidak dikenali.\n");
+            printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
+            printf("\nEnter command: ");
         }
 
         deallocate_string(&current_input);

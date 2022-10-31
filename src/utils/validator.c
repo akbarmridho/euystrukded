@@ -8,7 +8,6 @@
 /* inputs an integer x and returns x if min<=x<=max, else input x until x satisfies range */
 int validate_int(int min, int max, string prompt) {
     print_string(prompt);
-    putchar('\n');
 
     advance_word();
     string input = word_to_string(current_word);
@@ -17,7 +16,8 @@ int validate_int(int min, int max, string prompt) {
     sscanf(to_native_str(input), "%d", &x);
 
     while (x < min || x > max) {
-        printf("Input harus berada di antar %d dan %d\n", min, max);
+        printf("Input harus berada di antara %d dan %d\n", min, max);
+        print_string(prompt);
         advance_word();
         deallocate_string(&input);
         input = word_to_string(current_word);
