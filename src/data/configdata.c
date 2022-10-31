@@ -12,6 +12,7 @@ int convert(char cc) {
 void load_map(char *path) {
     FILE *fp;
     fp = fopen(path, "r");//buka file
+
     if (fp == NULL) {
         printf("Null file\n");
     }
@@ -47,7 +48,7 @@ void load_map(char *path) {
                     //blablabla
                 } else {
                     if (!found_col) {
-                        if(temp >= '0' && temp<= '9'){
+                        if (temp >= '0' && temp <= '9') {
                             int convertion = (int) temp - 48;
                             // printf("\n%d\n", convertion);
                             size.col = size.col * 10 + convertion;
@@ -66,7 +67,7 @@ void load_map(char *path) {
         }
         // printf("%c", temp);
     }
-    printf("%d %d\n", size.row, size.col);
+//    printf("%d %d\n", size.row, size.col);
     fclose(fp);
     // Matrix map;
     create_matrix(size.row, size.col, &map);
@@ -89,11 +90,10 @@ void load_map(char *path) {
         }
     }
     fclose(fp);
-
-    display_matrix(map);
+//    display_matrix(map);
 }
 
-void load_food_recipe(char * path_food, char * path_recipe) {
+void load_food_recipe(char *path_food, char *path_recipe) {
     ListFood food;
     create_list_food(&food, 100);
     FILE *fp_food, *fp_recipe;
@@ -127,7 +127,7 @@ void load_food_recipe(char * path_food, char * path_recipe) {
     boolean found_hour = false;
     boolean found_minute = false;
     int counter_dummy_day = 0;
-    int counter_dummy_min= 0;
+    int counter_dummy_min = 0;
     new_string(&name, 100);
     new_string(&action, 100);
     while (!feof(fp_food)) {
@@ -174,21 +174,21 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     if (val != ' ' && !found_day) {
                         // printf("%c ", val);
                         // printf("1 ");
-                        if(val >= '0' && val <= '9'){
+                        if (val >= '0' && val <= '9') {
                             // day= 0;
                             // printf("%d ", day);
-                            int convertion =  val - '0';
+                            int convertion = val - '0';
                             day = day * 10;
                             // printf("%d ", day);
-                            day+= convertion;
+                            day += convertion;
                             // printf("%d ", convertion);
                             // convertion= 0;
                             // printf("%d ", day);
-                            
+
                         }
-                        
+
                         // printf("%d\n", found_day);
-                    } else{
+                    } else {
                         // int day= 0;
                         // printf("1 ");
                         found_day = true;
@@ -197,34 +197,34 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     // printf("%d ", found_day);
                     if (found_day) {
                         // printf("1 ");
-                        if(val == ' ' && counter_dummy_day == 0 && !found_hour){
+                        if (val == ' ' && counter_dummy_day == 0 && !found_hour) {
                             // printf("1 ");
                             counter_dummy_day++;
                             // counter_dummy_day= 0;
                             // printf("%d ", counter_dummy_day);
-                        }else if (!found_hour && val != ' ') {
+                        } else if (!found_hour && val != ' ') {
                             // printf("1 ");
-                            if(val>='0' && val<='9'){
+                            if (val >= '0' && val <= '9') {
                                 // hour= 0;
                                 int convertion = (int) val - 48;
                                 hour = hour * 10 + convertion;
                                 // printf("%d ", hour);
                                 // printf("%d ", counter_dummy_day);
                             }
-                        }else{
+                        } else {
                             // printf("1 ");
-                            found_hour= true;
+                            found_hour = true;
                             // printf("%d ", counter_dummy_day);
                         }
                     }
                     if (found_day && found_hour) {
                         // printf("1 ");
-                        if(val == ' ' && counter_dummy_min == 0 && !found_minute){
-                            counter_dummy_min ++;
+                        if (val == ' ' && counter_dummy_min == 0 && !found_minute) {
+                            counter_dummy_min++;
                             // printf("%d ", counter_dummy_min);
-                        }else if (val != ' ' && !found_minute) {
+                        } else if (val != ' ' && !found_minute) {
                             // min= 0;
-                            if(val>='0' && val<='9'){
+                            if (val >= '0' && val <= '9') {
                                 int convertion = (int) val - 48;
                                 min = min * 10 + convertion;
                                 // printf("%d ", counter_dummy_min);
@@ -237,19 +237,19 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                 } else {
                     // count++;
                     counter++;
-                    
+
                     ELMT(food, index).expire_time.dd = day;
                     // printf("%d ", ELMT(food, index).expire_time.dd);
                     ELMT(food, index).expire_time.hh = hour;
                     // printf("%d ", ELMT(food, index).expire_time.hh);
                     ELMT(food, index).expire_time.mm = min;
                     // printf("%d ", ELMT(food, index).expire_time.mm);
-                    day= 0;
+                    day = 0;
                     // printf("%d ", day);
                     hour = 0;
-                    min= 0;
-                    counter_dummy_day= 0;
-                    counter_dummy_min= 0;
+                    min = 0;
+                    counter_dummy_day = 0;
+                    counter_dummy_min = 0;
                     found_day = false;
                     found_hour = false;
                     found_minute = false;
@@ -264,10 +264,10 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                         found_day = true;
                     }
                     if (found_day) {
-                        if(val == ' ' && counter_dummy_day == 0 && !found_hour){
+                        if (val == ' ' && counter_dummy_day == 0 && !found_hour) {
                             counter_dummy_day++;
-                        }else if (val != ' ' && !found_hour) {
-                            if(val >= '0' && val<='9'){
+                        } else if (val != ' ' && !found_hour) {
+                            if (val >= '0' && val <= '9') {
                                 int convertion = (int) val - 48;
                                 hour = hour * 10 + convertion;
                             }
@@ -276,10 +276,10 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                         }
                     }
                     if (found_day && found_hour) {
-                        if (val == ' ' && counter_dummy_min == 0 && !found_minute){
-                            counter_dummy_min ++;
-                        }else if (val != ' ' && !found_minute) {
-                            if(val >= '0' && val <= '9'){
+                        if (val == ' ' && counter_dummy_min == 0 && !found_minute) {
+                            counter_dummy_min++;
+                        } else if (val != ' ' && !found_minute) {
+                            if (val >= '0' && val <= '9') {
                                 int convertion = (int) val - 48;
                                 min = min * 10 + convertion;
                             }
@@ -299,8 +299,8 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     day = 0;
                     hour = 0;
                     min = 0;
-                    counter_dummy_day= 0;
-                    counter_dummy_min= 0;
+                    counter_dummy_day = 0;
+                    counter_dummy_min = 0;
                     found_day = false;
                     found_hour = false;
                     found_minute = false;
@@ -314,7 +314,7 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     // neff(action)++;
                 } else {
                     // count++;
-                    
+
                     // print_string(action);
                     // printf("\n");
                     char buy[] = "Buy";
@@ -358,7 +358,7 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                 }
             }
         }
-        if(val== '\n'){
+        if (val == '\n') {
             count++;
         }
     }
@@ -376,14 +376,14 @@ void load_food_recipe(char * path_food, char * path_recipe) {
     int id_child = 0;
     int list_ingredient[MAX_RECIPE];
     int index_ing = 0;
-    int counter_dummy_total= 0;
-    int counter_dummy_child= 0;
+    int counter_dummy_total = 0;
+    int counter_dummy_child = 0;
     boolean found_id_recipe = false;
     boolean found_total_recipe = false;
     boolean found_id_child = false;
     recipe_t recipe;
     int i = 0;
-    int idx_lfr= 0;
+    int idx_lfr = 0;
     while (!feof(fp_recipe)) {
         int val = fgetc(fp_recipe);
         if (count != 0) {
@@ -391,7 +391,7 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                 // printf("1 ");
                 if (val != ' ' && !found_id_recipe) {
                     // printf("1 ");
-                    if(val >= '0' && val <= '9'){
+                    if (val >= '0' && val <= '9') {
                         int convertion = (int) val - 48;
                         id_recipe = id_recipe * 10 + convertion;
                     }
@@ -399,10 +399,10 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     found_id_recipe = true;
                 }
                 if (found_id_recipe) {
-                    if(val == ' ' && counter_dummy_total == 0 && !found_total_recipe){
+                    if (val == ' ' && counter_dummy_total == 0 && !found_total_recipe) {
                         counter_dummy_total++;
-                    }else if (val != ' ' && !found_total_recipe) {
-                        if(val >= '0' && val <= '9'){
+                    } else if (val != ' ' && !found_total_recipe) {
+                        if (val >= '0' && val <= '9') {
                             int convertion = (int) val - 48;
                             total_recipe = total_recipe * 10 + convertion;
                         }
@@ -411,15 +411,15 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     }
                 }
                 if (found_id_recipe && found_total_recipe) {
-                    if (val == ' ' && counter_dummy_child == 0 && !found_id_child){
+                    if (val == ' ' && counter_dummy_child == 0 && !found_id_child) {
                         counter_dummy_child++;
-                    }else if (val != ' ' && !found_id_child) {
-                        if(val >= '0' && val <= '9'){
+                    } else if (val != ' ' && !found_id_child) {
+                        if (val >= '0' && val <= '9') {
                             int convertion = (int) val - 48;
                             id_child = id_child * 10 + convertion;
                             // printf("%d ", id_child);
                         }
-                    }else {
+                    } else {
                         found_id_child = true;
                     }
                 }
@@ -429,22 +429,22 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                     id_child = 0;
                     index_ing++;
                     found_id_child = false;
-                    counter_dummy_child= 0;
+                    counter_dummy_child = 0;
                 }
             } else {
-                list_ingredient[index_ing]= id_child;
+                list_ingredient[index_ing] = id_child;
                 create_recipe(&recipe, id_recipe, total_recipe, list_ingredient);
                 // printf("%d ", recipe.ingredients_count);
                 // for(int i= 0; i<recipe.ingredients_count; i++){
                 //     printf("%d ", recipe.ingredients[i]);
                 // }
-                id_child= 0;
+                id_child = 0;
                 // printf("-\n");
                 id_recipe = 0;
                 total_recipe = 0;
                 index_ing = 0;
-                counter_dummy_total= 0;
-                counter_dummy_child= 0;
+                counter_dummy_total = 0;
+                counter_dummy_child = 0;
                 found_id_recipe = false;
                 found_id_child = false;
                 found_total_recipe = false;
@@ -461,20 +461,20 @@ void load_food_recipe(char * path_food, char * path_recipe) {
                         food_recipe_temp.food = food.buffer[i];
                         food_recipe_temp.recipe = recipe;
                         food_recipe.contents[idx_lfr] = food_recipe_temp;
-                        idx_lfr ++;
+                        idx_lfr++;
                     }
                     i++;
                 }
             }
         }
-        if(val == '\n'){
+        if (val == '\n') {
             count++;
         }
     }
     // printf("%d ", idx_lfr);
     /*Untuk buy*/
     food_recipe_t food_recipe_temp;
-    for (int j = 0; j < index ; j++) {
+    for (int j = 0; j < index; j++) {
         if (food.buffer[j].source == Buy) {
             int temp[] = {0};
             // printf("%d ", food.buffer[j].id);
@@ -486,7 +486,7 @@ void load_food_recipe(char * path_food, char * path_recipe) {
         }
     }
     /*neff lfr*/
-    food_recipe.neff = idx_lfr-1;
+    food_recipe.neff = idx_lfr - 1;
     fclose(fp_recipe);
     // printf("%d ", food_recipe.neff);
     // printf("%d ", food_recipe.contents[3].recipe.ingredients_count);

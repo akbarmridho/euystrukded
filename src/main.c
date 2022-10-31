@@ -79,6 +79,7 @@ int main() {
     string name = word_to_string(current_word);
 
     start_program(name);
+    system("clear");
 
     display_info();
     advance_word();

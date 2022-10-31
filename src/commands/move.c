@@ -14,11 +14,12 @@ void cmd_move(string direction) {
     } else if (comparestr(direction, south)) {
         dest = point_plus_delta(simulator.position, 0, 1);
     } else if (comparestr(direction, east)) {
-        dest = point_plus_delta(simulator.position, -0, 0);
+        dest = point_plus_delta(simulator.position, 1, 0);
     } else if (comparestr(direction, west)) {
         dest = point_plus_delta(simulator.position, -1, 0);
     } else {
-        printf("Masukan salah\n");
+        printf("Perintah yang anda masukan salah! Pilihan yang tersedia: NORTH, SOUTH, EAST, WEST\n");
+        printf("Enter command: ");
         return;
     }
 
@@ -26,8 +27,10 @@ void cmd_move(string direction) {
         backup_state();
         move(dest);
         next_tick();
+        system("clear");
         display_info();
     } else {
         printf("Anda tidak bisa bergerak ke sana :(\n");
+        printf("Enter command: ");
     }
 }

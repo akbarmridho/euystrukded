@@ -20,16 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="move finalyy bisa">
-      <change afterPath="$PROJECT_DIR$/compile-linux.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compile-windows.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="add build script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/catalog.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/catalog.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile-linux.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile-linux.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +132,7 @@
       <workItem from="1667135728011" duration="4960000" />
       <workItem from="1667173506278" duration="66000" />
       <workItem from="1667173977954" duration="22000" />
-      <workItem from="1667184465013" duration="2008000" />
+      <workItem from="1667184465013" duration="3231000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial adt time implementation">
       <created>1666620382095</created>
@@ -431,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667139288341</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="add build script">
+      <created>1667186723907</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1667186723907</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: initial undo redo implementation" />
     <MESSAGE value="setup: add map service header" />
     <MESSAGE value="fix: display notification update message" />
     <MESSAGE value="final: adt matrix, point, recipe, time" />
@@ -474,7 +477,8 @@
     <MESSAGE value="glue the main" />
     <MESSAGE value="call backup state every side effect command" />
     <MESSAGE value="move finalyy bisa" />
-    <option name="LAST_COMMIT_MESSAGE" value="move finalyy bisa" />
+    <MESSAGE value="add build script" />
+    <option name="LAST_COMMIT_MESSAGE" value="add build script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -483,16 +487,6 @@
           <url>file://$PROJECT_DIR$/src/commands/buy.h</url>
           <line>3</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/commands/move.c</url>
-          <line>24</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/commands/move.c</url>
-          <line>26</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
