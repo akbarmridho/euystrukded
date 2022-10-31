@@ -23,15 +23,20 @@ state_t generate_state() {
 }
 
 void set_state(state_t state) {
-    list_food_copy(state.inventory, &simulator.inventory);
+    simulator.inventory.capacity = state.inventory.capacity;
+    simulator.inventory.nEff = state.inventory.nEff;
+    simulator.inventory.buffer = state.inventory.buffer;
+
     simulator.time = state.time;
     simulator.position = state.position;
-    list_delivery_copy(state.delivery, &delivery);
+    
+    delivery.capacity = state.delivery.capacity;
+    delivery.nEff = state.delivery.nEff;
+    delivery.buffer = state.delivery.buffer;
 }
 
 void backup_state() {
     state_t backup = generate_state();
-    printf("before stack push\n");
     stack_push(&history, backup);
 
     state_t dump;

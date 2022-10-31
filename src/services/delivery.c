@@ -29,14 +29,14 @@ time nol
 void execute_delivery() {
     food_t food;
     dequeue_delivery(&delivery, &food);
-
     enqueue_food(&simulator.inventory, food);
 
-    char base[] = "Makanan ";
-    char end[] = " telah sampai";
+    string prefix = char_to_string("Makanan ");
+    string postfix = char_to_string(" telah sampai");
 
+    string message = concat(prefix, FOOD_NAME(food));
 
-    notify(concat(concat(char_to_string(base), FOOD_NAME(food)), char_to_string(end)));
+    notify(message);
 }
 
 /* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */

@@ -3,6 +3,7 @@
 
 #include "../services/history.h"
 #include "../services/simulator.h"
+#include "../utils/display.h"
 
 void redo();
 

@@ -236,6 +236,7 @@ IdxType lfr_search_n_first_by_source(ListFoodRecipe lfr, enum food_source source
                 found = true;
             } else {
                 nth--;
+                i++;
             }
         } else {
             i++;

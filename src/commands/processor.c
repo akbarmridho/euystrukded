@@ -162,7 +162,7 @@ void process_request(enum food_source source) {
                 }
             }
         } else {
-            system("clear");
+            clear_display();
             display_info();
             print_string(name);
             printf(" selesai dibuat dan sudah masuk ke inventory!\nEnter command: ");
