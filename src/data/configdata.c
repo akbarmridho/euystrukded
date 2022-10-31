@@ -476,7 +476,7 @@ void load_food_recipe(char *path_food, char *path_recipe) {
     // printf("%d ", idx_lfr);
     /*Untuk buy*/
     food_recipe_t food_recipe_temp;
-    for (int j = 0; j < index; j++) {
+    for (int j = 0; j <= index; j++) {
         if (food.buffer[j].source == Buy) {
             int temp[] = {0};
             // printf("%d ", food.buffer[j].id);
