@@ -17,6 +17,7 @@ extern Matrix map;
 extern ListTree list_tree_recipe;
 
 extern boolean DEBUG;
+extern boolean CONFIG_DEBUG;
 
 void load_map(char *path);
 

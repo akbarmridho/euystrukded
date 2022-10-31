@@ -17,7 +17,7 @@
 #include "commands/undo.h"
 #include "commands/wait.h"
 #include "commands/processor.h"
-
+#include "utils/display.h"
 
 string get_name() {
     start_word();
@@ -39,7 +39,6 @@ string get_name() {
 }
 
 int main() {
-    setvbuf(stdout, NULL, _IONBF, 0);
     printf("Selamat datang di dinner dash!\n");
     printf("Ketik START untuk mulai atau EXIT untuk keluar\n");
 
@@ -66,16 +65,17 @@ int main() {
         return 0;
     }
 
+
     printf("Masukkan nama anda: ");
     advance_word();
     string name = word_to_string(current_word);
 
     start_program(name);
 
-    if (!DEBUG) {
-        system("clear");
+    if (!CONFIG_DEBUG) {
+        clear_display();
     }
-    
+
     display_info();
     printf("Enter command: ");
     advance_word();

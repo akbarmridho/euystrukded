@@ -6,6 +6,7 @@ Matrix map;
 ListTree list_tree_recipe;
 
 boolean DEBUG = true;
+boolean CONFIG_DEBUG = false;
 boolean MAP_DEBUG = false;
 boolean FOOD_DEBUG = false;
 boolean TREE_DEBUG = false;
@@ -95,7 +96,7 @@ void load_map(char *path) {
     }
     fclose(fp);
 
-    if (DEBUG && MAP_DEBUG) {
+    if (CONFIG_DEBUG && MAP_DEBUG) {
         printf("MAPDEBUG: MAP CONFIG\n");
         printf("Mapsize %d row %d col\n", size.row, size.col);
         display_matrix(map);
@@ -121,7 +122,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
 
     int food_count = read_next_int(fp);
 
-    if (DEBUG && FOOD_DEBUG) {
+    if (CONFIG_DEBUG && FOOD_DEBUG) {
         printf("DEBUG: FOOD RECIPE\n");
         printf("from food.txt, count: %d\n", food_count);
     }
@@ -180,7 +181,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         copy_string(name, &namecpy);
         create_food(&food, food_id, namecpy, expire_time, delivery_time, source);
 
-        if (DEBUG && FOOD_DEBUG) {
+        if (CONFIG_DEBUG && FOOD_DEBUG) {
             printf("Read Food No %d from food.txt\n", i + 1);
             display_food(food);
             putchar('\n');
@@ -290,7 +291,7 @@ void build_tree_recipe() {
         lt_insert_last(&list_tree_recipe, new);
     }
 
-    if (DEBUG && TREE_DEBUG) {
+    if (CONFIG_DEBUG && TREE_DEBUG) {
         printf("DEBUG: TREE DEBUG START\n\n");
         for (int i = 0; i < list_tree_recipe.length; i++) {
             display_tree(list_tree_recipe.content[i]);
