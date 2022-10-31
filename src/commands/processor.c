@@ -2,12 +2,6 @@
 
 void process_request(enum food_source source) {
     switch (source) {
-        case Buy:
-            if (!is_able_to_buy()) {
-                printf("Anda tidak berada di area telepon!\nEnter command: ");
-                return;
-            }
-            break;
         case Boil:
             if (!is_able_to_boil()) {
                 printf("Anda tidak berada di area ketel uap!\nEnter command: ");
@@ -40,9 +34,6 @@ void process_request(enum food_source source) {
 
     printf("======================\n");
     switch (source) {
-        case Buy:
-            printf("=        BUY         =\n");
-            break;
         case Boil:
             printf("=        BOIL        =\n");
             break;
@@ -89,6 +80,7 @@ void process_request(enum food_source source) {
     if (choice == 0) {
         clear_display();
         display_info();
+        printf("\nEnter command: ");
         return;
     }
 
@@ -108,9 +100,6 @@ void process_request(enum food_source source) {
             } else {
                 lack_ingredient = true;
             }
-            break;
-        case Buy:
-            add_to_delivery_list(food);
             break;
         case Fry:
             if (can_fry_food(recipe_tree)) {
@@ -140,33 +129,24 @@ void process_request(enum food_source source) {
             printf("Unreachable code in processor.c\n");
     }
 
-    if (source == Buy) {
-        printf("Berhasil memesan ");
+    if (lack_ingredient) {
+        printf("Gagal membuat ");
         print_string(name);
-        printf(". Pesanan akan diantar dalam ");
-        write_fulltime(FOOD_DELIVERY_TIME(food));
-        printf("\nEnter command: ");
-    } else {
-        if (lack_ingredient) {
-            printf("Gagal membuat ");
-            print_string(name);
-            printf(" karena anda tidak memiliki bahan berikut:\n");
+        printf(" karena anda tidak memiliki bahan berikut:\n");
 
-            for (int i = 0; i < recipe_tree->children_count; i++) {
-                food_t food_ingredient = T_FOOD(T_CHILDREN(recipe_tree, i));
+        for (int i = 0; i < recipe_tree->children_count; i++) {
+            food_t food_ingredient = T_FOOD(T_CHILDREN(recipe_tree, i));
 
-                if (food_count(inventory(simulator), FOOD_ID(food_ingredient)) <= 0) {
-                    printf("  %d. ", i + 1);
-                    print_string(FOOD_NAME(food_ingredient));
-                    putchar('\n');
-                }
+            if (food_count(inventory(simulator), FOOD_ID(food_ingredient)) <= 0) {
+                printf("  %d. ", i + 1);
+                print_string(FOOD_NAME(food_ingredient));
+                putchar('\n');
             }
-        } else {
-            clear_display();
-            display_info();
-            print_string(name);
-            printf(" selesai dibuat dan sudah masuk ke inventory!\nEnter command: ");
         }
+    } else {
+        clear_display();
+        display_info();
+        print_string(name);
+        printf(" selesai dibuat dan sudah masuk ke inventory!\nEnter command: ");
     }
-
 }

@@ -9,50 +9,56 @@
 
 /* command buy */
 void cmd_buy() {
-    ListFoodRecipe purchaseable;
-    create_lfr(&purchaseable);
+    if (!is_able_to_buy()) {
+        printf("Anda tidak berada di area telepon!\nEnter command: ");
+        return;
+    }
 
-    printf("======================\n");
-    printf("=        BUY         =\n");
-    printf("======================\n");
+    printf("======================\n=        BUY         =\n======================\n");
 
     printf("List Bahan Makanan:\n");
 
-    /* display and store buyable recipes in purchasable */
-    int counter = 1;
+    int counter = 0;
+
     for (int i = lfr_get_first_idx(food_recipe); i <= lfr_get_last_idx(food_recipe); i++) {
         food_recipe_t current = LFR_ELMT(food_recipe, i);
-        if (FOOD_SOURCE(FR_FOOD(current)) == Fry) {
-            lfr_insert_last(&purchaseable, current);
-            printf("   %d. ", counter);
+        if (FOOD_SOURCE(FR_FOOD(current)) == Buy) {
+            counter++;
+            printf("  %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
 
             printf(" (");
             write_fulltime(FOOD_DELIVERY_TIME(FR_FOOD(current)));
             printf(")\n");
-            counter++;
         }
     }
-    printf("\nKirim 0 untuk exit.\n");
 
-    /* input user choice */
-    int choice = validate_int(0, LFR_NEFF(purchaseable), char_to_string("Enter Command: "));
+    if (counter == 0) {
+        printf("Tidak ada resep yang tersedia\nEnter command: ");
+        return;
+    }
+
+    string prompt = char_to_string("Masukkan pilihan: (ketik 0 untuk membatalkan)");
+    int choice = validate_int(0, counter, prompt);
+
     while (choice != 0) {
-        food_t purchase = FR_FOOD(LFR_ELMT(purchaseable, choice));
-        string name = FOOD_NAME(purchase);
+        int lfr_food_index = lfr_search_n_first_by_source(food_recipe, Buy, choice);
+        food_t food = FR_FOOD(LFR_ELMT(food_recipe, lfr_food_index));
+        int food_id = FOOD_ID(food);
+        string name = FOOD_NAME(food);
 
-        add_to_delivery_list(purchase);
+        add_to_delivery_list(food);
 
         printf("Berhasil memesan ");
         print_string(name);
-        printf(". ");
-
-        print_string(name);
-        printf(" akan diantar dalam ");
-        write_fulltime(FOOD_DELIVERY_TIME(purchase));
-        printf(".\n");
-
+        printf(". Pesanan akan diantar dalam ");
+        write_fulltime(FOOD_DELIVERY_TIME(food));
         putchar('\n');
-        choice = validate_int(0, LFR_NEFF(purchaseable), char_to_string("Enter Command: "));
+
+        choice = validate_int(0, counter, prompt);
     }
+
+    clear_display();
+    display_info();
+    printf("\nEnter command: ");
 }

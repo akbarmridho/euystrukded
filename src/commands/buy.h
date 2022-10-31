@@ -6,6 +6,7 @@
 #include "../utils/validator.h"
 #include "../data/simulator.h"
 #include "../data/configdata.h"
+#include "../utils/display.h"
 
 
 /* command buy */

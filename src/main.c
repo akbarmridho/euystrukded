@@ -94,7 +94,7 @@ int main() {
         } else if (comparestr(BOIL, current_input)) {
             process_request(Boil);
         } else if (comparestr(BUY, current_input)) {
-            process_request(Buy);
+            cmd_buy();
         } else if (comparestr(CATALOG, current_input)) {
             display_catalog();
         } else if (comparestr(CHOP, current_input)) {
@@ -132,8 +132,18 @@ int main() {
             int hour;
             int minute;
 
-            sscanf(time_s, "%d %d", &hour, &minute);
-            wait(hour, minute);
+            int valcount = sscanf(time_s, "%d %d", &hour, &minute); //NOLINT
+
+            if (valcount == 1) {
+                // hanya satu angka, anggap menit
+                wait(0, hour);
+            } else if (valcount == 2) {
+                wait(hour, minute);
+            } else {
+                printf("Format wait salah! Gunakan WAIT JAM MENIT atau WAIT MENIT\n");
+                printf("\nEnter command: ");
+            }
+            
             deallocate_string(&time);
         } else {
             printf("Perintah tidak dikenali.\n");

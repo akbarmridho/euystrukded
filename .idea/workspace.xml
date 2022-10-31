@@ -20,19 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="update display clear">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="fix: catalog and cookbook display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/list_delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/list_delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/list_food.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/list_food.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/move.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/move.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/buy.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/buy.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/buy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/processor.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/processor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/processor.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/processor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/wait.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/wait.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/wait.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/map.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/history.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/history.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,14 +134,8 @@
       <workItem from="1667184465013" duration="5942000" />
       <workItem from="1667190622403" duration="3297000" />
       <workItem from="1667195149627" duration="7982000" />
-      <workItem from="1667203773472" duration="1117000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat: initial adt time implementation">
-      <created>1666620382095</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1666620382095</updated>
+      <workItem from="1667203773472" duration="1340000" />
+      <workItem from="1667222592228" duration="3203000" />
     </task>
     <task id="LOCAL-00002" summary="chore: add idea config files">
       <created>1666620523396</created>
@@ -472,7 +459,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667203076837</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="sebelum baterai laptop habis">
+      <created>1667205112628</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1667205112628</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix: working notification">
+      <created>1667223949590</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1667223949590</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fix: catalog and cookbook display">
+      <created>1667224595284</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1667224595284</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,9 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="final: tree and food driver" />
-    <MESSAGE value="semifinal: string and notification driver" />
-    <MESSAGE value="feat: from branch adt egi" />
     <MESSAGE value="update: some adt driver" />
     <MESSAGE value="adt finalization" />
     <MESSAGE value="fix: do not backup notification" />
@@ -515,18 +520,10 @@
     <MESSAGE value="come random thingsss" />
     <MESSAGE value="refactor configdata" />
     <MESSAGE value="update display clear" />
-    <option name="LAST_COMMIT_MESSAGE" value="update display clear" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/commands/buy.h</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="sebelum baterai laptop habis" />
+    <MESSAGE value="fix: working notification" />
+    <MESSAGE value="fix: catalog and cookbook display" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: catalog and cookbook display" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
