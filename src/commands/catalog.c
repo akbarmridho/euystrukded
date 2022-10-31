@@ -17,22 +17,18 @@ void display_catalog() {
         }
         if (food_recipe.contents[i].food.source == Buy) {
             printf("BUY - ");
-        }
-        if (food_recipe.contents[i].food.source == Mix) {
-            printf("MIX - ");
-        }
-        if (food_recipe.contents[i].food.source == Chop) {
-            printf("CHOP - ");
-        }
-        if (food_recipe.contents[i].food.source == Fry) {
-            printf("FRY - ");
-        }
-        if (food_recipe.contents[i].food.delivery_time.dd == 0 && food_recipe.contents[i].food.delivery_time.hh == 0 &&
-            food_recipe.contents[i].food.delivery_time.mm == 0) {
-            printf("0");
-        } else {
             write_fulltime(food_recipe.contents[i].food.delivery_time);
         }
+        if (food_recipe.contents[i].food.source == Mix) {
+            printf("MIX");
+        }
+        if (food_recipe.contents[i].food.source == Chop) {
+            printf("CHOP");
+        }
+        if (food_recipe.contents[i].food.source == Fry) {
+            printf("FRY");
+        }
+
         printf("\n");
     }
 
