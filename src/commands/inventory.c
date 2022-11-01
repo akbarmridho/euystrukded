@@ -11,7 +11,7 @@ void cmd_inventory() {
     printf("List Makanan di Inventor\n");
     printf("(nama - waktu sisa kedaluwarsa)\n");
 
-    if (NEFF(inventory(simulator))) {
+    if (NEFF(inventory(simulator)) == 0) {
         printf("Anda tidak memiliki makanan\n");
     } else {
         for (int i = 0; i < NEFF(inventory(simulator)); i++) {

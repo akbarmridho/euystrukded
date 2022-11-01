@@ -42,6 +42,11 @@ void cmd_buy() {
     string prompt = char_to_string("Enter command: ");
     int choice = validate_int(0, counter, prompt);
 
+    if (choice != 0) {
+        backup_state();
+        next_tick();
+    }
+
     while (choice != 0) {
         int lfr_food_index = lfr_search_n_first_by_source(food_recipe, Buy, choice);
         food_t food = FR_FOOD(LFR_ELMT(food_recipe, lfr_food_index));

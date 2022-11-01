@@ -9,11 +9,11 @@ void create_stack(StackState *S, int capacity) {
 }
 
 boolean stack_is_full(StackState S) {
-    return ((S).top) == (S).max_capacity;
+    return ((S).top + 1) == (S).max_capacity;
 }
 
 void expand_stack(StackState *S) {
-    (*S).max_capacity *= 2;
+    (*S).max_capacity *= 10;
     (*S).buffer = (state_t *) realloc((*S).buffer, (*S).max_capacity * sizeof(state_t));
 }
 

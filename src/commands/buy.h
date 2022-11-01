@@ -2,6 +2,8 @@
 #define COMMAND_BUY_H
 
 #include <stdio.h>
+#include "../services/clock.h"
+#include "../services/history.h"
 #include "../services/delivery.h"
 #include "../utils/validator.h"
 #include "../data/simulator.h"
