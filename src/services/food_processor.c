@@ -1,3 +1,10 @@
+/**
+ * @file food_processor.c
+ * @brief food_processor command for BOIL, CHOP, FRY, MIX
+ * @version 1.1
+ * @date 2022-11-01
+ */
+
 #include "food_processor.h"
 
 /*
@@ -33,8 +40,18 @@ boolean process_food(Tree recipe_tree){
         food_t raw = T_FOOD(T_CHILDREN(recipe_tree, i));
         dequeue_food(&inventory(simulator), FOOD_ID(raw), &raw);     /* mengonsumsi bahan */
     }
-    next_tick();    /* penambahan waktu 1 menit */
-    /* next_tick() dipanggil sebanyak time_to_minute(process_time(food)) dengan loop pada bonus */
+    
+    long processing_time = time_to_minute(FOOD_DELIVERY_TIME(result));
+    if (processing_time > 0){
+        /* DELIVERY TIME pada konfigurasi digunakan sebagai waktu pemrosesan*/
+        for (int i = 0; i < processing_time; i++){
+            next_tick();
+            /* memajukan waktu sebanyak processing_time (bonus) */
+        }
+    }
+    else{
+        next_tick();
+    }
 
     enqueue_food(&inventory(simulator), result);              /* menambahkan hasil ke inventory */
 }
