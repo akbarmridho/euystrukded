@@ -88,41 +88,16 @@ void process_request(enum food_source source) {
 
     boolean lack_ingredient = false;
 
-    switch (source) {
-        case Boil:
-            if (can_boil_food(recipe_tree)) {
-                backup_state();
-                boil(recipe_tree);
-            } else {
-                lack_ingredient = true;
-            }
-            break;
-        case Fry:
-            if (can_fry_food(recipe_tree)) {
-                backup_state();
-                fry(recipe_tree);
-            } else {
-                lack_ingredient = true;
-            }
-            break;
-        case Mix:
-            if (can_mix_food(recipe_tree)) {
-                backup_state();
-                mix(recipe_tree);
-            } else {
-                lack_ingredient = true;
-            }
-            break;
-        case Chop:
-            if (can_chop_food(recipe_tree)) {
-                backup_state();
-                chop(recipe_tree);
-            } else {
-                lack_ingredient = true;
-            }
-            break;
-        default:
-            printf("Unreachable code in processor.c\n");
+    if (source == Boil || source == Chop || source == Mix || source == Fry){
+        if (can_process_food(recipe_tree)) {
+            backup_state();
+            process_food(recipe_tree);
+        } else {
+            lack_ingredient = true;
+        }
+    }
+    else{
+        printf("Unreachable code in processor.c\n");
     }
 
     if (lack_ingredient) {
