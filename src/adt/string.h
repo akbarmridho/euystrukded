@@ -62,4 +62,9 @@ void print_string(string s);
    F.S. memasukkan suatu char dari word ke dalam string di posisi paling belakang */
 void insert_char_last(char c, string *s);
 
+/* mengonversi string numerik menjadi integer bilangan cacah */
+/* return -1 jika tidak numerik */
+/* return -2 jika neff(s) == 0 */
+long string_to_natural_int(string s);
+
 #endif

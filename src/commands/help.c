@@ -6,9 +6,9 @@ void cmd_main_help(){
         "  EXIT          Keluar dari program.\n"
         "  HELP          Menampilkan daftar perintah (COMMANDs).\n"
         "  CLEAR         Membersihkan tampilan antarmuka.\n"
-        "  MOVE {NORTH|SOUTH|EAST|WEST}\n"
-        "                Menggerakkan posisi pengguna pada peta.\n"
-        "  WAIT <hour> <minute>\n"
+        "  MOVE {NORTH|SOUTH|EAST|WEST} [n_times]\n"
+        "                Menggerakkan posisi pengguna pada peta sebanyak n>0 langkah.\n"
+        "  WAIT [hour] <minute>\n"
         "                Memajukan waktu pada simulasi.\n"
 
         "  CATALOG       Menampilkan daftar makanan yang dapat dipesan.\n"
