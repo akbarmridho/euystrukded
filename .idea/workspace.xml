@@ -20,20 +20,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="buy add ticker and backup state, fix stack bug">
-      <change afterPath="$PROJECT_DIR$/driver/adt/example.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/driver/adt/parsermachinedriver.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/driver/adt/parsermachinedriver.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/adt/parsermachine.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/adt/parsermachine.h" afterDir="false" />
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="update notification, update recipe parser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adt/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/string.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/configdata.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/charmachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/charmachine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/food.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/food.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/matrix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/parsermachine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/parsermachine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/parsermachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/parsermachine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/simulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/simulator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/stack_command.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/stack_command.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/stack_command.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/stack_command.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/time.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/time.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/time.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/time.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/tree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adt/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/adt/tree.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,35 +151,11 @@
       <workItem from="1667313321635" duration="4368000" />
       <workItem from="1667317743084" duration="1168000" />
       <workItem from="1667354031578" duration="6994000" />
-      <workItem from="1667361175535" duration="224000" />
-    </task>
-    <task id="LOCAL-00005" summary="feat: add adt tree">
-      <created>1666839896838</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1666839896838</updated>
-    </task>
-    <task id="LOCAL-00006" summary="refactor: rename header, time_t to day_time_t">
-      <created>1666840089852</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1666840089852</updated>
-    </task>
-    <task id="LOCAL-00007" summary="update: adt tree update">
-      <created>1666876724627</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1666876724627</updated>
-    </task>
-    <task id="LOCAL-00008" summary="setup: update data module declaration">
-      <created>1666877242679</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1666877242679</updated>
+      <workItem from="1667361175535" duration="3701000" />
+      <workItem from="1667368326300" duration="40000" />
+      <workItem from="1667368957834" duration="2363000" />
+      <workItem from="1667372256694" duration="602000" />
+      <workItem from="1667374760269" duration="852000" />
     </task>
     <task id="LOCAL-00009" summary="refactor: add adt notification prefix">
       <created>1666945065949</created>
@@ -496,7 +472,35 @@
       <option name="project" value="LOCAL" />
       <updated>1667267981151</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="feat: parsermachine, update config parser">
+      <created>1667361431127</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1667361431127</updated>
+    </task>
+    <task id="LOCAL-00055" summary="update move output, do not loop buy attempt">
+      <created>1667363429062</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1667363429062</updated>
+    </task>
+    <task id="LOCAL-00056" summary="update catalog and cookbook display">
+      <created>1667364069254</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1667364069254</updated>
+    </task>
+    <task id="LOCAL-00057" summary="update notification, update recipe parser">
+      <created>1667372802498</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1667372802498</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,10 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete unnecesary param" />
-    <MESSAGE value="clock, delivery, history, map, fryer service" />
-    <MESSAGE value="simulator, notifier, map service" />
-    <MESSAGE value="feat: command move" />
     <MESSAGE value="check commands correctness" />
     <MESSAGE value="misc dunno" />
     <MESSAGE value="update validator" />
@@ -539,7 +539,11 @@
     <MESSAGE value="buy in loop, validate wait" />
     <MESSAGE value="add splash screen" />
     <MESSAGE value="buy add ticker and backup state, fix stack bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="buy add ticker and backup state, fix stack bug" />
+    <MESSAGE value="feat: parsermachine, update config parser" />
+    <MESSAGE value="update move output, do not loop buy attempt" />
+    <MESSAGE value="update catalog and cookbook display" />
+    <MESSAGE value="update notification, update recipe parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="update notification, update recipe parser" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

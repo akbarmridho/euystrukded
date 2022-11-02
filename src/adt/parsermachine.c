@@ -1,12 +1,14 @@
 #include "parsermachine.h"
 
 static FILE *fp;
-static int retval_parse;
 char parser_current_char;
 boolean parser_EOP;
 boolean end_line;
 word_t current_line;
 
+/*
+ * Mulai mesin karakter versi file parser
+ */
 void start_parse(char *path) {
     fp = fopen(path, "r");
 
@@ -17,8 +19,10 @@ void start_parse(char *path) {
     advance_parse();
 }
 
+/*
+ * Maju mesin karakter satu langkah
+ */
 void advance_parse() {
-//    retval_parse = fscanf(fp, "%c", &parser_current_char);
     parser_current_char = fgetc(fp);
     parser_EOP = (parser_current_char == FILE_MARK);
 
@@ -28,12 +32,18 @@ void advance_parse() {
     }
 }
 
+/*
+ * Mulai mesin baris versi file parser
+ */
 void start_line(char *path) {
     start_parse(path);
     end_line = false;
     advance_line();
 }
 
+/*
+ * Maju mesin kata sebanyak satu baris
+ */
 void advance_line() {
     if (parser_current_char == FILE_MARK) {
         end_line = true;
@@ -44,12 +54,18 @@ void advance_line() {
     }
 }
 
+/*
+ * Skip newline
+ */
 void ignore_newline() {
     while (parser_current_char == NEWLINE_MARK) {
         advance_parse();
     }
 }
 
+/*
+ * Pindahkan karakter yang dibaca menjadi baris
+ */
 void copy_line() {
     int i = 0;
 
@@ -64,6 +80,9 @@ void copy_line() {
     current_line.length = i;
 }
 
+/*
+ * Force close file jika belum habis
+ */
 void force_close() {
     if (fp != NULL) {
         fclose(fp);

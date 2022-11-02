@@ -22,11 +22,6 @@ typedef struct {
 #define notification(sim) (sim).notification
 
 
-/*
-fungsi yang diperlukan????
-create simumlator, dll
-*/
-
 /* ------------KONSTRUKTOR------------ */
 
 /* I.S. simulator sembarang

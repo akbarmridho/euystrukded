@@ -7,23 +7,16 @@
 #include "boolean.h"
 
 /* *** Definisi TYPE TIME <hh:mm:SS> *** */
-typedef struct
-{
-   int dd; /* integer >= 0 */
-   int hh; /* integer [0..23] */
-   int mm; /* integer [0..59] */
+typedef struct {
+    int dd; /* integer >= 0 */
+    int hh; /* integer [0..23] */
+    int mm; /* integer [0..59] */
 } day_time_t;
 
 /* *** Notasi Akses: selektor TIME *** */
 #define DAY(T) (T).dd
 #define HOUR(T) (T).hh
 #define MINUTE(T) (T).mm
-
-/*
-Mengirim true jika d,h,m dapat membentuk T yang valid
-dipakai untuk mentest SEBELUM membentuk sebuah Jam
-*/
-boolean is_time_valid(int d, int h, int m);
 
 /*
 Konstruktor: Membentuk sebuah TIME dari komponen-komponennya
@@ -41,8 +34,14 @@ Hanya menampilkan jam dan menit, tidak termasuk hari
 */
 void write_time(day_time_t t);
 
+/*
+ * Menuliskan hari
+ */
 void write_day(day_time_t t);
 
+/*
+ * Menuliskan hari dan waktu
+ */
 void write_fulltime(day_time_t t);
 
 /*
@@ -56,7 +55,10 @@ Mengonversi menit ke waktu, dimulai dari day nol
 */
 day_time_t minute_to_time(long N);
 
-void pminute_to_time(long N, day_time_t* result);
+/*
+Mengonversi menit ke waktu, dimulai dari day nol, versi pointer
+*/
+void pminute_to_time(long N, day_time_t *result);
 
 /* Mengirimkan true jika T1=T2 (bagian jam dan menit), false jika tidak */
 boolean TEQ(day_time_t t1, day_time_t t2);

@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include "boolean.h"
 #include "charmachine.h"
-
-//char currentChar;
-//boolean EOP;
 
 static FILE *pita;
 static int retval;

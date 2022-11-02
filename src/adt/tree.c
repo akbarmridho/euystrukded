@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+ * Membuat node tree baru
+ */
 Address new_tree_node(food_t food) {
     Address result;
 
@@ -19,11 +22,17 @@ Address new_tree_node(food_t food) {
     return result;
 }
 
+/*
+ * Membuat pohon kosong
+ */
 void new_empty_tree(food_t food, Tree *p) {
     Tree new = new_tree_node(food);
     *p = new;
 }
 
+/*
+ * Membuat pohon dengan children
+ */
 void new_tree(food_t food, int child_count, Address children[], Tree *p) {
     new_empty_tree(food, p);
 
@@ -34,11 +43,17 @@ void new_tree(food_t food, int child_count, Address children[], Tree *p) {
     }
 }
 
+/*
+ * Menambahkan child ke pohon
+ */
 void tree_insert_child(Address child, Tree p) {
     T_CHILDREN(p, p->children_count) = child;
     p->children_count++;
 }
 
+/*
+ * Menampilkan pohon secara rekursif
+ */
 void display_tree(Tree t) {
     putchar('(');
     printf("%d", T_ID(t));
@@ -54,6 +69,9 @@ void display_tree(Tree t) {
     printf("])");
 }
 
+/*
+ * Membuat list of tree
+ */
 void lt_create(ListTree *l) {
     for (int i = 0; i < TREE_CHILD_MAX; i++) {
         (*l).content[i] = NULL;
@@ -62,11 +80,17 @@ void lt_create(ListTree *l) {
     (*l).length = 0;
 }
 
+/*
+ * Memasukkan tree ke list
+ */
 void lt_insert_last(ListTree *l, Tree item) {
     (*l).content[(*l).length] = item;
     (*l).length++;
 }
 
+/*
+ * Mencari tree dengan id tertentu
+ */
 Tree lt_search_by_id(ListTree *l, int id) {
     boolean found = false;
     int i = 0;

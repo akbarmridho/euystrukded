@@ -25,25 +25,38 @@ typedef struct {
 #define S_IDX_UNDEF (-1)
 
 /*
-Sisanya implementasi sendiri :)
-
-stack menggunakan pendekatan list dinamis
-sehingga setidaknya memiliki fungsi
-push, pop, expand list
-*/
-
+ * Buat stack of state
+ */
 void create_stack(StackState *S, int capacity);
 
+/*
+ * Periksa stack jika penuh
+ */
 boolean stack_is_full(StackState S);
 
+/*
+ * Perbanyak alokasi memori stack
+ */
 void expand_stack(StackState *S);
 
+/*
+ * Hapus stack
+ */
 void dealocate_stack(StackState *S);
 
+/*
+ * Periksa apakah stack kosong
+ */
 boolean stack_is_empty(StackState S);
 
+/*
+ * Push state ke stack
+ */
 void stack_push(StackState *S, state_t val);
 
+/*
+ * Pop state ke stack
+ */
 void stack_pop(StackState *S, state_t *val);
 
 #endif

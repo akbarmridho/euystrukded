@@ -21,14 +21,29 @@ typedef struct treeNode {
 
 typedef Address Tree;
 
+/*
+ * Membuat node tree baru
+ */
 Address new_tree_node(food_t food);
 
+/*
+ * Membuat pohon kosong
+ */
 void new_empty_tree(food_t food, Tree *p);
 
+/*
+ * Membuat pohon dengan children
+ */
 void new_tree(food_t food, int child_count, Address children[], Tree *p);
 
+/*
+ * Menambahkan child ke pohon
+ */
 void tree_insert_child(Address child, Tree p);
 
+/*
+ * Menampilkan pohon secara rekursif
+ */
 void display_tree(Tree t);
 
 typedef struct {
@@ -36,10 +51,19 @@ typedef struct {
     int length;
 } ListTree;
 
+/*
+ * Membuat list of tree
+ */
 void lt_create(ListTree *l);
 
+/*
+ * Memasukkan tree ke list
+ */
 void lt_insert_last(ListTree *l, Tree item);
 
+/*
+ * Mencari tree dengan id tertentu
+ */
 Tree lt_search_by_id(ListTree *l, int id);
 
 #endif
