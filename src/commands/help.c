@@ -8,8 +8,11 @@ void cmd_main_help(){
         "  CLEAR         Membersihkan tampilan antarmuka.\n"
         "  MOVE {NORTH|SOUTH|EAST|WEST} [n_times]\n"
         "                Menggerakkan posisi pengguna pada peta sebanyak n>0 langkah.\n"
+        "                Argumen n_times bersifat opsional.\n"
+
         "  WAIT [hour] <minute>\n"
         "                Memajukan waktu pada simulasi.\n"
+        "                Argumen hour bersifat opsional.\n"
 
         "  CATALOG       Menampilkan daftar makanan yang dapat dipesan.\n"
         "  COOKBOOK      Menampilkan resep-resep yang tersedia pada buku resep.\n"
