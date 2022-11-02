@@ -194,8 +194,11 @@ void load_recipe(char *path, ListFood *lf) {
             int val;
             int offset;
 
+            char *startlineidx = &current_line_str[endidx];
+
             for (int k = 0; k < ingredient_count; k++) {
-                sscanf(&current_line_str[endidx], "%d%n", &val, &offset);
+                sscanf(startlineidx, "%d%n", &val, &offset);
+                startlineidx += offset;
                 children[k] = val;
             }
 

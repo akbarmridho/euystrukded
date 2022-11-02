@@ -6,6 +6,14 @@ void notify(string notification) {
     n_insert_last(&simulator.notification, notification);
 }
 
+void notify_undo(string notification) {
+    n_insert_last(&history.buffer[history.top].notification, notification);
+}
+
+void notify_redo(string notification) {
+    n_insert_last(&restore.buffer[restore.top].notification, notification);
+}
+
 void clear_notification() {
     n_delete_list(&simulator.notification);
 }

@@ -32,7 +32,6 @@ void cookbook() {
             }
 
             for (int j = 0; j < t->children_count; j++) {
-
                 print_string(FOOD_NAME(t->children[j]->food));
                 if (j != (t->children_count - 1)) {
                     printf(" - ");
@@ -42,6 +41,6 @@ void cookbook() {
             }
         }
     }
-    
+
     printf("\nEnter command: ");
 }

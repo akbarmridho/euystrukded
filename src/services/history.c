@@ -12,12 +12,17 @@ state_t generate_state() {
     ListDelivery delivery_copy;
     list_delivery_copy(delivery, &delivery_copy);
 
+    // notifikasi kosong
+    ListNotification notification;
+    copy_notification(simulator.notification, &notification);
+
     state_t backup;
 
     backup.delivery = delivery_copy;
     backup.time = simulator.time;
     backup.position = simulator.position;
     backup.inventory = inventory_copy;
+    backup.notification = notification;
 
     return backup;
 }
@@ -27,9 +32,13 @@ void set_state(state_t state) {
     simulator.inventory.nEff = state.inventory.nEff;
     simulator.inventory.buffer = state.inventory.buffer;
 
+    simulator.notification = state.notification;
+//    simulator.notification.length = state.notification.length;
+//    simulator.notification.notifications = state.notification.notifications;
+
     simulator.time = state.time;
     simulator.position = state.position;
-    
+
     delivery.capacity = state.delivery.capacity;
     delivery.nEff = state.delivery.nEff;
     delivery.buffer = state.delivery.buffer;
@@ -37,6 +46,7 @@ void set_state(state_t state) {
 
 void backup_state() {
     state_t backup = generate_state();
+    clear_notification();
     stack_push(&history, backup);
 
     state_t dump;

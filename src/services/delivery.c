@@ -33,15 +33,18 @@ void execute_delivery() {
 
     string prefix = char_to_string("Makanan ");
     string postfix = char_to_string(" telah sampai");
+    string postfixCancel = char_to_string(" tidak jadi sampai");
 
     string withPrefix = concat(prefix, FOOD_NAME(food));
     string message = concat(withPrefix, postfix);
-
     notify(message);
+    string messageUndo = concat(withPrefix, postfixCancel);
+    notify_undo(messageUndo);
 
     deallocate_string(&prefix);
     deallocate_string(&postfix);
     deallocate_string(&withPrefix);
+    deallocate_string(&postfixCancel);
 }
 
 /* Mengembalikan true apabila delivery time dari suatu makanan adalah 0 */

@@ -88,15 +88,14 @@ void process_request(enum food_source source) {
 
     boolean lack_ingredient = false;
 
-    if (source == Boil || source == Chop || source == Mix || source == Fry){
+    if (source == Boil || source == Chop || source == Mix || source == Fry) {
         if (can_process_food(recipe_tree)) {
             backup_state();
             process_food(recipe_tree);
         } else {
             lack_ingredient = true;
         }
-    }
-    else{
+    } else {
         printf("Unreachable code in processor.c\n");
     }
 
@@ -115,9 +114,12 @@ void process_request(enum food_source source) {
             }
         }
     } else {
+        notify(concat(name, char_to_string(" selesai dibuat")));
+//        print_string(name);
+//        printf(" selesai dibuat dan sudah masuk ke inventory!\nEnter command: ");
+        notify_undo(concat(name, char_to_string(" tidak jadi dibuat.")));
         clear_display();
         display_info();
-        print_string(name);
-        printf(" selesai dibuat dan sudah masuk ke inventory!\nEnter command: ");
+        printf("Enter command: ");
     }
 }

@@ -22,7 +22,9 @@ void simulator_next_tick() {
         food_t dump = ELMT(inventory(simulator), 0);
         list_food_delete(&(inventory(simulator)), 0);
         string suffix = char_to_string(" telah kadaluarsa :(");
+        string suffixUndo = char_to_string(" telah kembali ke inventori");
         notify(concat(FOOD_NAME(dump), suffix));
+        notify_undo(concat(FOOD_NAME(dump), suffixUndo));
         deallocate_string(&suffix);
     }
 
@@ -41,7 +43,7 @@ void display_info() {
 
     display_notification();
     putchar('\n');
-    clear_notification();
+//    clear_notification();
 
     display_map();
     printf("\n");
