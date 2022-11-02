@@ -45,9 +45,7 @@ void cmd_buy() {
     if (choice != 0) {
         backup_state();
         next_tick();
-    }
 
-    while (choice != 0) {
         int lfr_food_index = lfr_search_n_first_by_source(food_recipe, Buy, choice);
         food_t food = FR_FOOD(LFR_ELMT(food_recipe, lfr_food_index));
         int food_id = FOOD_ID(food);
@@ -55,16 +53,17 @@ void cmd_buy() {
 
         add_to_delivery_list(food);
 
+        clear_display();
+        display_info();
         printf("Berhasil memesan ");
         print_string(name);
         printf(". Pesanan akan diantar dalam ");
         write_fulltime(FOOD_DELIVERY_TIME(food));
         putchar('\n');
-
-        choice = validate_int(0, counter, prompt);
+        printf("\nEnter command: ");
+    } else {
+        clear_display();
+        display_info();
+        printf("\nEnter command: ");
     }
-
-    clear_display();
-    display_info();
-    printf("\nEnter command: ");
 }
