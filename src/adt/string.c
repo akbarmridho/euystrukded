@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "string.h"
 
 /* ------------KONSTRUKTOR------------ */
@@ -169,28 +168,26 @@ void insert_char_last(char c, string *s) {
 /* mengonversi string numerik menjadi integer bilangan cacah */
 /* return -1 jika tidak numerik */
 /* return -2 jika neff(s) == 0 */
-long string_to_natural_int(string s) {
-    printf("%d\n", neff(s));
+/* truncate hasil jika digit lebih dari 9*/
+int string_to_natural_int(string s) {
     if (neff(s) > 0) {   
-        int power =  neff(s) - 1;
-        long result = -1;
-        if (power > 9) {
-            return result;
-        } else {
-            for (int i = 0; i < neff(s); i++){
-                char c = letter_at(s, i);
-                if (c >= '0' && c <= '9'){
-                    if (result == -1){
-                        result = 0;
-                    }
-                    result += ((int)c - 48) * (long)pow(10, power);
-                    power--;
-                } else {
-                    return -1;
+        int pow_10 = 1;
+        int result = -1;
+        for (int i = neff(s) - 1; i >= 0; i--){
+            char c = letter_at(s, i);
+            if (c >= '0' && c <= '9') {
+                if (result == -1){
+                    result = 0;
                 }
+                if (pow_10 <= 100000000) {
+                    result += ((int)c - 48) * pow_10;
+                    pow_10 *= 10;
+                }
+            } else {
+                return -1;
             }
-            return result;
         }
+        return result;
     } else {
         return -2;
     }

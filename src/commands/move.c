@@ -28,7 +28,7 @@ void cmd_move(string direction) {
         return;
     }
     
-    long n = string_to_natural_int(nums);
+    int n = string_to_natural_int(nums);
 
     if (n == -1 || n == 0){
         printf("Format MOVE salah! Gunakan \"MOVE {NORTH|SOUTH|EAST|WEST} [n_times]\" dengan n_times > 0\n");
