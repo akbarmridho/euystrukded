@@ -154,7 +154,7 @@ int main() {
             } else if (valcount == 2) {
                 wait(hour, minute);
             } else {
-                printf("Format wait salah! Gunakan WAIT JAM MENIT atau WAIT MENIT\n");
+                printf("Format WAIT salah! Gunakan \"WAIT [hour] <minute>\"\n");
                 printf("\nEnter command: ");
             }
 
