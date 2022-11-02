@@ -19,7 +19,7 @@ void load_map(char *path) {
     string cline_str = word_to_string(current_line);
     char *first_line_str = to_native_str(cline_str);
     deallocate_string(&cline_str);
-
+    // baca row dan col
     sscanf(first_line_str, "%d %d", &row, &col);
     free(first_line_str);
 
@@ -29,6 +29,7 @@ void load_map(char *path) {
 
     while (i < row) {
         advance_line();
+        // baca setiap baris map lalu masukkan ke matriks map
         for (int j = 0; j < col; j++) {
             MAT_ELMT(map, i, j) = current_line.tab_word[j];
         }
@@ -55,6 +56,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
     char *food_line_str = to_native_str(current_line_str);
     deallocate_string(&current_line_str);
 
+    // baca banyaknya makanan
     int food_count;
     sscanf(food_line_str, "%d", &food_count);
     free(food_line_str);
@@ -66,6 +68,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
 
     create_list_food(lf, food_count);
 
+    // untuk setiap makanan
     for (int i = 0; i < food_count; i++) {
         advance_line();
 
@@ -73,6 +76,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         char *fc_line_str = to_native_str(cline_str);
         deallocate_string(&cline_str);
 
+        // baca id makanan
         int food_id;
         sscanf(fc_line_str, "%d", &food_id);
         free(fc_line_str);
@@ -80,6 +84,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         int day, hour, minute;
         day_time_t expire_time, delivery_time;
 
+        // baca nama makanan
         advance_line();
         string name = word_to_string(current_line);
 
@@ -87,6 +92,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         string expire_string = word_to_string(current_line);
         char *expire_time_native_str = to_native_str(expire_string);
         deallocate_string(&expire_string);
+        // baca expire time makanan
         sscanf(expire_time_native_str, "%d %d %d", &day, &hour, &minute); //NOLINT
         free(expire_time_native_str);
         create_time(&expire_time, day, hour, minute);
@@ -94,6 +100,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         advance_line();
         string delivery_time_str = word_to_string(current_line);
         char *delivery_time_native_str = to_native_str(delivery_time_str);
+        // baca delivery time atau processing time makanan
         sscanf(delivery_time_native_str, "%d %d %d", &day, &hour, &minute); //NOLINT
         deallocate_string(&delivery_time_str);
         free(delivery_time_native_str);
@@ -102,6 +109,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
 
         enum food_source source;
         advance_line();
+        // baca metode pembuatan makan
         string method = word_to_string(current_line);
 
         if (comparestr(method, MIX)) {
@@ -146,7 +154,7 @@ void load_recipe(char *path, ListFood *lf) {
     deallocate_string(&recipe_count_str);
 
     int count;
-
+    // baca banyaknya resep
     sscanf(recipe_line, "%d", &count);
     free(recipe_line);
 
@@ -155,6 +163,7 @@ void load_recipe(char *path, ListFood *lf) {
         printf("Found %d recipe\n", count);
     }
 
+    // buat resep kosong untuk setiap makanan
     for (int i = 0; i < list_food_length(*lf); i++) {
         food_t food = ELMT(*lf, i);
 
@@ -167,6 +176,7 @@ void load_recipe(char *path, ListFood *lf) {
         }
     }
 
+    // untuk setiap resep
     for (int i = 0; i < count; i++) {
         int food_id;
         int ingredient_count;
@@ -177,6 +187,7 @@ void load_recipe(char *path, ListFood *lf) {
         deallocate_string(&each_recipe_line);
         int endidx;
 
+        // baca id makanan dan banyaknya bahan
         sscanf(current_line_str, "%d %d%n", &food_id, &ingredient_count, &endidx);
 
         if (DEBUG && FOOD_DEBUG) {
@@ -196,6 +207,7 @@ void load_recipe(char *path, ListFood *lf) {
 
             char *startlineidx = &current_line_str[endidx];
 
+            // baca id children recipe
             for (int k = 0; k < ingredient_count; k++) {
                 sscanf(startlineidx, "%d%n", &val, &offset);
                 startlineidx += offset;

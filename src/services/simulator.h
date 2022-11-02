@@ -21,6 +21,9 @@ F.S. Info simulator tampil pada layar
 */
 void display_info();
 
+/*
+ * Pindahkan posisi player ke destination
+ */
 void move(point_t destination);
 
 /*

@@ -1,5 +1,8 @@
 #include "display.h"
 
+/*
+ * Mengosongkan layar command line
+ */
 void clear_display() {
     if (DEBUG) {
         return;
@@ -11,6 +14,9 @@ void clear_display() {
 #endif
 }
 
+/*
+ * Mengampilkan splash screen
+ */
 void print_splash_screen() {
     char *nahida = "\n"
                    "@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&#G7?JJ7J#&#PY@@B#@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"

@@ -1,9 +1,9 @@
 #include "map.h"
 #include <stdio.h>
-//
-//simulator_t simulator;
-//Matrix map;
 
+/*
+ * Menampilkan peta dan juga posisi player saat ini
+ */
 void display_map() {
     int k = 0, l = 0;
     for (int i = 0; i < MAT_ROW_EFF(map) + 2; i++) {
@@ -30,12 +30,17 @@ void display_map() {
     printf("\n");
 }
 
-
+/*
+ * Periksa jika pemain bisa bergerak ke suatu titik
+ */
 boolean is_able_move_to(point_t destination) {
     return mat_is_idx_valid(map, destination.x, destination.y) &&
            (MAT_ELMT(map, ORDINAT(destination), ABSIS(destination)) == '#');
 }
 
+/*
+ * Menampilkan posisi karakter pada map
+ */
 point_t get_char_pos(char c) {
     boolean found = false;
     int i = 0;
@@ -60,22 +65,27 @@ point_t get_char_pos(char c) {
     return destination;
 }
 
+// mendapatkan posisi boiler
 point_t get_boiler_position() {
     return get_char_pos('B');
 }
 
+// mendapatkan posisi chopper
 point_t get_fryer_position() {
     return get_char_pos('F');
 }
 
+// mendapatkan posisi mixer
 point_t get_mixer_position() {
     return get_char_pos('M');
 }
 
+// mendapatkan posisi telepon
 point_t get_delivery_position() {
     return get_char_pos('T');
 }
 
+// mendapatkan posisi chopper
 point_t get_chopper_position() {
     return get_char_pos('C');
 }

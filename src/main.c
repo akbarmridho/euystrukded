@@ -17,6 +17,9 @@
 #include "commands/help.h"
 #include "utils/display.h"
 
+/*
+ * Meminta nama kepada user
+ */
 string get_name() {
     start_word();
     string result;
@@ -66,11 +69,10 @@ int main() {
         printf("\nKetik START untuk mulai atau EXIT untuk keluar\n");
         start_word();
         while (!comparestr(START, word_to_string(current_word))) {
-            if (comparestr(EXIT, word_to_string(current_word))){
+            if (comparestr(EXIT, word_to_string(current_word))) {
                 printf("Bye Bye!~\n");
                 return 0;
-            }
-            else if (!comparestr(START, word_to_string(current_word))){
+            } else if (!comparestr(START, word_to_string(current_word))) {
                 printf("Perintah tidak dikenali. Ketik START untuk mulai atau EXIT untuk keluar.\n");
                 advance_word();
             }

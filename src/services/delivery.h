@@ -10,7 +10,6 @@
 #include "../adt/food.h"
 #include "notifier.h"
 #include "../data/delivery.h"
-// terdapat delivery queue
 
 /*
 Kurangi waktu delivery pada delivery list sebanyak satu tick (menit)

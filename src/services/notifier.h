@@ -6,14 +6,25 @@
 #include "../data/simulator.h"
 #include "../data/history.h"
 
+/*
+ * Mengirim notifikasi
+ */
 void notify(string notification);
 
-void notify_redo(string notification);
-
+/**
+ * Mengirim motifikasi ke state undo
+ * @param notification
+ */
 void notify_undo(string notification);
 
+/*
+ * Menghapus isi notifikasi
+ */
 void clear_notification();
 
+/*
+ * Menampilkan notifikasi
+ */
 void display_notification();
 
 #endif

@@ -1,8 +1,6 @@
 #include "history.h"
 
-//StackState history;
-//StackState restore;
-
+/* Lakukan copy semua data penting ke state */
 state_t generate_state() {
     // copy inventory
     ListFood inventory_copy;
@@ -27,6 +25,7 @@ state_t generate_state() {
     return backup;
 }
 
+/* set state program sekarang berdasarkan input */
 void set_state(state_t state) {
     simulator.inventory.capacity = state.inventory.capacity;
     simulator.inventory.nEff = state.inventory.nEff;
@@ -44,6 +43,7 @@ void set_state(state_t state) {
     delivery.buffer = state.delivery.buffer;
 }
 
+/* Copy current state, lalu push ke stack history */
 void backup_state() {
     state_t backup = generate_state();
     clear_notification();
@@ -56,6 +56,7 @@ void backup_state() {
     }
 }
 
+/* Pop stack history, lalu timpa current state. Untuk perintah UNDO */
 void restore_state() {
     state_t prev_state;
     state_t current_state = generate_state();
@@ -66,6 +67,7 @@ void restore_state() {
     set_state(prev_state);
 }
 
+/* Pop stack restore, push current state ke history, timpa hasil restore ke current state. Untuk perintah REDO */
 void restore_backup_state() {
     state_t next_state;
     stack_pop(&restore, &next_state);
@@ -76,10 +78,12 @@ void restore_backup_state() {
     set_state(next_state);
 }
 
+/* cek jika bisa undo */
 boolean is_able_to_restore() {
     return !stack_is_empty(history);
 }
 
+/* cek jika bisa redo */
 boolean is_able_to_restore_backup() {
     return !stack_is_empty(restore);
 }
