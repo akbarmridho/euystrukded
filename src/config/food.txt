@@ -1,31 +1,126 @@
+25
+1
+Raw Fish
+1 0 0
+0 0 30
+Buy
+2
+Fish Fillet
+1 0 0
+0 0 5
+Chop
+3
+Sumeru Rose
+3 0 0
+0 0 5
+Buy
+4
+Oil
+10 0 0
+0 0 5
+Buy
+5
+Fried Fish
+0 5 0
+0 0 10
+Fry
 6
+Lambad Fish Roll
+0 4 0
+0 0 10
+Mix
+7
+Beans
+2 0 0
+0 0 10
+Buy
+8
+Mint
+4 0 0
+0 0 10
+Buy
+9
+Chopped Mint
+0 12 0
+0 0 5
+Chop
+10
+Minty Bean Soup
+4 0 0
+0 0 30
+Boil
 11
-Ayam Mentah
+Raw Meat
+2 0 0
+0 0 30
+Buy
+12
+Flour
+7 0 0
+0 0 15
+Buy
+13
+Spices
+3 0 0
+0 0 10
+Buy
+14
+Flat Bread
+1 0 0
+0 0 30
+Mix
+15
+Cooked Meat
+6 0 0
+0 0 15
+Fry
+16
+Shawarma Wrap
+0 3 0
+0 0 30
+Mix
+17
+Shrimp Meat
 1 0 0
 0 0 15
 Buy
-21
-Ayam Potong
-0 2 0
-0 0 0
+18
+Onion
+7 0 0
+0 0 10
+Buy
+19
+Chopped Onion
+0 6 0
+0 0 5
 Chop
-10
-Tepung
-0 1 0
+20
+Curry Shrimp
+0 3 0
 0 0 30
-Buy
-15
-Minyak Goreng
-0 1 30
-0 1 0
-Buy
-31
-Ayam Tepung
-0 0 30
-0 0 0
-Mix
-37
-Ayam Goreng
-0 0 15
-0 0 0
 Fry
+21
+Rice
+7 0 0
+0 0 10
+Buy
+22
+Cooked Rice
+0 12 0
+0 0 30
+Boil
+23
+Tomato
+3 0 0
+0 0 10
+Buy
+24
+Aaru Beans
+0 12 0
+0 0 20
+Fry
+25
+Aaru Mixed Rice
+0 6 0
+0 0 10
+Mix

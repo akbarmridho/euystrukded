@@ -20,25 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="docs: adt">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="docs: rest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/start.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/configdata.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/configdata.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/food.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/recipe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/recipe.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/clock.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/clock.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/delivery.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/delivery.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/delivery.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/history.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/history.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/map.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/notifier.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/notifier.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/notifier.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/notifier.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/simulator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/simulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/simulator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/display.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/display.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/parser.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,14 +146,7 @@
       <workItem from="1667368326300" duration="40000" />
       <workItem from="1667368957834" duration="2363000" />
       <workItem from="1667372256694" duration="602000" />
-      <workItem from="1667374760269" duration="1646000" />
-    </task>
-    <task id="LOCAL-00010" summary="feat: notifier service">
-      <created>1666945090456</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1666945090456</updated>
+      <workItem from="1667374760269" duration="3271000" />
     </task>
     <task id="LOCAL-00011" summary="refactor: function renaming">
       <created>1666964221815</created>
@@ -505,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667375638742</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="docs: rest">
+      <created>1667376462215</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1667376462215</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="misc dunno" />
     <MESSAGE value="update validator" />
     <MESSAGE value="update start and config initializer" />
     <MESSAGE value="lakjsdlaskd bisa compile" />
@@ -548,7 +533,8 @@
     <MESSAGE value="update catalog and cookbook display" />
     <MESSAGE value="update notification, update recipe parser" />
     <MESSAGE value="docs: adt" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: adt" />
+    <MESSAGE value="docs: rest" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: rest" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

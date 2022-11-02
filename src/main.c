@@ -43,7 +43,7 @@ int main() {
     clear_display();
     print_splash_screen();
 
-    printf("\nSelamat datang di Sumeru! Nikmati berbagai hidangan yang ada di seluruh penjuru Tevyat\n");
+    printf("\nSelamat datang di Sumeru! Nikmati berbagai hidangan khas yang ada di Sumeru\n");
 
     string START = char_to_string("START");
     string EXIT = char_to_string("EXIT");
