@@ -139,7 +139,7 @@ string concat(string s1, string s2) {
 string word_to_string(word_t word) {
     string sHasil;
     int i;
-    new_string(&sHasil, capacity(sHasil));
+    new_string(&sHasil, word.length);
 
     for (i = 0; i < word.length; i++) {
         insert_char_last(word.tab_word[i], &sHasil);
@@ -170,17 +170,17 @@ void insert_char_last(char c, string *s) {
 /* return -2 jika neff(s) == 0 */
 /* truncate hasil jika digit lebih dari 9*/
 int string_to_natural_int(string s) {
-    if (neff(s) > 0) {   
+    if (neff(s) > 0) {
         int pow_10 = 1;
         int result = -1;
-        for (int i = neff(s) - 1; i >= 0; i--){
+        for (int i = neff(s) - 1; i >= 0; i--) {
             char c = letter_at(s, i);
             if (c >= '0' && c <= '9') {
-                if (result == -1){
+                if (result == -1) {
                     result = 0;
                 }
                 if (pow_10 <= 100000000) {
-                    result += ((int)c - 48) * pow_10;
+                    result += ((int) c - 48) * pow_10;
                     pow_10 *= 10;
                 }
             } else {

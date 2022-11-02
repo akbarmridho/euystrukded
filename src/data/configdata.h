@@ -10,6 +10,7 @@
 #include "../adt/list_delivery.h"
 #include "../adt/food.h"
 #include "../adt/simulator.h"
+#include "../adt/parsermachine.h"
 #include "../utils/parser.h"
 
 extern ListFoodRecipe food_recipe;

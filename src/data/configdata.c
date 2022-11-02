@@ -11,94 +11,33 @@ boolean MAP_DEBUG = false;
 boolean FOOD_DEBUG = false;
 boolean TREE_DEBUG = false;
 
-int convert(char cc) {
-    return (cc - 48);
-}
 
 void load_map(char *path) {
-    FILE *fp;
-    fp = fopen(path, "r");//buka file
+    start_line(path);
 
-    if (fp == NULL) {
-        printf("Null file\n");
-    }
+    int row, col;
+    string cline_str = word_to_string(current_line);
+    char *first_line_str = to_native_str(cline_str);
+    deallocate_string(&cline_str);
 
-    int count = 0;//menentukan baris berapa yang diproses
-    typedef struct {
-        int row;
-        int col;
-    } Matrix_size;
+    sscanf(first_line_str, "%d %d", &row, &col);
+    free(first_line_str);
 
-    Matrix_size size;
-    size.row = 0;
-    size.col = 0;
-    boolean found_row = false;
-    boolean found_col = false;
-    // char temp= fgetc(fp);
-    while (!feof(fp)) { // mendapatkan row pertama dari file (row_size, col_size)
-        // printf("%c", temp);
-        char temp = fgetc(fp);
-        if (count == 0 && temp != '\n') {
-            if (temp != ' ' && !found_row) {
-                int convertion = (int) temp - 48;
-                // printf("%d\n", convertion);
-                size.row = size.row * 10 + convertion;
-                // found_row= true;
-            } else {
-                found_row = true;
-            }
-            // printf("%d\n", found_row);
-            if (found_row) {
-                // printf("1\n");
-                if (temp == ' ') {
-                    //blablabla
-                } else {
-                    if (!found_col) {
-                        if (temp >= '0' && temp <= '9') {
-                            int convertion = (int) temp - 48;
-                            // printf("\n%d\n", convertion);
-                            size.col = size.col * 10 + convertion;
-                            // found_col= true;
-                        } else {
-                            found_col = true;
-                            // printf("1\n");
-                        }
-                    }
-                }
-            }
-        } else if (temp != '\n') {
-            //tidak ada apa2, cuman gak tau mau gimana
-        } else {
-            count++;
+    create_matrix(row, col, &map);
+
+    int i = 0;
+
+    while (i < row) {
+        advance_line();
+        for (int j = 0; j < col; j++) {
+            MAT_ELMT(map, i, j) = current_line.tab_word[j];
         }
-        // printf("%c", temp);
+        i++;
     }
-    fclose(fp);
-    // Matrix map;
-    create_matrix(size.row, size.col, &map);
-    fp = fopen(path, "r");
-    count = 0;
-    int i = 0, j = 0;
-    while (!feof(fp)) {
-        char mat_val = fgetc(fp);
-        if (count != 0) {
-            if (mat_val != '\n') {
-                MAT_ELMT(map, i, j) = mat_val;
-                j++;
-            } else {
-                j = 0;
-                i++;
-            }
-        }
-        if (mat_val == '\n') {
-            count++;
-        }
-    }
-    fclose(fp);
 
     if (CONFIG_DEBUG && MAP_DEBUG) {
         printf("MAPDEBUG: MAP CONFIG\n");
-        printf("Mapsize %d row %d col\n", size.row, size.col);
+        printf("Mapsize %d row %d col\n", row, col);
         display_matrix(map);
         printf("ENDMAPDEBUG: ENDMAP\n");
     }
@@ -111,16 +50,14 @@ void load_temp_list_food(ListFood *lf, char *path) {
     string MIX = char_to_string("Mix");
     string FRY = char_to_string("Fry");
 
-    FILE *fp;
+    start_line(path);
+    string current_line_str = word_to_string(current_line);
+    char *food_line_str = to_native_str(current_line_str);
+    deallocate_string(&current_line_str);
 
-    fp = fopen(path, "r");
-
-    if (fp == NULL) {
-        printf("FILE LOAD ERROR map.txt. GOT NULL FILE FROM PATH %s\n", path);
-        return;
-    }
-
-    int food_count = read_next_int(fp);
+    int food_count;
+    sscanf(food_line_str, "%d", &food_count);
+    free(food_line_str);
 
     if (CONFIG_DEBUG && FOOD_DEBUG) {
         printf("DEBUG: FOOD RECIPE\n");
@@ -130,34 +67,42 @@ void load_temp_list_food(ListFood *lf, char *path) {
     create_list_food(lf, food_count);
 
     for (int i = 0; i < food_count; i++) {
-        int food_id = read_next_int(fp);
+        advance_line();
+
+        string cline_str = word_to_string(current_line);
+        char *fc_line_str = to_native_str(cline_str);
+        deallocate_string(&cline_str);
+
+        int food_id;
+        sscanf(fc_line_str, "%d", &food_id);
+        free(fc_line_str);
+
         int day, hour, minute;
         day_time_t expire_time, delivery_time;
-        string name;
 
-        read_next_line(fp, &name);
+        advance_line();
+        string name = word_to_string(current_line);
 
-        string expire_time_str;
-        read_next_line(fp, &expire_time_str);
-        char *expire_time_native_str = to_native_str(expire_time_str);
-
+        advance_line();
+        string expire_string = word_to_string(current_line);
+        char *expire_time_native_str = to_native_str(expire_string);
+        deallocate_string(&expire_string);
         sscanf(expire_time_native_str, "%d %d %d", &day, &hour, &minute); //NOLINT
-        deallocate_string(&expire_time_str);
         free(expire_time_native_str);
         create_time(&expire_time, day, hour, minute);
 
-        string delivery_time_str;
-        read_next_line(fp, &delivery_time_str);
+        advance_line();
+        string delivery_time_str = word_to_string(current_line);
         char *delivery_time_native_str = to_native_str(delivery_time_str);
-
         sscanf(delivery_time_native_str, "%d %d %d", &day, &hour, &minute); //NOLINT
         deallocate_string(&delivery_time_str);
         free(delivery_time_native_str);
+
         create_time(&delivery_time, day, hour, minute);
 
-        string method;
         enum food_source source;
-        read_next_line(fp, &method);
+        advance_line();
+        string method = word_to_string(current_line);
 
         if (comparestr(method, MIX)) {
             source = Mix;
@@ -191,13 +136,24 @@ void load_temp_list_food(ListFood *lf, char *path) {
         NEFF(*lf)++;
     }
 
-    fclose(fp);
+    force_close();
 }
 
 void load_recipe(char *path, ListFood *lf) {
-    FILE *fp = fopen(path, "r");
+    start_line(path);
+    string recipe_count_str = word_to_string(current_line);
+    char *recipe_line = to_native_str(recipe_count_str);
+    deallocate_string(&recipe_count_str);
 
-    int count = read_next_int(fp);
+    int count;
+
+    sscanf(recipe_line, "%d", &count);
+    free(recipe_line);
+
+    if (DEBUG && FOOD_DEBUG) {
+        printf("DEBUG: RECIPE DEBUG\n");
+        printf("Found %d recipe\n", count);
+    }
 
     for (int i = 0; i < list_food_length(*lf); i++) {
         food_t food = ELMT(*lf, i);
@@ -212,8 +168,20 @@ void load_recipe(char *path, ListFood *lf) {
     }
 
     for (int i = 0; i < count; i++) {
-        int food_id = read_next_int(fp);
-        int ingredient_count = read_next_int(fp);
+        int food_id;
+        int ingredient_count;
+
+        advance_line();
+        string each_recipe_line = word_to_string(current_line);
+        char *current_line_str = to_native_str(each_recipe_line);
+        deallocate_string(&each_recipe_line);
+        int endidx;
+
+        sscanf(current_line_str, "%d %d%n", &food_id, &ingredient_count, &endidx);
+
+        if (DEBUG && FOOD_DEBUG) {
+            printf("Readingf recipe with id %d and ingredient %d\n", food_id, ingredient_count);
+        }
 
         recipe_t recipe;
 
@@ -223,8 +191,12 @@ void load_recipe(char *path, ListFood *lf) {
         } else {
             int children[ingredient_count];
 
-            for (int j = 0; j < ingredient_count; j++) {
-                children[j] = read_next_int(fp);
+            int val;
+            int offset;
+
+            for (int k = 0; k < ingredient_count; k++) {
+                sscanf(&current_line_str[endidx], "%d%n", &val, &offset);
+                children[k] = val;
             }
 
             create_recipe(&recipe, food_id, ingredient_count, children);
@@ -252,7 +224,7 @@ void load_recipe(char *path, ListFood *lf) {
         lfr_insert_last(&food_recipe, fr);
     }
 
-    fclose(fp);
+    force_close();
 }
 
 void load_food_recipe(char *path_food, char *path_recipe) {
