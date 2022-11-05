@@ -3,6 +3,8 @@
 
 #include "../core/pathtoservice.h"
 #include "../../services/simulator.h"
+#include "../../services/clock.h"
+#include "../../services/history.h"
 #include "../../utils/display.h"
 
 void move_auto_to(point_t destination);

@@ -65,7 +65,7 @@ int main() {
     string WAIT = char_to_string("WAIT");
     string CLEAR = char_to_string("CLEAR");
     string HELP = char_to_string("HELP");
-    string TELEPORT = char_to_string("TELEPORT");
+    string AUTOMOVE = char_to_string("AUTOMOVE");
 
     string name;
 
@@ -165,7 +165,7 @@ int main() {
             }
 
             deallocate_string(&time);
-        } else if (startwith(current_input, TELEPORT)) {
+        } else if (startwith(current_input, AUTOMOVE)) {
             if (current_input.neff < 10) {
                 printf("Perintah salah!\n");
             } else {
