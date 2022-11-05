@@ -10,7 +10,7 @@ word_t current_line;
  * Mulai mesin karakter versi file parser
  */
 void start_parse(char *path) {
-    fp = fopen(path, "r");
+    fp = fopen(path, "rt");
 
     if (fp == NULL) {
         printf("FILE LOAD ERROR map.txt. GOT NULL FILE FROM PATH %s\n", path);
@@ -24,6 +24,7 @@ void start_parse(char *path) {
  */
 void advance_parse() {
     parser_current_char = fgetc(fp);
+//    fscanf(fp, "%c", &parser_current_char);
     parser_EOP = (parser_current_char == FILE_MARK);
 
     if (parser_EOP) {

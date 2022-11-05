@@ -16,11 +16,13 @@
 #include "commands/clear.h"
 #include "commands/help.h"
 #include "utils/display.h"
+#include "autobnmo/commands/automove.h"
 
 /*
  * Meminta nama kepada user
  */
 string get_name() {
+
     start_word();
     string result;
     boolean defined = false;
@@ -40,6 +42,7 @@ string get_name() {
 }
 
 int main() {
+    setbuf(stdout, 0);
     clear_display();
     print_splash_screen();
 
@@ -62,6 +65,7 @@ int main() {
     string WAIT = char_to_string("WAIT");
     string CLEAR = char_to_string("CLEAR");
     string HELP = char_to_string("HELP");
+    string TELEPORT = char_to_string("TELEPORT");
 
     string name;
 
@@ -161,6 +165,35 @@ int main() {
             }
 
             deallocate_string(&time);
+        } else if (startwith(current_input, TELEPORT)) {
+            if (current_input.neff < 10) {
+                printf("Perintah salah!\n");
+            } else {
+                char destination = current_input.chars[9];
+                point_t dest_point;
+
+                boolean valid = true;
+
+                if (destination == 'T') {
+                    dest_point = get_delivery_position();
+                } else if (destination == 'B') {
+                    dest_point = get_boiler_position();
+                } else if (destination == 'F') {
+                    dest_point = get_fryer_position();
+                } else if (destination == 'C') {
+                    dest_point = get_chopper_position();
+                } else if (destination == 'M') {
+                    dest_point = get_mixer_position();
+                } else {
+                    printf("Destination invalid!\n");
+                    valid = false;
+                }
+
+                if (valid) {
+                    move_auto_to(dest_point);
+                    printf("\nEnter command: ");
+                }
+            }
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");

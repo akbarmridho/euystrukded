@@ -4,6 +4,7 @@ project(euystrukded C)
 set(CMAKE_C_STANDARD 11)
 
 include_directories(src/adt)
+include_directories(src/autobnmo)
 include_directories(src/commands)
 include_directories(src/data)
 include_directories(src/services)
@@ -20,6 +21,12 @@ file(GLOB src
         "src/commands/*.c"
         "src/utils/*.h"
         "src/utils/*.c"
+        "src/autobnmo/core/*.h"
+        "src/autobnmo/core/*.c"
+        "src/autobnmo/services/*.h"
+        "src/autobnmo/services/*.c"
+        "src/autobnmo/commands/*.h"
+        "src/autobnmo/commands/*.c"
         )
 
 add_executable(euystrukded
