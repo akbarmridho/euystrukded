@@ -32,4 +32,6 @@ point_t get_delivery_position();
 // mendapatkan posisi chopper
 point_t get_chopper_position();
 
+point_t get_refrigerator_position();
+
 #endif
