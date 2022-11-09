@@ -289,3 +289,7 @@ void build_tree_recipe() {
 
 
 }
+
+void read_size_food(char *path_food_size) {
+    
+}
