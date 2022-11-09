@@ -15,4 +15,6 @@ boolean is_refrigerator_full();
 
 void get_item_refrigerator();
 
+void display_refrigerator();
+
 #endif
