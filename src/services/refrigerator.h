@@ -10,7 +10,7 @@
 
 ListFoodRecipe food_recipe;
 simulator_t simulator;
-Matrix refrigerator;
+Matrix_R refrigerator;
 
 void store_item_refrigerator();
 

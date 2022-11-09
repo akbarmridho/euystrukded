@@ -225,3 +225,8 @@ int find_food (string name, ListFood f){
     }
     return n;
 }
+
+int get_food_id_from_name(string name, ListFood f){
+    int index= find_food(name, f);
+    return(FOOD_ID(ELMT(f, index)));
+}
