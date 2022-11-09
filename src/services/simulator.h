@@ -7,6 +7,8 @@
 #include "../adt/time.h"
 #include "../data/simulator.h"
 
+simulator_t simulator;
+
 /*
 Kurangi waktu kadaluarsa inventory
 bila ada yg kadaluarsa, tambahkan ke notification lalu tambahkan ke food history
@@ -63,5 +65,7 @@ boolean is_able_to_fry();
 boolean is_able_to_mix();
 
 // is able to buy dll
+
+boolean is_in_inventory(string name);
 
 #endif
