@@ -4,12 +4,13 @@
  * Buat makanan dari parameter
  */
 void
-create_food(food_t *f, int id, string name, day_time_t expire_time, day_time_t delivery_time, enum food_source source) {
+create_food(food_t *f, int id, string name, day_time_t expire_time, day_time_t delivery_time, enum food_source source, size food_size) {
     FOOD_NAME(*f) = name;
     FOOD_ID(*f) = id;
     FOOD_EXPIRE_TIME(*f) = expire_time;
     FOOD_DELIVERY_TIME(*f) = delivery_time;
     FOOD_SOURCE(*f) = source;
+    FOOD_SIZE(*f)= food_size;
 }
 
 /*

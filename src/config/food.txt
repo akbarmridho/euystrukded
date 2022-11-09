@@ -4,123 +4,148 @@ Raw Fish
 1 0 0
 0 0 30
 Buy
+1 2
 2
 Fish Fillet
 1 0 0
 0 0 5
 Chop
+1 2
 3
 Sumeru Rose
 3 0 0
 0 0 5
 Buy
+1 1
 4
 Oil
 10 0 0
 0 0 5
 Buy
+1 1
 5
 Fried Fish
 0 5 0
 0 0 10
 Fry
+2 2
 6
 Lambad Fish Roll
 0 4 0
 0 0 10
 Mix
+1 2
 7
 Beans
 2 0 0
 0 0 10
 Buy
+1 2
 8
 Mint
 4 0 0
 0 0 10
 Buy
+1 1
 9
 Chopped Mint
 0 12 0
 0 0 5
 Chop
+1 2
 10
 Minty Bean Soup
 4 0 0
 0 0 30
 Boil
+2 2
 11
 Raw Meat
 2 0 0
 0 0 30
 Buy
+2 2
 12
 Flour
 7 0 0
 0 0 15
 Buy
+2 2
 13
 Spices
 3 0 0
 0 0 10
 Buy
+1 1
 14
 Flat Bread
 1 0 0
 0 0 30
 Mix
+3 3
 15
 Cooked Meat
 6 0 0
 0 0 15
 Fry
+2 3
 16
 Shawarma Wrap
 0 3 0
 0 0 30
 Mix
+2 3
 17
 Shrimp Meat
 1 0 0
 0 0 15
 Buy
+1 2
 18
 Onion
 7 0 0
 0 0 10
 Buy
+1 1
 19
 Chopped Onion
 0 6 0
 0 0 5
 Chop
+1 1
 20
 Curry Shrimp
 0 3 0
 0 0 30
 Fry
+1 2
 21
 Rice
 7 0 0
 0 0 10
 Buy
+2 2
 22
 Cooked Rice
 0 12 0
 0 0 30
 Boil
+2 2
 23
 Tomato
 3 0 0
 0 0 10
 Buy
+1 2
 24
 Aaru Beans
 0 12 0
 0 0 20
 Fry
+1 1
 25
 Aaru Mixed Rice
 0 6 0
 0 0 10
 Mix
+2 2

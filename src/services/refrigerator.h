@@ -5,9 +5,11 @@
 #include "../adt/boolean.h"
 #include "../adt/list_food.h"
 #include "../data/refrigerator.h"
+#include "../data/configdata.h"
 
-Matrix refrigerator;
+ListFoodRecipe food_recipe;
 simulator_t simulator;
+Matrix refrigerator
 
 void store_item_refrigerator();
 
