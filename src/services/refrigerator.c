@@ -17,6 +17,7 @@ void store_item_refrigerator(string name){
             size food_size= get_food_size(inventory(simulator), name);
             if(is_item_fit){
                 dequeue_food(&inventory(simulator), get_food_id_from_name(name, inventory(simulator)), &val);
+                enqueue_food(&refrigerator_food, val);
                 for(int i= x; i< x+ LENGTH(food_size); i++){
                     for(int j= y; j< y+ WIDTH(food_size); j++){
                         ELMT_R(refrigerator, i, j)= val;
@@ -43,12 +44,47 @@ boolean is_refrigerator_full(){
     return full;
 }
 
-void get_item_refrigerator(){
+void get_item_refrigerator(string name){
+    food_t val;
+    int i, j, id;
+    int x, y;
+    size food_size = get_food_size(refrigerator_food, name);
 
+    id = get_food_id_from_name(name, refrigerator_food);
+
+    if (is_in_refrigerator(name)) {
+        dequeue_food(&refrigerator_food, id, &val);
+        enqueue_food(&inventory(simulator), val);
+
+        while (i < 20) {
+            while (j < 10) {
+                if (FOOD_ID(ELMT_R(refrigerator,i,j)) == FOOD_ID(val) ) {
+                    break;
+                }
+            }
+        }
+
+        x = j;
+        y = i;
+
+        for (y = i; y < WIDTH(food_size); y++) {
+            for (x = j; x < LENGTH(food_size); x++) {
+                FOOD_ID(ELMT_R(refrigerator,i,j)) = 0;
+            }
+        } 
+    } else {
+        printf("Food is not in the Refrigerator!");
+    }
 }
 
 void display_refrigerator(){
-    
+    int i, j;
+    for (i = 0; i < 20; i++) {
+        for (j = 0; j < 10; j++) {
+            printf("%d ", FOOD_ID(ELMT_R(refrigerator,i,j)));
+        }
+        printf("\n");
+    }
 }
 
 int count_zero_area(int x, int y, size food_size){
@@ -83,4 +119,17 @@ void is_fit_index_place(string name, int * x, int * y, boolean * fit_in_place){
             }
         }
     }
+}
+
+boolean is_in_refrigerator(string name) {
+    int i = 0;
+    boolean found = false;
+    while (i < list_food_length(refrigerator_food) && !found) {
+        if (comparestr(name, FOOD_NAME(ELMT(refrigerator_food, i)))) {
+            found = true;
+        } else {
+            i += 1;
+        }
+    }
+    return found;
 }
