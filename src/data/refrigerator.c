@@ -2,6 +2,7 @@
 #include "refrigerator.h"
 
 Matrix_R refrigerator;
+ListFood refrigerator_food;
 
 void initialize_refrigerator(){
     create_refrigerator(&refrigerator, 20, 10);

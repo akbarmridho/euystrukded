@@ -5,6 +5,7 @@
 #include "../adt/refrigerator.h"
 
 extern Matrix_R refrigerator;
+extern ListFood refrigerator_food;
 
 void initialize_refrigerator();
 
