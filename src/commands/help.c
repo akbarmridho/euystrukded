@@ -25,7 +25,10 @@ void cmd_main_help() {
             "  CHOP          Memotong bahan makanan pada lokasi C.\n"
             "  UNDO          Membatalkan perubahan terakhir terhadap data pengguna.\n"
             "  REDO          Membatalkan efek pemanggilan \"UNDO\" terakhir.\n"
-            "  AUTOMOVE D    Otomatis pergi ke lokasi D pada map\n"
+            "  AUTOBNMO SERIES\n"
+            "    AUTOMOVE D      Otomatis pergi ke lokasi D pada map\n"
+            "    AUTOBNMO id     Lakukan otomasi proses pembuatan makanan dengan id id\n"
+            "    AUTOPROCESS id  Lakukan pemrosesan makanan dengan id id\n"
     );
     printf("\nEnter command: ");
 }

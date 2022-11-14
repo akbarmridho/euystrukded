@@ -17,6 +17,8 @@
 #include "commands/help.h"
 #include "utils/display.h"
 #include "autobnmo/commands/automove.h"
+#include "autobnmo/commands/autoprocess.h"
+#include "autobnmo/commands/autobnmo.h"
 
 /*
  * Meminta nama kepada user
@@ -66,6 +68,8 @@ int main() {
     string CLEAR = char_to_string("CLEAR");
     string HELP = char_to_string("HELP");
     string AUTOMOVE = char_to_string("AUTOMOVE");
+    string AUTOBNMO = char_to_string("AUTOBNMO");
+    string AUTOPROCESS = char_to_string("AUTOPROCESS");
 
     string name;
 
@@ -194,6 +198,26 @@ int main() {
                     printf("\nEnter command: ");
                 }
             }
+        } else if (startwith(current_input, AUTOBNMO)) {
+            int food_id;
+            int result = sscanf(to_native_str(current_input), "%d", &food_id);
+
+            if (!result) {
+                printf("Invalid command! Cannot parse food id\n");
+            } else {
+                autobnmo(food_id);
+            }
+
+        } else if (startwith(current_input, AUTOPROCESS)) {
+            int food_id;
+            int result = sscanf(to_native_str(current_input), "%d", &food_id);
+
+            if (!result) {
+                printf("Invalid command! Cannot parse food id\n");
+            } else {
+                autoprocess(food_id);
+            }
+
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");

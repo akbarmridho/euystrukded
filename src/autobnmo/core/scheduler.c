@@ -78,7 +78,7 @@ void schedule(int target_food_id) {
 
             for (int k = 0; k < steps.contents[j].length; k++) {
                 food_t food = steps.contents[j].contents[k]->food;
-                snprintf(buffer, 14, "%s %d id\n", source_to_command(food.source), food.id);
+                snprintf(buffer, 14, "%s %d id\n", "AUTOPROCESS", food.id);
             }
         }
     }
