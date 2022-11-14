@@ -10,7 +10,8 @@ void schedule(int target_food_id) {
 
     group_list_action(&action_steps, actions);
 
-    list_of_action_list_t grouped_steps[action_steps.length];
+    int grouped_steps_len = action_steps.length;
+    list_of_action_list_t grouped_steps[grouped_steps_len];
 
     for (int i = 0; i < action_steps.length; i++) {
         create_list_of_list_action(&grouped_steps[i]);
@@ -60,14 +61,29 @@ void schedule(int target_food_id) {
                 printf("Invalid source on sheduler\n");
             }
         }
-
-        // lakukan sorting pada grouped_steps sedemikian sehingga terurut langkah-langkahnya sesuai dengan langkah
-        // paling efisien. Travelling salesman problem
-
-        // lakukan parse grup action menjadi commands
     }
 
+    // lakukan sorting pada grouped_steps sedemikian sehingga terurut langkah-langkahnya sesuai dengan langkah
+    // paling efisien. Travelling salesman problem
 
+    setup_writer("autobnmo.txt");
+
+    for (int i = 0; i < grouped_steps_len; i++) {
+        list_of_action_list_t steps = grouped_steps[i];
+        char buffer[15];
+
+        for (int j = 0; j < steps.length; j++) {
+            snprintf(buffer, 14, "%s %c\n", "AUTOMOVE", source_to_char(steps.contents[j].contents[0]->food.source));
+            c_write(buffer);
+
+            for (int k = 0; k < steps.contents[j].length; k++) {
+                food_t food = steps.contents[j].contents[k]->food;
+                snprintf(buffer, 14, "%s %d id\n", source_to_command(food.source), food.id);
+            }
+        }
+    }
+
+    close_writer();
 }
 
 void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
@@ -116,6 +132,10 @@ void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
 
                     insert_list_action(&action_group, action_list.contents[i]);
 
+                    if (action_list.contents[i]->parent != NULL) {
+                        action_list.contents[i]->parent->unmet_prereq_count--;
+                    }
+
                     delete_list_action(&action_list, i);
                     highest_priority_count--;
                     deleted = true;
@@ -145,12 +165,17 @@ void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
             int i = 0;
 
             while (i < action_list.length && !deleted) {
-                if ((action_list.contents[i]->food.source == Fry && has_fry) ||
-                    (action_list.contents[i]->food.source == Mix && has_mix) ||
-                    (action_list.contents[i]->food.source == Chop && has_chop) ||
-                    (action_list.contents[i]->food.source == Boil && has_boil)
+                if (((action_list.contents[i]->food.source == Fry && has_fry) ||
+                     (action_list.contents[i]->food.source == Mix && has_mix) ||
+                     (action_list.contents[i]->food.source == Chop && has_chop) ||
+                     (action_list.contents[i]->food.source == Boil && has_boil)) &&
+                    action_list.contents[i]->unmet_prereq_count == 0
                         ) {
                     insert_list_action(&action_group, action_list.contents[i]);
+
+                    if (action_list.contents[i]->parent != NULL) {
+                        action_list.contents[i]->parent->unmet_prereq_count--;
+                    }
 
                     delete_list_action(&action_list, i);
                     carry_count--;

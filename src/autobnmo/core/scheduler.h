@@ -2,6 +2,7 @@
 #define AUTOBNMO_CORE_SCHEDULER_H
 
 #include "action_list.h"
+#include "writer.h"
 #include "../../adt/tree.h"
 #include "../../data/configdata.h"
 #include "../../data/simulator.h"
