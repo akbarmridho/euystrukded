@@ -1,7 +1,74 @@
 #include "scheduler.h"
 
-// todo: hitung total waktu setiap aksi pada grup
-// lakukan dijkstra algorithm
+void schedule(int target_food_id) {
+    list_of_action_list_t action_steps;
+    create_list_of_list_action(&action_steps);
+
+    list_action_t actions;
+    create_list_action(&actions);
+    create_action_priority(&actions, target_food_id);
+
+    group_list_action(&action_steps, actions);
+
+    list_of_action_list_t grouped_steps[action_steps.length];
+
+    for (int i = 0; i < action_steps.length; i++) {
+        create_list_of_list_action(&grouped_steps[i]);
+
+        int boil_idx = -1;
+        int chop_idx = -1;
+        int mix_idx = -1;
+        int fry_idx = -1;
+
+        for (int j = 0; j < action_steps.contents[i].length; j++) {
+            food_t food = action_steps.contents[i].contents[j]->food;
+            list_action_t group;
+
+            if (food.source == Boil) {
+                if (boil_idx == -1) {
+                    create_list_action(&group);
+                    boil_idx = grouped_steps[i].length;
+                    insert_list_of_list_action(&grouped_steps[i], group);
+                }
+
+                insert_list_action(&grouped_steps[i].contents[boil_idx], action_steps.contents[i].contents[j]);
+            } else if (food.source == Chop) {
+                if (chop_idx == -1) {
+                    create_list_action(&group);
+                    chop_idx = grouped_steps[i].length;
+                    insert_list_of_list_action(&grouped_steps[i], group);
+                }
+
+                insert_list_action(&grouped_steps[i].contents[chop_idx], action_steps.contents[i].contents[j]);
+            } else if (food.source == Mix) {
+                if (mix_idx == -1) {
+                    create_list_action(&group);
+                    mix_idx = grouped_steps[i].length;
+                    insert_list_of_list_action(&grouped_steps[i], group);
+                }
+
+                insert_list_action(&grouped_steps[i].contents[mix_idx], action_steps.contents[i].contents[j]);
+            } else if (food.source == Fry) {
+                if (fry_idx == -1) {
+                    create_list_action(&group);
+                    fry_idx = grouped_steps[i].length;
+                    insert_list_of_list_action(&grouped_steps[i], group);
+                }
+
+                insert_list_action(&grouped_steps[i].contents[fry_idx], action_steps.contents[i].contents[j]);
+            } else {
+                printf("Invalid source on sheduler\n");
+            }
+        }
+
+        // lakukan sorting pada grouped_steps sedemikian sehingga terurut langkah-langkahnya sesuai dengan langkah
+        // paling efisien. Travelling salesman problem
+
+        // lakukan parse grup action menjadi commands
+    }
+
+
+}
 
 void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
     int highest_priority = 0;
