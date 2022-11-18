@@ -6,6 +6,6 @@
 #include "../../services/simulator.h"
 #include "../../utils/display.h"
 
-void autoprocess(int id);
+int autoprocess(int id);
 
 #endif

@@ -19,6 +19,7 @@
 #include "autobnmo/commands/automove.h"
 #include "autobnmo/commands/autoprocess.h"
 #include "autobnmo/commands/autobnmo.h"
+#include "autobnmo/commands/bnmogo.h"
 
 /*
  * Meminta nama kepada user
@@ -70,6 +71,7 @@ int main() {
     string AUTOMOVE = char_to_string("AUTOMOVE");
     string AUTOBNMO = char_to_string("AUTOBNMO");
     string AUTOPROCESS = char_to_string("AUTOPROCESS");
+    string BNMOGO = char_to_string("BNMOGO");
 
     string name;
 
@@ -236,6 +238,8 @@ int main() {
                 autoprocess(food_id);
             }
 
+        } else if (startwith(current_input, BNMOGO)) {
+            bnmogo();
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");

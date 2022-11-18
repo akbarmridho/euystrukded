@@ -16,7 +16,7 @@ extern word_t current_line;
 /*
  * Mulai mesin karakter versi file parser
  */
-void start_parse(char *path);
+int start_parse(char *path);
 
 /*
  * Maju mesin karakter satu langkah
@@ -26,7 +26,7 @@ void advance_parse();
 /*
  * Mulai mesin baris versi file parser
  */
-void start_line(char *path);
+int start_line(char *path);
 
 /*
  * Maju mesin kata sebanyak satu baris

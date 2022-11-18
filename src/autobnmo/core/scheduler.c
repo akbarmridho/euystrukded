@@ -1,6 +1,6 @@
 #include "scheduler.h"
 
-boolean AUTOBNMO_DEBUG = true;
+boolean AUTOBNMO_DEBUG = false;
 
 void schedule(int target_food_id) {
     list_of_action_list_t action_steps;
@@ -240,7 +240,6 @@ void create_action_priority(list_action_t *list, int target) {
 
     Tree t = lt_search_by_id(&list_tree_recipe, target);
 
-
     tranverse_tree(list, t, 0, NULL);
 
     if (AUTOBNMO_DEBUG) {
@@ -269,9 +268,8 @@ void tranverse_tree(list_action_t *list, Tree t, int depth, action_t *parent) {
 
     for (int i = 0; i < t->children_count; i++) {
         Tree child = t->children[i];
-        int count = food_count(simulator.inventory, child->food.id);
 
-        if (child->food.source != Buy && count != 0) {
+        if (child->food.source != Buy) {
             tranverse_tree(list, child, depth + 1, action);
             action->unmet_prereq_count++;
         }

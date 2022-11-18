@@ -29,6 +29,7 @@ void cmd_main_help() {
             "    AUTOMOVE D      Otomatis pergi ke lokasi D pada map\n"
             "    AUTOBNMO id     Lakukan otomasi proses pembuatan makanan dengan id id\n"
             "    AUTOPROCESS id  Lakukan pemrosesan makanan dengan id id\n"
+            "    BNMOGO          Eksekusi semua perintah dari autobnmo.txt (jika ada)\n"
     );
     printf("\nEnter command: ");
 }

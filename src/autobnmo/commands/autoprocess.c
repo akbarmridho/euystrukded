@@ -1,6 +1,6 @@
 #include "autoprocess.h"
 
-void autoprocess(int id) {
+int autoprocess(int id) {
     int lfr_food_index = lfr_search_by_food_id(food_recipe, id);
     food_t food = FR_FOOD(LFR_ELMT(food_recipe, lfr_food_index));
     int food_id = FOOD_ID(food);
@@ -32,11 +32,15 @@ void autoprocess(int id) {
         }
 
         printf("Enter command: ");
+
+        return 1; // retcode 1: fail (lack ingredient)
     } else {
         notify(concat(name, char_to_string(" selesai dibuat")));
         notify_undo(concat(name, char_to_string(" tidak jadi dibuat.")));
         clear_display();
         display_info();
         printf("Enter command: ");
+
+        return 0; // retcode 0: success
     }
 }
