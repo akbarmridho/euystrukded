@@ -20,11 +20,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="docs: rest">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="skip transverse when processed ingredient exist">
+      <change afterPath="$PROJECT_DIR$/src/adt/set.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/adt/set.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/recommend.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/recommend.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/food.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/recipe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/recipe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/help.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/help.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/food_recommendation.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/food_recommendation.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/food_recommendation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/food_recommendation.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +50,9 @@
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -80,7 +88,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/home/barcode/kulyahsmt3/euystrukded&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/akbar/Kuliah/Tahun Kedua/Semester 3/IF2130 - Organisasi dan Arsitektur Komputer/Praktikum/2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -90,7 +98,18 @@
     &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\home\barcode\kulyahsmt3\euystrukded\src\autobnmo\commands" />
+      <recent name="\\wsl$\Ubuntu-22.04\home\barcode\kulyahsmt3\euystrukded\src\autobnmo\core" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -146,105 +165,23 @@
       <workItem from="1667368326300" duration="40000" />
       <workItem from="1667368957834" duration="2363000" />
       <workItem from="1667372256694" duration="602000" />
-      <workItem from="1667374760269" duration="3271000" />
-    </task>
-    <task id="LOCAL-00011" summary="refactor: function renaming">
-      <created>1666964221815</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1666964221815</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: history service">
-      <created>1666964239094</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1666964239094</updated>
-    </task>
-    <task id="LOCAL-00013" summary="feat: initial undo redo implementation">
-      <created>1666965283374</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1666965283374</updated>
-    </task>
-    <task id="LOCAL-00014" summary="setup: add map service header">
-      <created>1667020640460</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1667020640460</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fix: display notification update message">
-      <created>1667026141444</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1667026141444</updated>
-    </task>
-    <task id="LOCAL-00016" summary="final: adt matrix, point, recipe, time">
-      <created>1667028468389</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1667028468389</updated>
-    </task>
-    <task id="LOCAL-00017" summary="update: add list tree recipe to global vars">
-      <created>1667034495625</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1667034495625</updated>
-    </task>
-    <task id="LOCAL-00018" summary="update: add list tree recipe to global vars">
-      <created>1667034840411</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1667034840411</updated>
-    </task>
-    <task id="LOCAL-00019" summary="final: tree and food driver">
-      <created>1667104901623</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1667104901623</updated>
-    </task>
-    <task id="LOCAL-00020" summary="semifinal: string and notification driver">
-      <created>1667106699357</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1667106699357</updated>
-    </task>
-    <task id="LOCAL-00021" summary="feat: from branch adt egi">
-      <created>1667109038553</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1667109038553</updated>
-    </task>
-    <task id="LOCAL-00022" summary="update: some adt driver">
-      <created>1667110690130</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1667110690130</updated>
-    </task>
-    <task id="LOCAL-00023" summary="adt finalization">
-      <created>1667113332129</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1667113332129</updated>
-    </task>
-    <task id="LOCAL-00024" summary="fix: do not backup notification">
-      <created>1667113502355</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1667113502355</updated>
+      <workItem from="1667374760269" duration="3334000" />
+      <workItem from="1667401380461" duration="3060000" />
+      <workItem from="1667408343105" duration="90000" />
+      <workItem from="1667408657488" duration="104000" />
+      <workItem from="1667545981240" duration="132000" />
+      <workItem from="1667618204888" duration="17999000" />
+      <workItem from="1667718366468" duration="55000" />
+      <workItem from="1668084376558" duration="59000" />
+      <workItem from="1668245954299" duration="5858000" />
+      <workItem from="1668383833493" duration="2632000" />
+      <workItem from="1668395398962" duration="4383000" />
+      <workItem from="1668403108205" duration="1257000" />
+      <workItem from="1668579360947" duration="271000" />
+      <workItem from="1668691768472" duration="1520000" />
+      <workItem from="1668731668879" duration="2230000" />
+      <workItem from="1668733931531" duration="10084000" />
+      <workItem from="1668751793300" duration="1705000" />
     </task>
     <task id="LOCAL-00025" summary="fix: do not backup notification">
       <created>1667113608587</created>
@@ -491,7 +428,105 @@
       <option name="project" value="LOCAL" />
       <updated>1667376462215</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="config: update food and recipe to sumeru themed">
+      <created>1667378106889</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1667378106889</updated>
+    </task>
+    <task id="LOCAL-00061" summary="feat: teleporter">
+      <created>1667637903743</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1667637903743</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fix: display info, steps">
+      <created>1667638342549</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1667638342549</updated>
+    </task>
+    <task id="LOCAL-00063" summary="scheduler: grouper">
+      <created>1668252029169</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1668252029170</updated>
+    </task>
+    <task id="LOCAL-00064" summary="scheduler: group action by method">
+      <created>1668387079613</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1668387079614</updated>
+    </task>
+    <task id="LOCAL-00065" summary="scheduler: result writer">
+      <created>1668400515436</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1668400515438</updated>
+    </task>
+    <task id="LOCAL-00066" summary="scheduler: addition to scheduler">
+      <created>1668400542780</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1668400542780</updated>
+    </task>
+    <task id="LOCAL-00067" summary="autobnmo: add support command">
+      <created>1668404215700</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1668404215701</updated>
+    </task>
+    <task id="LOCAL-00068" summary="update debug config">
+      <created>1668734671144</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1668734671144</updated>
+    </task>
+    <task id="LOCAL-00069" summary="tranverse tree bugfix">
+      <created>1668735123515</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1668735123515</updated>
+    </task>
+    <task id="LOCAL-00070" summary="group action fix">
+      <created>1668739115443</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1668739115443</updated>
+    </task>
+    <task id="LOCAL-00071" summary="writer bugfix">
+      <created>1668740626036</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1668740626036</updated>
+    </task>
+    <task id="LOCAL-00072" summary="initial autobnmo implementation">
+      <created>1668743041749</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1668743041749</updated>
+    </task>
+    <task id="LOCAL-00073" summary="skip transverse when processed ingredient exist">
+      <created>1668752336792</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1668752336793</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,20 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update validator" />
-    <MESSAGE value="update start and config initializer" />
-    <MESSAGE value="lakjsdlaskd bisa compile" />
-    <MESSAGE value="YEYEYEYEYEYEY" />
-    <MESSAGE value="GATAU" />
-    <MESSAGE value="glue the main" />
-    <MESSAGE value="call backup state every side effect command" />
-    <MESSAGE value="move finalyy bisa" />
-    <MESSAGE value="add build script" />
-    <MESSAGE value="bugfix: move command" />
-    <MESSAGE value="come random thingsss" />
-    <MESSAGE value="refactor configdata" />
-    <MESSAGE value="update display clear" />
-    <MESSAGE value="sebelum baterai laptop habis" />
     <MESSAGE value="fix: working notification" />
     <MESSAGE value="fix: catalog and cookbook display" />
     <MESSAGE value="buy in loop, validate wait" />
@@ -534,14 +555,42 @@
     <MESSAGE value="update notification, update recipe parser" />
     <MESSAGE value="docs: adt" />
     <MESSAGE value="docs: rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: rest" />
+    <MESSAGE value="config: update food and recipe to sumeru themed" />
+    <MESSAGE value="feat: teleporter" />
+    <MESSAGE value="fix: display info, steps" />
+    <MESSAGE value="scheduler: grouper" />
+    <MESSAGE value="scheduler: group action by method" />
+    <MESSAGE value="scheduler: result writer" />
+    <MESSAGE value="scheduler: addition to scheduler" />
+    <MESSAGE value="autobnmo: add support command" />
+    <MESSAGE value="update debug config" />
+    <MESSAGE value="tranverse tree bugfix" />
+    <MESSAGE value="group action fix" />
+    <MESSAGE value="writer bugfix" />
+    <MESSAGE value="initial autobnmo implementation" />
+    <MESSAGE value="skip transverse when processed ingredient exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="skip transverse when processed ingredient exist" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="*first_line_str @ &lt;Enter Size&gt;" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/commands/automove.c</url>
+          <line>19</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/commands/automove.c</url>
+          <line>12</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/core/pathtoservice.c</url>
+          <line>297</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

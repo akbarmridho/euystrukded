@@ -15,12 +15,18 @@
 #include "commands/processor.h"
 #include "commands/clear.h"
 #include "commands/help.h"
+#include "commands/recommend.h"
 #include "utils/display.h"
+#include "autobnmo/commands/automove.h"
+#include "autobnmo/commands/autoprocess.h"
+#include "autobnmo/commands/autobnmo.h"
+#include "autobnmo/commands/bnmogo.h"
 
 /*
  * Meminta nama kepada user
  */
 string get_name() {
+
     start_word();
     string result;
     boolean defined = false;
@@ -40,6 +46,7 @@ string get_name() {
 }
 
 int main() {
+    setbuf(stdout, 0);
     clear_display();
     print_splash_screen();
 
@@ -62,6 +69,11 @@ int main() {
     string WAIT = char_to_string("WAIT");
     string CLEAR = char_to_string("CLEAR");
     string HELP = char_to_string("HELP");
+    string AUTOMOVE = char_to_string("AUTOMOVE");
+    string AUTOBNMO = char_to_string("AUTOBNMO");
+    string AUTOPROCESS = char_to_string("AUTOPROCESS");
+    string BNMOGO = char_to_string("BNMOGO");
+    string RECOMMEND = char_to_string("RECOMMEND");
 
     string name;
 
@@ -80,6 +92,7 @@ int main() {
         printf("Masukkan nama anda: ");
         advance_word();
         name = word_to_string(current_word);
+
     } else {
         name = char_to_string("DEBUG PROFILE");
     }
@@ -91,6 +104,21 @@ int main() {
 
     if (DEBUG) {
         start_word();
+        /*
+         * Tambahkan semua makanan ke inventory
+         */
+
+        for (int i = 0; i < food_recipe.neff; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (food_recipe.contents[i].food.source == Buy) {
+                    add_to_delivery_list(food_recipe.contents[i].food);
+                }
+            }
+        }
+
+        for (int i = 0; i < 35; i++) {
+            next_tick();
+        }
     } else {
         advance_word();
     }
@@ -161,6 +189,61 @@ int main() {
             }
 
             deallocate_string(&time);
+        } else if (startwith(current_input, AUTOMOVE)) {
+            if (current_input.neff < 10) {
+                printf("Perintah salah!\n");
+            } else {
+                char destination = current_input.chars[9];
+                point_t dest_point;
+
+                boolean valid = true;
+
+                if (destination == 'T') {
+                    dest_point = get_delivery_position();
+                } else if (destination == 'B') {
+                    dest_point = get_boiler_position();
+                } else if (destination == 'F') {
+                    dest_point = get_fryer_position();
+                } else if (destination == 'C') {
+                    dest_point = get_chopper_position();
+                } else if (destination == 'M') {
+                    dest_point = get_mixer_position();
+                } else {
+                    printf("Destination invalid!\n");
+                    valid = false;
+                }
+
+                if (valid) {
+                    move_auto_to(dest_point);
+                    printf("\nEnter command: ");
+                }
+            }
+        } else if (startwith(current_input, AUTOBNMO)) {
+            int food_id;
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
+
+            if (result != 2) {
+                printf("Invalid command! Cannot parse food id\n");
+            } else {
+                autobnmo(food_id);
+            }
+
+        } else if (startwith(current_input, AUTOPROCESS)) {
+            int food_id;
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
+
+            if (result != 2) {
+                printf("Invalid command! Cannot parse food id\n");
+            } else {
+                autoprocess(food_id);
+            }
+
+        } else if (startwith(current_input, BNMOGO)) {
+            bnmogo();
+        } else if (comparestr(current_input, RECOMMEND)) {
+            recommend();
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");
