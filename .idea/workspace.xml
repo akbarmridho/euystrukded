@@ -20,10 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="docs: rest">
+    <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="feat: teleporter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/food.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/recipe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/recipe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/autobnmo/commands/automove.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/autobnmo/commands/automove.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/autobnmo/commands/automove.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/autobnmo/commands/automove.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/help.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/help.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/home/barcode/kulyahsmt3/euystrukded&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/akbar/Ngoding/euystrukded&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -90,7 +91,18 @@
     &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\home\barcode\kulyahsmt3\euystrukded\src\autobnmo\commands" />
+      <recent name="\\wsl$\Ubuntu-22.04\home\barcode\kulyahsmt3\euystrukded\src\autobnmo\core" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -146,21 +158,12 @@
       <workItem from="1667368326300" duration="40000" />
       <workItem from="1667368957834" duration="2363000" />
       <workItem from="1667372256694" duration="602000" />
-      <workItem from="1667374760269" duration="3271000" />
-    </task>
-    <task id="LOCAL-00011" summary="refactor: function renaming">
-      <created>1666964221815</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1666964221815</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: history service">
-      <created>1666964239094</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1666964239094</updated>
+      <workItem from="1667374760269" duration="3334000" />
+      <workItem from="1667401380461" duration="3060000" />
+      <workItem from="1667408343105" duration="90000" />
+      <workItem from="1667408657488" duration="104000" />
+      <workItem from="1667545981240" duration="132000" />
+      <workItem from="1667618204888" duration="17286000" />
     </task>
     <task id="LOCAL-00013" summary="feat: initial undo redo implementation">
       <created>1666965283374</created>
@@ -491,7 +494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667376462215</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="config: update food and recipe to sumeru themed">
+      <created>1667378106889</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1667378106889</updated>
+    </task>
+    <task id="LOCAL-00061" summary="feat: teleporter">
+      <created>1667637903743</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1667637903743</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,8 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update validator" />
-    <MESSAGE value="update start and config initializer" />
     <MESSAGE value="lakjsdlaskd bisa compile" />
     <MESSAGE value="YEYEYEYEYEYEY" />
     <MESSAGE value="GATAU" />
@@ -534,12 +549,35 @@
     <MESSAGE value="update notification, update recipe parser" />
     <MESSAGE value="docs: adt" />
     <MESSAGE value="docs: rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: rest" />
+    <MESSAGE value="config: update food and recipe to sumeru themed" />
+    <MESSAGE value="feat: teleporter" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: teleporter" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/commands/automove.c</url>
+          <line>19</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/commands/automove.c</url>
+          <line>12</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/autobnmo/core/pathtoservice.c</url>
+          <line>297</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="*first_line_str @ &lt;Enter Size&gt;" />
+        <watch expression="map_distance" />
+        <watch expression="map_distance" />
       </configuration>
     </watches-manager>
   </component>

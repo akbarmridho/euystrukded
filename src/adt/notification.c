@@ -65,8 +65,11 @@ int n_get_last_idx(ListNotification n) {
 /* I.S. n terdefinisi, n mungkin kosong
    F.S. s adalah elemen terakhir dari List Notifikasi */
 void n_insert_last(ListNotification *n, Eltype s) {
-    notif(*n, n_list_length(*n)) = s;
-    length(*n) += 1;
+    if (n->length < NOTIFCAPACITY) {
+        notif(*n, n_list_length(*n)) = s;
+        length(*n) += 1;
+    }
+
 }
 
 /* I.S. n terdefinisi

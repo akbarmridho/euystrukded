@@ -9,14 +9,16 @@ word_t current_line;
 /*
  * Mulai mesin karakter versi file parser
  */
-void start_parse(char *path) {
-    fp = fopen(path, "r");
+int start_parse(char *path) {
+    fp = fopen(path, "rt");
 
     if (fp == NULL) {
-        printf("FILE LOAD ERROR map.txt. GOT NULL FILE FROM PATH %s\n", path);
+        printf("FILE LOAD ERROR. GOT NULL FILE FROM PATH %s\n", path);
+        return 1; // retcode file not found
     }
 
     advance_parse();
+    return 0; // retcode success
 }
 
 /*
@@ -24,6 +26,7 @@ void start_parse(char *path) {
  */
 void advance_parse() {
     parser_current_char = fgetc(fp);
+//    fscanf(fp, "%c", &parser_current_char);
     parser_EOP = (parser_current_char == FILE_MARK);
 
     if (parser_EOP) {
@@ -35,10 +38,14 @@ void advance_parse() {
 /*
  * Mulai mesin baris versi file parser
  */
-void start_line(char *path) {
-    start_parse(path);
-    end_line = false;
-    advance_line();
+int start_line(char *path) {
+    int retcode = start_parse(path);
+
+    if (retcode == 0) {
+        end_line = false;
+        advance_line();
+    }
+    return retcode;
 }
 
 /*

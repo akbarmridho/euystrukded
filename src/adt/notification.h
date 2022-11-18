@@ -3,7 +3,7 @@
 
 #include "string.h"
 
-#define NOTIFCAPACITY 20
+#define NOTIFCAPACITY 200
 #define IDX_MIN 0
 
 typedef string notification;
