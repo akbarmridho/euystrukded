@@ -25,6 +25,7 @@ void cmd_main_help() {
             "  CHOP          Memotong bahan makanan pada lokasi C.\n"
             "  UNDO          Membatalkan perubahan terakhir terhadap data pengguna.\n"
             "  REDO          Membatalkan efek pemanggilan \"UNDO\" terakhir.\n"
+            "  RECOMMEND     Menampilkan rekomendasi makanan yang dapat dibuat\n"
             "  AUTOBNMO SERIES\n"
             "    AUTOMOVE D      Otomatis pergi ke lokasi D pada map\n"
             "    AUTOBNMO id     Lakukan otomasi proses pembuatan makanan dengan id id\n"

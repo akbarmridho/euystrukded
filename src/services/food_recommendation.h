@@ -1,46 +1,14 @@
+#ifndef SERVICE_FOOD_RECOMMENDATION_h
+#define SERVICE_FOOD_RECOMMENDATION_h
+
+
 #include "../data/simulator.h"
 #include "../data/configdata.h"
-#include "../adt/boolean.h"
+#include "../adt/set.h"
 
-#define MAX_ID 99           //Max food ID
-
-typedef struct{
-    char contents[MAX_ID + 1];  // Buffer
-    int neff;                   // Banyaknya elm pada set
-    int idx_eff;                // Nilai IDX paling besar
-} Set;
-
-/* SELEKTOR */
-#define S_ELMT(s, i) (s).contents[(i)]
-#define S_NEFF(s) (s).neff
-#define S_IDX_EFF(s) (s).idx_eff
-
-/* KONSTRUKTOR */
-
-/*  proses: Menginialisasi set set
-    I.S. set sembarang
-    F.S. set terdefinisi
-*/
-void create_set(Set *set);
-
-/*  proses: mengonversi List Food dalam bentuk set 
-    I.S. set sembarang
-    F.s. set merepresentasikan element element pada list
-*/
-void list_food_to_set (Set *set, ListFood list);
-
-/*  proses: mengonversi tree recipe dalam bentuk set
-    I.S. set sembarang
-    F.s. set merepresentasikan ingridient-ingridient pada tree recipe
-*/
-void tree_to_set(Set *set, Tree recipe);
-
-/* Mengembalikan apakah s1 merupakan subset dari s2 */
-boolean isSubset(Set s1, Set s2);
-
-/* Menampilkan elemen set dan jumlahnya */
-void display_set(Set s);
 
 /* Menampilkan rekomendasi makanan yang dapat dibuat berdasarkan
 inventory yang ada. */
 void food_recommendation();
+
+#endif
