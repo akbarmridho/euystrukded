@@ -106,7 +106,9 @@ int main() {
 
         for (int i = 0; i < food_recipe.neff; i++) {
             for (int j = 0; j < 3; j++) {
-                add_to_delivery_list(food_recipe.contents[i].food);
+                if (food_recipe.contents[i].food.source == Buy) {
+                    add_to_delivery_list(food_recipe.contents[i].food);
+                }
             }
         }
 
@@ -225,9 +227,10 @@ int main() {
 
         } else if (startwith(current_input, AUTOPROCESS)) {
             int food_id;
-            int result = sscanf(to_native_str(current_input), "%d", &food_id);
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
 
-            if (!result) {
+            if (result != 2) {
                 printf("Invalid command! Cannot parse food id\n");
             } else {
                 autoprocess(food_id);

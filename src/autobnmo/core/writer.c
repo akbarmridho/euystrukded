@@ -41,12 +41,11 @@ char *source_to_command(enum food_source source) {
 }
 
 void setup_writer(char *path) {
-    cwriter = fopen(path, "r");
+    cwriter = fopen(path, "w");
 }
 
 void c_write(char *command) {
     fwrite(command, sizeof(char), native_strlen(command), cwriter);
-//    fwrite("\n", sizeof(char), 1, cwriter);
 }
 
 void close_writer() {

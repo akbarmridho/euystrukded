@@ -8,8 +8,10 @@ void schedule(int target_food_id) {
 
     list_action_t actions;
     create_list_action(&actions);
+    // done debug
     create_action_priority(&actions, target_food_id);
 
+    // done debug
     group_list_action(&action_steps, actions);
 
     int grouped_steps_len = action_steps.length;
@@ -65,6 +67,29 @@ void schedule(int target_food_id) {
         }
     }
 
+    if (AUTOBNMO_DEBUG) {
+        for (int i = 0; i < grouped_steps_len; i++) {
+            list_of_action_list_t group = grouped_steps[i];
+
+            printf("\nSteps idx %d\n", i);
+
+            for (int j = 0; j < group.length; j++) {
+                printf("Group %d\n", j);
+                list_action_t acts = group.contents[j];
+
+                for (int k = 0; k < acts.length; k++) {
+                    printf("Item idx %d with id %d\n", k, acts.contents[k]->food.id);
+                    printf("Unmet prereq %d priority %d\n", acts.contents[k]->unmet_prereq_count,
+                           acts.contents[k]->priority);
+                    if (acts.contents[k]->parent != NULL) {
+                        printf("Have parent with food id %d\n", acts.contents[k]->parent->food.id);
+                    }
+                    putchar('\n');
+                }
+            }
+        }
+    }
+
     // lakukan sorting pada grouped_steps sedemikian sehingga terurut langkah-langkahnya sesuai dengan langkah
     // paling efisien. Travelling salesman problem
 
@@ -80,7 +105,8 @@ void schedule(int target_food_id) {
 
             for (int k = 0; k < steps.contents[j].length; k++) {
                 food_t food = steps.contents[j].contents[k]->food;
-                snprintf(buffer, 28, "%s %d id\n", "AUTOPROCESS", food.id);
+                snprintf(buffer, 28, "%s %d\n", "AUTOPROCESS", food.id);
+                c_write(buffer);
             }
         }
     }
