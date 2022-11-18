@@ -88,6 +88,7 @@ int main() {
         printf("Masukkan nama anda: ");
         advance_word();
         name = word_to_string(current_word);
+
     } else {
         name = char_to_string("DEBUG PROFILE");
     }
@@ -99,6 +100,20 @@ int main() {
 
     if (DEBUG) {
         start_word();
+        /*
+         * Tambahkan semua makanan ke inventory
+         */
+
+        for (int i = 0; i < food_recipe.neff; i++) {
+            for (int j = 0; j < 3; j++) {
+                k++;
+                add_to_delivery_list(food_recipe.contents[i].food);
+            }
+        }
+
+        for (int i = 0; i < 35; i++) {
+            next_tick();
+        }
     } else {
         advance_word();
     }
@@ -200,9 +215,10 @@ int main() {
             }
         } else if (startwith(current_input, AUTOBNMO)) {
             int food_id;
-            int result = sscanf(to_native_str(current_input), "%d", &food_id);
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
 
-            if (!result) {
+            if (result != 2) {
                 printf("Invalid command! Cannot parse food id\n");
             } else {
                 autobnmo(food_id);
