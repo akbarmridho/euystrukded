@@ -269,9 +269,15 @@ void tranverse_tree(list_action_t *list, Tree t, int depth, action_t *parent) {
     for (int i = 0; i < t->children_count; i++) {
         Tree child = t->children[i];
 
-        if (child->food.source != Buy) {
-            tranverse_tree(list, child, depth + 1, action);
-            action->unmet_prereq_count++;
+        if (list_food_count_val(simulator.inventory, child->food) == 0) {
+            if (child->food.source != Buy) {
+                tranverse_tree(list, child, depth + 1, action);
+                action->unmet_prereq_count++;
+            } else {
+                printf("Missing basic ingredient ");
+                print_string(child->food.name);
+                printf(" \n");
+            }
         }
     }
 }

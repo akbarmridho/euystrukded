@@ -62,6 +62,7 @@ void process_request(enum food_source source) {
             counter++;
             printf("  %d. ", counter);
             print_string(FOOD_NAME(FR_FOOD(current)));
+            putchar('\n');
         }
     }
 
