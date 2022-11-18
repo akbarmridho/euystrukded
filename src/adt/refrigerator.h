@@ -2,6 +2,7 @@
 #define ADT_REFRIGERATOR_H
 
 #include "../adt/food.h"
+#include "../adt/matrix.h"
 
 typedef struct{
     food_t mem[ROW_CAP][COL_CAP];
