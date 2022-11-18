@@ -10,10 +10,6 @@ void schedule(int target_food_id) {
     create_list_action(&actions);
     create_action_priority(&actions, target_food_id);
 
-    if (AUTOBNMO_DEBUG) {
-        printf("action priority length %d\n", actions.length);
-    }
-
     group_list_action(&action_steps, actions);
 
     int grouped_steps_len = action_steps.length;
@@ -104,6 +100,7 @@ void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
     int current_highest_priority = highest_priority;
 
     while (current_highest_priority >= 0) {
+
         int highest_priority_count = 0;
 
         for (int i = 0; i < action_list.length; i++) {
@@ -145,9 +142,8 @@ void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
                     delete_list_action(&action_list, i);
                     highest_priority_count--;
                     deleted = true;
-                } else {
-                    i++;
                 }
+                i++;
             }
         }
 
@@ -195,6 +191,22 @@ void group_list_action(list_of_action_list_t *list, list_action_t action_list) {
         current_highest_priority--;
         insert_list_of_list_action(list, action_group);
     }
+
+    if (AUTOBNMO_DEBUG) {
+        printf("GROUP LIST ACTION DEBUG\n");
+        for (int k = 0; k < list->length; k++) {
+            list_action_t la = list->contents[k];
+            printf("Group %d\n", k);
+            for (int i = 0; i < la.length; i++) {
+                printf("Item idx %d with id %d\n", i, la.contents[i]->food.id);
+                printf("Unmet prereq %d priority %d\n", la.contents[i]->unmet_prereq_count, la.contents[i]->priority);
+                if (la.contents[i]->parent != NULL) {
+                    printf("Have parent with food id %d\n", la.contents[i]->parent->food.id);
+                }
+                putchar('\n');
+            }
+        }
+    }
 }
 
 void create_action_priority(list_action_t *list, int target) {
@@ -216,6 +228,7 @@ void create_action_priority(list_action_t *list, int target) {
             if (list->contents[i]->parent != NULL) {
                 printf("Have parent with food id %d\n", list->contents[i]->parent->food.id);
             }
+            putchar('\n');
         }
     }
 }
@@ -232,7 +245,7 @@ void tranverse_tree(list_action_t *list, Tree t, int depth, action_t *parent) {
         Tree child = t->children[i];
         int count = food_count(simulator.inventory, child->food.id);
 
-        if (count != 0) {
+        if (child->food.source != Buy && count != 0) {
             tranverse_tree(list, child, depth + 1, action);
             action->unmet_prereq_count++;
         }

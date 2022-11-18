@@ -15,7 +15,7 @@ void delete_list_action(list_action_t *list, int index) {
     } else {
 //        free(list->contents[index]);
         for (int i = index; i < list->length - 1; i++) {
-            list->contents[index] = list->contents[index + 1];
+            list->contents[i] = list->contents[i + 1];
         }
         list->length = list->length - 1;
     }
