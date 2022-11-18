@@ -5,13 +5,13 @@
 #include "tree.h"
 #include "list_food.h"
 
+#define MAX_ID 99 // Max food ID
 
-#define MAX_ID 99           //Max food ID
-
-typedef struct {
-    char contents[MAX_ID + 1];  // Buffer
-    int neff;                   // Banyaknya elm pada set
-    int idx_eff;                // Nilai IDX paling besar
+typedef struct
+{
+    int contents[MAX_ID + 1]; // Buffer
+    int neff;                 // Banyaknya elm pada set
+    int idx_eff;              // Nilai IDX paling besar
 } Set;
 
 /* SELEKTOR */
