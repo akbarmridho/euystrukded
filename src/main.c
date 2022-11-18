@@ -15,6 +15,7 @@
 #include "commands/processor.h"
 #include "commands/clear.h"
 #include "commands/help.h"
+#include "commands/recommend.h"
 #include "utils/display.h"
 #include "autobnmo/commands/automove.h"
 #include "autobnmo/commands/autoprocess.h"
@@ -72,6 +73,7 @@ int main() {
     string AUTOBNMO = char_to_string("AUTOBNMO");
     string AUTOPROCESS = char_to_string("AUTOPROCESS");
     string BNMOGO = char_to_string("BNMOGO");
+    string RECOMMEND = char_to_string("RECOMMEND");
 
     string name;
 
@@ -240,6 +242,8 @@ int main() {
 
         } else if (startwith(current_input, BNMOGO)) {
             bnmogo();
+        } else if (comparestr(current_input, RECOMMEND)) {
+            recommend();
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");
