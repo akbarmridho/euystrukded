@@ -1,5 +1,7 @@
 #include "scheduler.h"
 
+boolean AUTOBNMO_DEBUG = true;
+
 void schedule(int target_food_id) {
     list_of_action_list_t action_steps;
     create_list_of_list_action(&action_steps);
@@ -7,6 +9,10 @@ void schedule(int target_food_id) {
     list_action_t actions;
     create_list_action(&actions);
     create_action_priority(&actions, target_food_id);
+
+    if (AUTOBNMO_DEBUG) {
+        printf("action priority length %d\n", actions.length);
+    }
 
     group_list_action(&action_steps, actions);
 
@@ -70,15 +76,15 @@ void schedule(int target_food_id) {
 
     for (int i = 0; i < grouped_steps_len; i++) {
         list_of_action_list_t steps = grouped_steps[i];
-        char buffer[15];
+        char buffer[28];
 
         for (int j = 0; j < steps.length; j++) {
-            snprintf(buffer, 14, "%s %c\n", "AUTOMOVE", source_to_char(steps.contents[j].contents[0]->food.source));
+            snprintf(buffer, 28, "%s %c\n", "AUTOMOVE", source_to_char(steps.contents[j].contents[0]->food.source));
             c_write(buffer);
 
             for (int k = 0; k < steps.contents[j].length; k++) {
                 food_t food = steps.contents[j].contents[k]->food;
-                snprintf(buffer, 14, "%s %d id\n", "AUTOPROCESS", food.id);
+                snprintf(buffer, 28, "%s %d id\n", "AUTOPROCESS", food.id);
             }
         }
     }
@@ -196,7 +202,22 @@ void create_action_priority(list_action_t *list, int target) {
 
     Tree t = lt_search_by_id(&list_tree_recipe, target);
 
+
     tranverse_tree(list, t, 0, NULL);
+
+    if (AUTOBNMO_DEBUG) {
+        printf("Recipe tree\n");
+        display_tree(t);
+        putchar('\n');
+        printf("ACTION PRIORITY DEBUG\n");
+        for (int i = 0; i < list->length; i++) {
+            printf("Item idx %d with id %d\n", i, list->contents[i]->food.id);
+            printf("Unmet prereq %d priority %d\n", list->contents[i]->unmet_prereq_count, list->contents[i]->priority);
+            if (list->contents[i]->parent != NULL) {
+                printf("Have parent with food id %d\n", list->contents[i]->parent->food.id);
+            }
+        }
+    }
 }
 
 void tranverse_tree(list_action_t *list, Tree t, int depth, action_t *parent) {
@@ -211,7 +232,7 @@ void tranverse_tree(list_action_t *list, Tree t, int depth, action_t *parent) {
         Tree child = t->children[i];
         int count = food_count(simulator.inventory, child->food.id);
 
-        if (count == 0) {
+        if (count != 0) {
             tranverse_tree(list, child, depth + 1, action);
             action->unmet_prereq_count++;
         }

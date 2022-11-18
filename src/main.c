@@ -106,7 +106,6 @@ int main() {
 
         for (int i = 0; i < food_recipe.neff; i++) {
             for (int j = 0; j < 3; j++) {
-                k++;
                 add_to_delivery_list(food_recipe.contents[i].food);
             }
         }
