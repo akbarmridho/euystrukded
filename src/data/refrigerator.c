@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "refrigerator.h"
+#include "../data/refrigerator.h"
 
 Matrix_R refrigerator;
 ListFood refrigerator_food;
@@ -8,13 +8,12 @@ void initialize_refrigerator(){
     create_refrigerator(&refrigerator, 20, 10);
     day_time_t temp_time;
     create_time(&temp_time, 0, 0, 0);
-    food_t dummy;
-    size food_size;
-    create_size(&food_size, 1, 1);
-    create_food(&dummy, 0, char_to_string("none"), temp_time, temp_time, Buy,  food_size);
-    for(int i= 0; i<20; i++){
-        for(int j= 0; j<10; j++){
+    food_t dummy = create_empty_slot_elmt();
+    
+    for(int i= 0; i < ROWEFF_R(refrigerator); i++){
+        for(int j= 0; j < COLEFF_R(refrigerator); j++){
             ELMT_R(refrigerator, i, j)= dummy;
         }
     }
+    create_list_food(&refrigerator_food, 50);
 }

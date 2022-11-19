@@ -130,7 +130,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         deallocate_string(&method);
 
         int length, width;
-        size food_size;
+        food_size food_size;
         advance_line();
         
         string size_string= word_to_string(current_line);
@@ -138,7 +138,7 @@ void load_temp_list_food(ListFood *lf, char *path) {
         //baca ukuran makanan
         sscanf(size_string_native_str, "%d %d", &length, &width);
         deallocate_string(&size_string);
-        free(&size_string_native_str);
+        free(size_string_native_str);
 
         create_size(&food_size, length, width);
 
