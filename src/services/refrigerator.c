@@ -1,9 +1,5 @@
 #include "refrigerator.h"
 
-simulator_t simulator;
-Matrix_R refrigerator;
-ListFood refrigerator_food;
-
 void store_item_refrigerator(food_t item, point_t loc) {
     food_size size = FOOD_SIZE(item);
     for (int i = 0; i < FOOD_SIZE_LENGTH(size); i++) {
@@ -31,7 +27,7 @@ void retract_item_refrigerator(food_t item) {
         food_t val;
         dequeue_food(&refrigerator_food, FOOD_ID(item), &val);
         enqueue_food(&inventory(simulator), val);
-        
+
         val = create_empty_slot_elmt();
         for (int i = 0; i < FOOD_SIZE_LENGTH(FOOD_SIZE(item)); i++) {
             for (int j = 0; j < FOOD_SIZE_WIDTH(FOOD_SIZE(item)); j++) {

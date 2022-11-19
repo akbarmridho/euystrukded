@@ -7,8 +7,6 @@
 #include "../adt/time.h"
 #include "../data/simulator.h"
 
-simulator_t simulator;
-
 /*
 Kurangi waktu kadaluarsa inventory
 bila ada yg kadaluarsa, tambahkan ke notification lalu tambahkan ke food history
