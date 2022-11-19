@@ -212,3 +212,21 @@ void display_list_food(ListFood l) {
         printf("--------------------------------------\n");
     }
 }
+
+int find_food (string name, ListFood f){
+    boolean found= false;
+    int n= 0;
+    while (!found && n<NEFF(f)){
+        if(comparestr(name, FOOD_NAME(ELMT(f, n)))){
+            found= true;
+        }else{
+            n++;
+        }
+    }
+    return n;
+}
+
+int get_food_id_from_name(string name, ListFood f){
+    int index= find_food(name, f);
+    return(FOOD_ID(ELMT(f, index)));
+}

@@ -7,6 +7,7 @@
 #include "time.h"
 #include "notification.h"
 #include "boolean.h"
+#include "refrigerator.h"
 
 typedef struct {
     ListFood inventory;
@@ -14,6 +15,8 @@ typedef struct {
     day_time_t time;
     ListDelivery delivery;
     ListNotification notification;
+    Matrix_R refrigerator;
+    ListFood refrigerator_food;
 } state_t;
 
 typedef struct {

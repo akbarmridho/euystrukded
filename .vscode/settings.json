@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "refrigerator.h": "c",
+        "food.h": "c",
+        "stdio.h": "c",
+        "string.h": "c",
+        "time.h": "c",
+        "size.h": "c",
+        "matrix.h": "c",
+        "stdlib.h": "c",
+        "boolean.h": "c"
+    }
+}

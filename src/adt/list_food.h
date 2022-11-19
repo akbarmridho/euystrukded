@@ -135,4 +135,8 @@ void compress_list_food(ListFood *l);
 /* Proses : Menampilkan isi list ke layar */
 void display_list_food(ListFood l);
 
+int find_food (string name, ListFood f);
+
+int get_food_id_from_name(string name, ListFood f);
+
 #endif

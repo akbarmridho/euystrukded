@@ -129,10 +129,23 @@ void load_temp_list_food(ListFood *lf, char *path) {
         }
         deallocate_string(&method);
 
+        int length, width;
+        food_size food_size;
+        advance_line();
+        
+        string size_string= word_to_string(current_line);
+        char *size_string_native_str= to_native_str(size_string);
+        //baca ukuran makanan
+        sscanf(size_string_native_str, "%d %d", &length, &width);
+        deallocate_string(&size_string);
+        free(size_string_native_str);
+
+        create_size(&food_size, length, width);
+
         food_t food;
         string namecpy;
         copy_string(name, &namecpy);
-        create_food(&food, food_id, namecpy, expire_time, delivery_time, source);
+        create_food(&food, food_id, namecpy, expire_time, delivery_time, source, food_size);
 
         if (CONFIG_DEBUG && FOOD_DEBUG) {
             printf("Read Food No %d from food.txt\n", i + 1);
