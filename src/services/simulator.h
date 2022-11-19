@@ -64,7 +64,11 @@ boolean is_able_to_fry();
 */
 boolean is_able_to_mix();
 
-// is able to buy dll
+/*
+    Mengembalikan true jika terdapat kulkas di simulator,
+    mengembalikan false jika tidak
+*/
+boolean is_next_to_refrigerator();
 
 boolean is_in_inventory(string name);
 
