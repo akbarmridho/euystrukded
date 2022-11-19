@@ -1,10 +1,6 @@
 #include "refrigerator.h"
 
 void cmd_refrigerator() {
-    if (!is_next_to_refrigerator()) {
-        printf("Anda tidak berada di area kulkas!\nEnter command: ");
-        return;
-    } 
     display_refrigerator(refrigerator);
     if (NEFF(refrigerator_food) == 0) {
         printf("Kulkas Anda kosong\n");
@@ -28,6 +24,10 @@ void cmd_refrigerator() {
 
 /* memasukkan makanan ke kulkas */
 void cmd_freeze(int food_idx) {
+    if (!is_next_to_refrigerator()) {
+        printf("Anda tidak berada di area kulkas!\nEnter command: ");
+        return;
+    }
     if (food_idx < 0 || food_idx >= NEFF(inventory(simulator))) {
         printf("Indeks tidak ditemukan pada inventory.\n");
         printf("\nEnter command: ");
@@ -60,6 +60,10 @@ void cmd_freeze(int food_idx) {
 
 /* mengeluarkan makanan dari kulkas, food_idx adalah idx dari list refrigerator_food */
 void cmd_defrost(int food_idx) {
+    if (!is_next_to_refrigerator()) {
+        printf("Anda tidak berada di area kulkas!\nEnter command: ");
+        return;
+    }
     if (food_idx < 0 || food_idx >= NEFF(refrigerator_food)) {
         printf("Indeks makanan tidak ditemukan pada kulkas.\n");
         printf("\nEnter command: ");
