@@ -217,7 +217,7 @@ int find_food (string name, ListFood f){
     boolean found= false;
     int n= 0;
     while (!found && n<NEFF(f)){
-        if(compare_str(name, FOOD_NAME(ELMT(f, n)))){
+        if(comparestr(name, FOOD_NAME(ELMT(f, n)))){
             found= true;
         }else{
             n++;
