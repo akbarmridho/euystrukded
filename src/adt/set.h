@@ -5,7 +5,6 @@
 #include "tree.h"
 #include "list_food.h"
 
-
 #define MAX_ID 99           
 #define S_CAP 100
 

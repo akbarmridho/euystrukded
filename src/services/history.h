@@ -4,6 +4,7 @@
 #include "../data/simulator.h"
 #include "../data/delivery.h"
 #include "../data/history.h"
+#include "../data/refrigerator.h"
 #include "../services/notifier.h"
 
 /* Lakukan copy semua data penting ke state */

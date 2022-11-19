@@ -21,6 +21,7 @@
 #include "autobnmo/commands/autoprocess.h"
 #include "autobnmo/commands/autobnmo.h"
 #include "autobnmo/commands/bnmogo.h"
+#include "commands/refrigerator.h"
 
 /*
  * Meminta nama kepada user
@@ -74,6 +75,11 @@ int main() {
     string AUTOPROCESS = char_to_string("AUTOPROCESS");
     string BNMOGO = char_to_string("BNMOGO");
     string RECOMMEND = char_to_string("RECOMMEND");
+    string REFRIGERATOR = char_to_string("REFRIGERATOR");
+    string FRIDGE = char_to_string("FRIDGE");
+    string FREEZE = char_to_string("FREEZE");
+    string DEFROST = char_to_string("DEFROST");
+
 
     string name;
 
@@ -208,6 +214,8 @@ int main() {
                     dest_point = get_chopper_position();
                 } else if (destination == 'M') {
                     dest_point = get_mixer_position();
+                } else if (destination == 'R') {
+                    dest_point = get_refrigerator_position();
                 } else {
                     printf("Destination invalid!\n");
                     valid = false;
@@ -244,6 +252,30 @@ int main() {
             bnmogo();
         } else if (comparestr(current_input, RECOMMEND)) {
             recommend();
+
+        } else if (comparestr(current_input, REFRIGERATOR) || comparestr(current_input, FRIDGE)) {
+            cmd_refrigerator();
+        } else if (startwith(current_input, FREEZE)) {
+            int food_id;
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
+
+            if (result != 2) {
+                printf("Invalid command!\n");
+            } else {
+                cmd_freeze(food_id - 1);
+            }
+        } else if (startwith(current_input, DEFROST)) {
+            int food_id;
+            char dump[15];
+            int result = sscanf(to_native_str(current_input), "%s %d", dump, &food_id);
+
+            if (result != 2) {
+                printf("Invalid command!\n");
+            } else {
+                cmd_defrost(food_id - 1);
+            }
+
         } else {
             printf("Perintah tidak dikenali. Ketik HELP untuk melihat daftar perintah.\n");
             printf("\nEnter command: ");

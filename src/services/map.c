@@ -89,3 +89,7 @@ point_t get_delivery_position() {
 point_t get_chopper_position() {
     return get_char_pos('C');
 }
+
+point_t get_refrigerator_position(){
+    return get_char_pos('R');
+}

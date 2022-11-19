@@ -2,6 +2,8 @@
 #include "simulator.h"
 #include "notifier.h"
 
+simulator_t simulator;
+
 /*
 Kurangi waktu kadaluarsa inventory
 bila ada yg kadaluarsa, tambahkan ke notification lalu tambahkan ke food history
@@ -100,4 +102,20 @@ boolean is_able_to_fry() {
  */
 boolean is_able_to_mix() {
     return is_near(get_mixer_position());
+}
+
+boolean is_next_to_refrigerator() {
+    return is_near(get_refrigerator_position());
+}
+
+boolean is_in_inventory(string name){
+    boolean found= false;
+    int n= 0;
+    while (!found && n<NEFF(inventory(simulator))){
+        if(comparestr(name, FOOD_NAME(ELMT(inventory(simulator), n)))){
+            found= true;
+        }else{
+            n++;
+        }
+    }
 }

@@ -8,7 +8,7 @@
 #include "inventory.h"
 
 void cmd_inventory() {
-    printf("List Makanan di Inventor\n");
+    printf("List Makanan di Inventory\n");
     printf("(nama - waktu sisa kedaluwarsa)\n");
 
     if (NEFF(inventory(simulator)) == 0) {
