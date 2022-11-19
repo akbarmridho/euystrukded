@@ -32,7 +32,7 @@ boolean is_refrigerator_full(Matrix_R fridge) {
 
 boolean is_item_fit(Matrix_R fridge, food_t food, point_t loc) {
     food_size size = FOOD_SIZE(food);
-    if (ABSIS(loc) + FOOD_SIZE_LENGTH(size) >= ROWEFF_R(fridge) || ORDINAT(loc) + FOOD_SIZE_WIDTH(size) >= COLEFF_R(fridge)) {
+    if (ABSIS(loc) + FOOD_SIZE_LENGTH(size) - 1 >= ROWEFF_R(fridge) || ORDINAT(loc) + FOOD_SIZE_WIDTH(size) - 1 >= COLEFF_R(fridge)) {
         return false;
     } else {
         boolean fit = true;

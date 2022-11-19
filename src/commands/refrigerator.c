@@ -5,29 +5,12 @@ void cmd_refrigerator() {
         printf("Anda tidak berada di area kulkas!\nEnter command: ");
         return;
     } 
-    // printf("\nList Makanan di Inventory\n");
-    // printf("(nama - waktu sisa kedaluwarsa)\n");
-
-    // if (NEFF(inventory(simulator)) == 0) {
-    //     printf("Anda tidak memiliki makanan\n");
-    // } else {
-    //     for (int i = 0; i < NEFF(inventory(simulator)); i++) {
-    //         food_t food = ELMT(inventory(simulator), i);
-    //         printf("   %d. ", (i + 1));
-    //         print_string(FOOD_NAME(food));
-    //         printf(" - ");
-    //         write_fulltime(FOOD_EXPIRE_TIME(food));
-
-    //         putchar('\n');
-    //     }
-    // }
-
     display_refrigerator(refrigerator);
     if (NEFF(refrigerator_food) == 0) {
         printf("Kulkas Anda kosong\n");
     } else {
         printf("Isi Kulkas:\n");
-        printf("(nama - waktu sisa kedaluwarsa - ID)");
+        printf("(nama - waktu sisa kedaluwarsa - ID)\n");
         for (int i = 0; i < NEFF(refrigerator_food); i++) {
             food_t food = ELMT(refrigerator_food, i);
             printf("   %d. ", (i + 1));
@@ -50,16 +33,21 @@ void cmd_freeze(int food_idx) {
         printf("\nEnter command: ");
         return;
     }
+    
     food_t item = ELMT(inventory(simulator), food_idx);
     point_t startpoint;
     for (int i = 0; i <= ROWEFF_R(refrigerator) - FOOD_SIZE_LENGTH(FOOD_SIZE(item)); i++) {
         for (int j = 0; j <= ROWEFF_R(refrigerator) - FOOD_SIZE_WIDTH(FOOD_SIZE(item)); j++) {
             create_point(&startpoint, i, j);
             if (is_item_fit(refrigerator, item, startpoint)) {
+                backup_state();
                 store_item_refrigerator(item, startpoint);
                 
-                print_string(FOOD_NAME(item));
-                printf(" berhasil dimasukkan ke dalam kulkas.\n");
+                string name = FOOD_NAME(item);
+                notify(concat(name, char_to_string(" berhasil dimasukkan ke dalam kulkas.")));
+                notify_undo(concat(name, char_to_string(" tidak jadi dimasukkan ke dalam kulkas.")));
+                clear_display();
+                display_info();
                 printf("\nEnter command: ");
                 return;
             }
@@ -78,11 +66,15 @@ void cmd_defrost(int food_idx) {
         return;
     }
 
+    backup_state();
     food_t item = ELMT(refrigerator_food, food_idx);
     retract_item_refrigerator(item);
 
-    print_string(FOOD_NAME(item));
-    printf(" sudah dikembalikan ke inventory.\n");
+    string name = FOOD_NAME(item);
+    notify(concat(name, char_to_string(" sudah dikembalikan ke inventory.")));
+    notify_undo(concat(name, char_to_string(" tidak jadi dikeluarkan dari kulkas.")));
+    clear_display();
+    display_info();
     printf("\nEnter command: ");
     return;
 }

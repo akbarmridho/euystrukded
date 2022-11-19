@@ -1,4 +1,4 @@
-25
+26
 1
 Raw Fish
 1 0 0
@@ -149,3 +149,9 @@ Aaru Mixed Rice
 0 0 10
 Mix
 2 2
+26
+Large Paimon Pie
+1 0 0
+0 1 0
+Buy
+9 7

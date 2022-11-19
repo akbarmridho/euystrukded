@@ -2,6 +2,11 @@
 #define COMMAND_REFRIGERATOR_H
 
 #include "../services/refrigerator.h"
+#include "../services/history.h"
+#include "../services/simulator.h"
+#include "../services/delivery.h"
+#include "../utils/display.h"
+
 
 /* display refrigerator */
 void cmd_refrigerator();
