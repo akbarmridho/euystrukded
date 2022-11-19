@@ -1,2 +1,1 @@
-cd build
-./euystrukded
+cd build; ./euystrukded
