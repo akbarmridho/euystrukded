@@ -1,16 +1,23 @@
 #include "food.h"
 
 /*
+ * food size
+ */
+void create_size(food_size * f, int length, int width) {
+    FOOD_SIZE_LENGTH(*f) = length;
+    FOOD_SIZE_WIDTH(*f) = width;
+}
+/*
  * Buat makanan dari parameter
  */
 void
-create_food(food_t *f, int id, string name, day_time_t expire_time, day_time_t delivery_time, enum food_source source, size food_size) {
+create_food(food_t *f, int id, string name, day_time_t expire_time, day_time_t delivery_time, enum food_source source, food_size size) {
     FOOD_NAME(*f) = name;
     FOOD_ID(*f) = id;
     FOOD_EXPIRE_TIME(*f) = expire_time;
     FOOD_DELIVERY_TIME(*f) = delivery_time;
     FOOD_SOURCE(*f) = source;
-    FOOD_SIZE(*f)= food_size;
+    FOOD_SIZE(*f) = size;
 }
 
 /*
@@ -52,4 +59,17 @@ void display_food(food_t food) {
             break;
 
     }
+}
+
+/* PEMBANDING */
+boolean is_food_equal(food_t food_a, food_t food_b) {
+    boolean equal = (
+        comparestr(FOOD_NAME(food_a), FOOD_NAME(food_b))
+        && FOOD_ID(food_a) == FOOD_ID(food_b)
+        && time_to_minute(FOOD_EXPIRE_TIME(food_a)) == time_to_minute(FOOD_EXPIRE_TIME(food_b))
+        && time_to_minute(FOOD_DELIVERY_TIME(food_a)) == time_to_minute(FOOD_DELIVERY_TIME(food_b))
+        && FOOD_SOURCE(food_a) == FOOD_SOURCE(food_b)
+        && is_point_equal(FOOD_SIZE(food_a), FOOD_SIZE(food_b))
+    );
+    return equal;
 }
