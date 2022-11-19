@@ -15,6 +15,7 @@ typedef struct {
     ListDelivery delivery;
     ListNotification notification;
 } state_t;
+/* chore: backup refrigerator state*/
 
 typedef struct {
     state_t *buffer; /* tabel penyimpan elemen */

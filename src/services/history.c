@@ -45,6 +45,7 @@ void set_state(state_t state) {
 
 /* Copy current state, lalu push ke stack history */
 void backup_state() {
+    /* chore: backup refrigerator */
     state_t backup = generate_state();
     clear_notification();
     stack_push(&history, backup);
