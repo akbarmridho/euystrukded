@@ -8,19 +8,12 @@
 #include "../data/configdata.h"
 #include "simulator.h"
 
-ListFoodRecipe food_recipe;
-simulator_t simulator;
-Matrix_R refrigerator;
-ListFood refrigerator_food;
+extern simulator_t simulator;
+extern Matrix_R refrigerator;
+extern ListFood refrigerator_food;
 
-void store_item_refrigerator(string name);
+void store_item_refrigerator(food_t item, point_t loc);//service
 
-boolean is_refrigerator_full();
-
-void get_item_refrigerator(string name);
-
-void display_refrigerator();
-
-boolean is_item_fit();
+void retract_item_refrigerator(food_t item);
 
 #endif
