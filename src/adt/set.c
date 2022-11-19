@@ -1,4 +1,6 @@
 #include "set.h"
+#include "../data/configdata.h"
+
 
 void create_set(Set *set) {
     for (int i = 0; i < MAX_ID + 1; i++) {
@@ -18,6 +20,29 @@ void list_food_to_set(Set *set, ListFood list) {
     }
 }
 
+void set_to_scratch(Set *set) { 
+    boolean scratching;
+    do { 
+        scratching = false;
+        for (int i = 0; i < S_CAP; i++) {
+            int recipe_idx = lfr_search_by_food_id(food_recipe, i);
+            recipe_t recipe = food_recipe.contents[recipe_idx].recipe;
+            if (S_ELMT(*set, i) == 0 || recipe.ingredients_count == 0){
+                continue;
+            }
+            else {
+                S_ELMT(*set, i)--;
+                S_NEFF(*set)--;
+                for (int j = 0; j < recipe.ingredients_count; j ++){
+                    S_ELMT(*set, recipe.ingredients[j])++;
+                    S_NEFF(*set)++;
+                }
+                scratching = true;
+            }
+        }
+    } while (scratching);
+}
+
 void tree_to_set(Set *set, Tree recipe) {
     if (recipe->children_count == 0) {
         S_ELMT(*set, T_ID(recipe))++;
@@ -32,26 +57,39 @@ void tree_to_set(Set *set, Tree recipe) {
     }
 }
 
-boolean isSubset(Set s1, Set s2) {
-    if (S_IDX_EFF(s1) > S_IDX_EFF(s2) || S_NEFF(s1) > S_NEFF(s2)) {
-        return false;
-    } else {
-        int i = 0;
-        while (i <= S_IDX_EFF(s1)) {
-            if (S_ELMT(s2, i) < S_ELMT(s1, i)) {
-                return false;
-            } else {
-                i++;
-            }
+Set set_copy(Set s1){
+    Set temp;
+    S_NEFF(temp) = 0;
+    S_IDX_EFF(temp) = -1; 
+    for(int i = 0; i < S_CAP; i++){
+        if (S_ELMT(s1, i) > 0){
+            S_ELMT(temp, i) = S_ELMT(s1, i);
+            S_IDX_EFF(temp) = i;
+        }    
+        else {
+            S_ELMT(temp, i) = 0;
         }
-        return true;
-    }
+    }   
+    return temp;
 }
 
-void display_set(Set s) {
-    for (int i = 0; i <= S_IDX_EFF(s); i++) {
-        if (S_ELMT(s, i) > 0) {
-            printf("%d,%d\n", i, S_ELMT(s, i));
+boolean is_subset(Set s1, Set s2) {
+    int i = 0;
+    while (i < S_CAP) {
+        if (S_ELMT(s2, i) < S_ELMT(s1, i)) {
+            return false;
+        } else {
+            i++;
         }
     }
+    return true;
 }
+// void display_set(Set s) {
+//     printf("[");
+//     for (int i = 0; i < S_CAP; i++) {
+//         if (S_ELMT(s, i) > 0) {
+//             printf("[%d,%d] ", i, S_ELMT(s, i));
+//         }
+//     }
+//     printf("]\n");
+// }

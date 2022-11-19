@@ -7,8 +7,10 @@
 #include "../adt/set.h"
 
 
-/* Menampilkan rekomendasi makanan yang dapat dibuat berdasarkan
-inventory yang ada. */
+boolean is_path_exist(Tree recipe, Set inventory);
+
 void food_recommendation();
+
+
 
 #endif

@@ -6,10 +6,11 @@
 #include "list_food.h"
 
 
-#define MAX_ID 99           //Max food ID
+#define MAX_ID 99           
+#define S_CAP 100
 
 typedef struct {
-    char contents[MAX_ID + 1];  // Buffer
+    int contents[S_CAP];        // Buffer
     int neff;                   // Banyaknya elm pada set
     int idx_eff;                // Nilai IDX paling besar
 } Set;
@@ -33,16 +34,26 @@ void create_set(Set *set);
 */
 void list_food_to_set(Set *set, ListFood list);
 
+/*  proses: mendekonstuksi elemen pada set food ke bahan paling sederhana
+    I.S. set merepresentasikan list makanan
+    F.s. set tersusun oleh ingredien-ingredient paling sederhana
+*/
+void set_to_scratch(Set *set);
+
 /*  proses: mengonversi tree recipe dalam bentuk set
     I.S. set sembarang
-    F.s. set merepresentasikan ingridient-ingridient pada tree recipe
+    F.s. set merepresentasikan ingridient-ingridient pada tree recipe paling sederhana
 */
 void tree_to_set(Set *set, Tree recipe);
 
-/* Mengembalikan apakah s1 merupakan subset dari s2 */
-boolean isSubset(Set s1, Set s2);
+/*  fungsi: mengembalikan Set yang merupakan salinan dari s1
+*/
+Set set_copy(Set s1);
 
-/* Menampilkan elemen set dan jumlahnya */
-void display_set(Set s);
+/* Mengembalikan apakah s1 merupakan subset dari s2 */
+boolean is_subset(Set s1, Set s2);
+
+// /* Menampilkan elemen set dan jumlahnya */
+// void display_set(Set s);
 
 #endif
