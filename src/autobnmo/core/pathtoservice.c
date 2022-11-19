@@ -55,7 +55,7 @@ build_map(int ***map_original, boolean ***map_visited, int ***map_distance, int 
         }
     }
 
-    display_graph_map(*map_original);
+//    display_graph_map(*map_original);
 }
 
 
@@ -240,8 +240,8 @@ void find_path(point_t start, point_t goal, point_t **path, int *steps) {
         }
     }
 
-    printf("MAP ORIGIN\n");
-    display_graph_map(map_origin);
+//    printf("MAP ORIGIN\n");
+//    display_graph_map(map_origin);
 
     int xCurrent = goal.x;
     int yCurrent = goal.y;

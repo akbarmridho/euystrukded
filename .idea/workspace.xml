@@ -21,15 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="761fe895-63df-45e8-84d2-380350020a7f" name="Changes" comment="skip transverse when processed ingredient exist">
-      <change afterPath="$PROJECT_DIR$/src/adt/set.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/adt/set.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/recommend.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/recommend.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/help.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/help.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/food_recommendation.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/food_recommendation.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/food_recommendation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/food_recommendation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/autobnmo/core/pathtoservice.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/autobnmo/core/pathtoservice.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +98,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="euystrukded" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="euystrukded" TARGET_NAME="euystrukded" CONFIG_NAME="Debug-WSL" RUN_TARGET_PROJECT_NAME="euystrukded" RUN_TARGET_NAME="euystrukded">
