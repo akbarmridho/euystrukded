@@ -14,6 +14,10 @@ state_t generate_state() {
     ListNotification notification;
     copy_notification(simulator.notification, &notification);
 
+    // refrigerator list
+    ListFood ref_list_copy;
+    list_food_copy(refrigerator_food, &ref_list_copy);
+
     state_t backup;
 
     backup.delivery = delivery_copy;
@@ -21,6 +25,8 @@ state_t generate_state() {
     backup.position = simulator.position;
     backup.inventory = inventory_copy;
     backup.notification = notification;
+    backup.refrigerator = refrigerator;
+    backup.refrigerator_food = ref_list_copy;
 
     return backup;
 }
@@ -41,6 +47,9 @@ void set_state(state_t state) {
     delivery.capacity = state.delivery.capacity;
     delivery.nEff = state.delivery.nEff;
     delivery.buffer = state.delivery.buffer;
+
+    refrigerator = state.refrigerator;
+    refrigerator_food = state.refrigerator_food;
 }
 
 /* Copy current state, lalu push ke stack history */
